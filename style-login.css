@@ -14,20 +14,12 @@ body {
     margin: -20px 0 50px;
 }
 
-h1 {
-    font-weight: bold;
-    margin: 0;
-    color: #000000; /* لون رمادي غامق */
-}
 
-h2 {
-    text-align: center;
-    color: #ffffff; /* لون أغمق قليلاً */
-}
+
+
 
 span {
-    font-size: 12px;
-    color: #000000; /* لون رمادي أخف */
+    font-size: 20px;
 }
 
 a {
@@ -241,9 +233,7 @@ input {
 }
 
 /* Light mode (default) */
-h4 {
-    color: #ffffff; /* Default color for h4 */
-}
+
 
 /* Dark mode styles */
 body.dark-mode h4 {
@@ -257,7 +247,6 @@ body.dark-mode input::placeholder {
   /* Light mode (default) */
 .container {
   background-color: #ffffff;
-  color: #333;
 }
 
 .form-container {

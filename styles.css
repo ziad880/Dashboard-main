@@ -34,7 +34,6 @@ body{
     font-weight: bold;
     display: flex;
     
-    color: #ecf0f1;
     flex-direction: row-reverse;
 }
 
@@ -757,9 +756,6 @@ body {
   color: #333;
 }
 
-.dashboard-text {
-  color: #333;
-}
 
 .dashboard > h2 {
   color: #333;
@@ -955,6 +951,15 @@ body.dark-mode {
     transition:0.3s;
     width: 100%;
 }
+.sidebar-item.dark-mode {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition:0.3s;
+    width: 100%;
+}
 
 .sidebar-item:hover {
     background: #34495e;
@@ -975,7 +980,7 @@ body.dark-mode {
     display: flex;
     align-items: center;
     padding: 10px;
-    color: rgb(255, 255, 255);
+    color: #f0ecec;
     text-decoration: none;
     transition: 0.3s;
     width: 100%;
