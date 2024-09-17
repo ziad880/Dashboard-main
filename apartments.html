@@ -60,12 +60,21 @@
         </div>
 
         <ul class="sidebar-menu">
-             <li><a href="index.html" class="sidebar-item">
+                        <li><a href="index.html" class="sidebar-item">
                 <i class="fas fa-home"></i> <span>الصفحة الرئيسية</span>
             </a></li>
-            <li><a href="apartments.html" class="sidebar-item">
-                <i class="fas fa-building"></i> <span>الشقق</span>
-            </a></li>
+<li class="sidebar-item-with-submenu">
+    <a href="apartments.html" class="sidebar-item">
+        <i class="fas fa-building"></i> 
+        <span>الشقق</span>
+    </a>
+    <ul class="submenu">
+        <li><a href="add-apartment.html" class="sidebar-item">                    <i class="fas fa-list "></i>
+اضافة شقة   </a></li>
+        <li><a href="all-apartments.html" class="sidebar-item">                    <i class="fas fa-building "></i>
+ جميع الشقق</a></li>
+    </ul>
+</li>
             <li><a href="rental.html" class="sidebar-item">
                 <i class="fas fa-key"></i> <span>التأجير</span>
             </a></li>
@@ -101,13 +110,13 @@
         <div class="breadcrumb-container">
             <div class="breadcrumb">
                 <div class="breadcrumb-item">الرئيسية - الشقق
-                    <a id="lf" href=""><i class="fa-solid fa-circle-right"></i></a>
+                    <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="#">الرئيسية</a>
+                    <a href="index.html">الرئيسية</a>
                     <p>/</p>
-                    <a href="#">الشقق</a>
+                    <a href="apartments.html">الشقق</a>
                     <i class="fa-solid fa-building"></i>
                 </div>
             </div>
@@ -119,13 +128,15 @@
                 <div class="card">
                     <i class="fas fa-building fa-2x"></i>
                     <h2>إضافة شقة</h2>
-                    <button class="details-btn"><i class="fas fa-arrow-left"></i> إضافة شقة جديدة</button>
-                </div>
+<button class="details-btn" onclick="window.location.href='add-apartment.html';">
+    <i class="fas fa-arrow-left"></i> إضافة شقة جديدة
+</button>                </div>
                 <div class="card">
                     <i class="fas fa-list fa-2x"></i>
                     <h2>جميع الشقق</h2>
-                    <button class="details-btn"><i class="fas fa-arrow-left"></i> عرض جميع الشقق</button>
-                </div>
+<button class="details-btn" onclick="window.location.href='all-apartments.html';">
+    <i class="fas fa-arrow-left"></i>الانتقال لجمبع الشقق
+</button>                </div>
             </div>
         </div>
     </div>
