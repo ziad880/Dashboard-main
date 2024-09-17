@@ -949,10 +949,10 @@ body.dark-mode {
 .sidebar-item {
     display: flex;
     align-items: center;
-    padding: 1٠px;
+    padding: 10px;
     color: rgb(0, 0, 0);
     text-decoration: none;
-    transition: background 0.3s;
+    transition:0.3s;
     width: 100%;
 }
 
@@ -964,8 +964,6 @@ body.dark-mode {
 
 /* الوضع الغامق */
 @media (prefers-color-scheme: dark) {
-   
-
     .sidebar-menu li:hover {
         background-color: #3c4a56; /* لون خلفية عند التمرير في الوضع الغامق */
         color: #ecf0f1; /* لون النص عند التمرير في الوضع الغامق */
@@ -976,10 +974,10 @@ body.dark-mode {
 .sidebar-item.dark-mode {
     display: flex;
     align-items: center;
-    padding: 1٠px;
+    padding: 10px;
     color: rgb(255, 255, 255);
     text-decoration: none;
-    transition: background 0.3s;
+    transition: 0.3s;
     width: 100%;
 }
     .details-btn:hover {
