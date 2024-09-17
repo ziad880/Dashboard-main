@@ -878,13 +878,12 @@ body.dark-mode {
 }
 @media (max-width: 768px) {
     .dashboard-text {
-        display: none; /* إخفاء النص */
+        display: none; 
     }
 
 }
 
 
-/* تأثير الانتقال للشريط الجانبي */
 .sidebar {
     transition: transform 0.3s ease;
 }
@@ -892,7 +891,7 @@ body.dark-mode {
 
 
 .sidebar-toggle {
-    display: none; /* إخفاء الزر في الشاشات الكبيرة */
+    display: none; 
     background-color: transparent;
     color: #ecf0f1;
     border: none;
@@ -906,7 +905,7 @@ body.dark-mode {
 }
 
 .sidebar-toggle {
-    display: none; /* إخفاء الزر في الشاشات الكبيرة */
+    display: none; 
     background-color: transparent;
     color: #ecf0f1;
     border: none;
@@ -916,7 +915,38 @@ body.dark-mode {
 
 @media (max-width: 768px) {
     .sidebar-toggle {
-        display: block; /* إظهار الزر في الشاشات الصغيرة */
+        display: block; 
     }
    
+}
+/* الوضع الفاتح (الافتراضي) */
+.sidebar-menu li:hover {
+    background-color: #f0f0f0; 
+    color: #333; 
+}
+.sidebar-menu li:hover .fas {
+    color: #333; 
+}
+
+.details-btn:hover {
+    background-color: #ececec; /* لون خلفية الزر عند التمرير في الوضع الفاتح */
+    color: #2980b9; /* لون النص عند التمرير في الوضع الفاتح */
+}
+
+/* الوضع الغامق */
+@media (prefers-color-scheme: dark) {
+   
+
+    .sidebar-menu li:hover {
+        background-color: #3c4a56; /* لون خلفية عند التمرير في الوضع الغامق */
+        color: #ecf0f1; /* لون النص عند التمرير في الوضع الغامق */
+    }
+.sidebar-menu li:hover .fas {
+    color: #f0ecec; 
+}
+
+    .details-btn:hover {
+        background-color: #3b4c5a; /* لون خلفية الزر عند التمرير في الوضع الغامق */
+        color: #ffffff; /* لون النص عند التمرير في الوضع الغامق */
+    }
 }
