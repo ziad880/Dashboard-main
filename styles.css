@@ -1092,84 +1092,137 @@ body.dark-mode {
         .btn-submit:hover {
             background-color: #232d51;
         }
+/* زر التصدير */
+.btn-export {
+    background-color: #000000;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    display: inline-block;
+    font-size: 16px; /* أضف حجم الخط الأساسي */
+}
 
-        /* زر التصدير */
-        .btn-export {
-            background-color: #000000;
-            color: white;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            margin-bottom: 20px;
-            display: inline-block;
-        }
+.btn-export:hover {
+    background-color: #333333; /* تغيير اللون عند التمرير */
+}
 
-        .btn-export:hover {
-            background-color: #000000;
-        }
+/* تصميم الجدول */
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 20px;
+}
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-bottom: 20px;
-        }
+table, th, td {
+    border: 1px solid #e0e0e0;
+}
 
-        table, th, td {
-            border: 1px solid #e0e0e0;
-        }
+th, td {
+    padding: 12px;
+    text-align: center;
+    font-size: 14px; /* حجم الخط الأساسي */
+}
 
-        th, td {
-            padding: 12px;
-            text-align: center;
-        }
+th {
+    background-color: #000000;
+    color: white;
+}
 
-        th {
-            background-color: #000000;
-            color: white;
-        }
+td {
+    background-color: #f9f9f9;
+}
 
-        td {
-            background-color: #f9f9f9;
-        }
+/* أزرار الإجراءات */
+.action-btns {
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+}
 
-        .action-btns {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-        }
+.btn-edit, .btn-delete {
+    padding: 6px 10px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 14px;
+}
 
-        .btn-edit, .btn-delete {
-            padding: 6px 10px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 14px;
-        }
+.btn-edit {
+    background-color: #28a745;
+    color: white;
+}
 
-        .btn-edit {
-            background-color: #28a745;
-            color: white;
-        }
+.btn-delete {
+    background-color: #dc3545;
+    color: white;
+}
 
-        .btn-delete {
-            background-color: #dc3545;
-            color: white;
-        }
+.btn-edit:hover {
+    background-color: #218838;
+}
 
-        .btn-edit:hover {
-            background-color: #218838;
-        }
+.btn-delete:hover {
+    background-color: #c82333;
+}
 
-        .btn-delete:hover {
-            background-color: #c82333;
-        }
+/* تصميم DataTables */
+.dataTables_wrapper .dt-buttons {
+    float: left;
+}
 
-        .dataTables_wrapper .dt-buttons {
-            float: left;
-        }
+.dataTables_wrapper .dataTables_filter {
+    float: right;
+    text-align: right;
+}
 
-        .dataTables_wrapper .dataTables_filter {
-            float: right;
-            text-align: right;
-        }
+/* استعلامات الإعلامية لجعل التصميم متجاوبًا */
+@media (max-width: 768px) {
+    .btn-export {
+        padding: 8px 16px;
+        font-size: 14px;
+    }
+
+    th, td {
+        padding: 10px;
+        font-size: 12px;
+    }
+
+    .btn-edit, .btn-delete {
+        padding: 4px 8px;
+        font-size: 12px;
+    }
+
+    .dataTables_wrapper .dt-buttons,
+    .dataTables_wrapper .dataTables_filter {
+        float: none;
+        text-align: center;
+        margin-top: 10px;
+    }
+
+    /* جعل الجدول قابلاً للتمرير على الشاشات الصغيرة */
+    table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
+
+@media (max-width: 480px) {
+    .btn-export {
+        padding: 6px 12px;
+        font-size: 12px;
+    }
+
+    th, td {
+        padding: 8px;
+        font-size: 10px;
+    }
+
+    .btn-edit, .btn-delete {
+        padding: 4px 6px;
+        font-size: 10px;
+    }
+}
