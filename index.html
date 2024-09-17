@@ -32,16 +32,19 @@
         </div>
         <div class="dashboard-text">
             <span>لوحة التحكم أوروك للطيران</span>
+             
         </div>
+           <button class="sidebar-toggle" onclick="toggleSidebar()">
+            <i class="fas fa-bars"></i>
+        </button>
     </div>
     <nav  class="sidebar">
         <div class="user-info">
         <div style="    margin-left: 20px;"><a href=""><i class="fa-solid fa-gear"></i></a></div>
-<div>
-    <span  class="user-name"> Admin</>
-<img src="user-photo.jpg" alt="User Photo" class="user-photo">
-
-</div>
+ <div class="user-info">
+        <span class="user-name">Admin</span>
+        <img src="user-photo.jpg" alt="User Photo" class="user-photo">
+    </div>
 
 
         </div>
@@ -127,6 +130,10 @@ document.getElementById('mode-toggle').addEventListener('change', function() {
     document.getElementById('lf').classList.toggle('dark-mode', isDarkMode);
 });
 ;
+function toggleSidebar() {
+    const sidebar = document.querySelector('.sidebar');
+    sidebar.classList.toggle('active');
+}
 
 </script>
 </body>

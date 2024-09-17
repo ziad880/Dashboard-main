@@ -876,3 +876,47 @@ body.dark-mode {
 .fa-solid.dark-mode, .fas.dark-mode {
   color: #e0e0e0;
 }
+@media (max-width: 768px) {
+    .dashboard-text {
+        display: none; /* إخفاء النص */
+    }
+
+}
+
+
+/* تأثير الانتقال للشريط الجانبي */
+.sidebar {
+    transition: transform 0.3s ease;
+}
+
+
+
+.sidebar-toggle {
+    display: none; /* إخفاء الزر في الشاشات الكبيرة */
+    background-color: transparent;
+    color: #ecf0f1;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+
+.dashboard-title {
+    display: inline-block;
+}
+
+.sidebar-toggle {
+    display: none; /* إخفاء الزر في الشاشات الكبيرة */
+    background-color: transparent;
+    color: #ecf0f1;
+    border: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+@media (max-width: 768px) {
+    .sidebar-toggle {
+        display: block; /* إظهار الزر في الشاشات الصغيرة */
+    }
+   
+}
