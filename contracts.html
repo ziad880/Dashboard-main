@@ -1,15 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة التحكم</title>
+    <title>العقود</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <div class="header">
+   <div class="header">
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
@@ -42,7 +41,7 @@
             </label>
         </div>
         <div class="dashboard-text">
-            <span>لوحة التحكم أوروك للطيران</span>
+            <span> أوروك للطيران</span>
         </div>
         <button class="sidebar-toggle" onclick="toggleSidebar()">
             <i class="fas fa-bars"></i>
@@ -61,7 +60,7 @@
         </div>
 
         <ul class="sidebar-menu">
-                        <li><a href="index.html" class="sidebar-item">
+             <li><a href="index.html" class="sidebar-item">
                 <i class="fas fa-home"></i> <span>الصفحة الرئيسية</span>
             </a></li>
             <li><a href="apartments.html" class="sidebar-item">
@@ -100,45 +99,36 @@
     <div class="content">
         <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - لوحة التحكم
+                <div class="breadcrumb-item">الرئيسية - العقود
                     <a id="lf" href=""><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    
                     <a href="#">الرئيسية</a>
                     <p>/</p>
-                    <a href="#">لوحة التحكم</a>
-                    <i class="fa-solid fa-house"></i>
+                    <a href="#">العقود</a>
+                    <i class="fa-solid fa-file-contract"></i>
                 </div>
             </div>
         </div>
-        
+
         <div class="dashboard">
-            <h2 >أحصائيات التطبيق</h2>
+            <h2>إدارة العقود</h2>
             <div class="row">
                 <div class="card">
-                    <i class="fas fa-building fa-2x"></i>
-                    <h2>إجمالي الشقق</h2>
-                    <p>عدد الشقق: 34</p>
-                                            <button class="details-btn"><i class="fas fa-arrow-left"></i> عرض التفاصيل</button>
+                    <i class="fas fa-file-contract fa-2x"></i>
+                    <h2>إضافة عقد</h2>
+                    <button class="details-btn"><i class="fas fa-arrow-left"></i> إضافة عقد جديد</button>
                 </div>
                 <div class="card">
-                    <i class="fas fa-money-bill-wave fa-2x"></i>
-                    <h2>الإيجارات المستحقة</h2>
-                    <p>عدد الإيجارات: 12</p>
-                        <button class="details-btn"><i class="fas fa-arrow-left"></i> عرض التفاصيل</button>
-
-                </div>
-                <div class="card">
-                    <i class="fas fa-calendar-alt fa-2x"></i>
-                    <h2>الشقق المسلمة</h2>
-                    <p>عدد الشقق المسلمة: 3 </p>
-                                            <button class="details-btn"><i class="fas fa-arrow-left"></i> عرض التفاصيل</button>
+                    <i class="fas fa-list fa-2x"></i>
+                    <h2>جميع العقود</h2>
+                    <button class="details-btn"><i class="fas fa-arrow-left"></i> عرض جميع العقود</button>
                 </div>
             </div>
         </div>
     </div>
+
 
 <script src="script.js"></script>
 

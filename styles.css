@@ -946,6 +946,21 @@ body.dark-mode {
     background-color: #ececec; /* لون خلفية الزر عند التمرير في الوضع الفاتح */
     color: #2980b9; /* لون النص عند التمرير في الوضع الفاتح */
 }
+.sidebar-item {
+    display: flex;
+    align-items: center;
+    padding: 1٠px;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    transition: background 0.3s;
+    width: 100%;
+}
+
+.sidebar-item:hover {
+    background: #34495e;
+    color: #ffffff;
+}
+
 
 /* الوضع الغامق */
 @media (prefers-color-scheme: dark) {
@@ -958,7 +973,15 @@ body.dark-mode {
 .sidebar-menu li:hover .fas {
     color: #f0ecec; 
 }
-
+.sidebar-item.dark-mode {
+    display: flex;
+    align-items: center;
+    padding: 1٠px;
+    color: rgb(255, 255, 255);
+    text-decoration: none;
+    transition: background 0.3s;
+    width: 100%;
+}
     .details-btn:hover {
         background-color: #3b4c5a; /* لون خلفية الزر عند التمرير في الوضع الغامق */
         color: #ffffff; /* لون النص عند التمرير في الوضع الغامق */
