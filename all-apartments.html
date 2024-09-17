@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>الشقق</title>
+    <title>جميع الشقق</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -60,21 +60,12 @@
         </div>
 
         <ul class="sidebar-menu">
-                        <li><a href="index.html" class="sidebar-item">
+             <li><a href="index.html" class="sidebar-item">
                 <i class="fas fa-home"></i> <span>الصفحة الرئيسية</span>
             </a></li>
-<li class="sidebar-item-with-submenu">
-    <a href="apartments.html" class="sidebar-item">
-        <i class="fas fa-building"></i> 
-        <span>الشقق</span>
-    </a>
-    <ul class="submenu">
-        <li><a href="add-apartment.html" class="sidebar-item">                    <i class="fas fa-list "></i>
-اضافة شقة   </a></li>
-        <li><a href="all-apartments.html" class="sidebar-item">                    <i class="fas fa-building "></i>
- جميع الشقق</a></li>
-    </ul>
-</li>
+            <li><a href="apartments.html" class="sidebar-item">
+                <i class="fas fa-building"></i> <span>الشقق</span>
+            </a></li>
             <li><a href="rental.html" class="sidebar-item">
                 <i class="fas fa-key"></i> <span>التأجير</span>
             </a></li>
@@ -105,41 +96,127 @@
         </ul>
     </nav>
 
-
-    <div class="content">
-        <div class="breadcrumb-container">
+ <div class="content">
+     <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - الشقق
+                <div class="breadcrumb-item">  الشقق -  جميع الشقق
                     <a id="lf" href=""><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="#">الرئيسية</a>
-                    <p>/</p>
+                    
                     <a href="#">الشقق</a>
-                    <i class="fa-solid fa-building"></i>
+                    <p>/</p>
+                    <a href="#">جميع الشقق</a>
+                    <i class="fa-solid fa-house"></i>
                 </div>
             </div>
         </div>
 
-        <div class="dashboard">
-            <h2>إدارة الشقق</h2>
-            <div class="row">
-                <div class="card">
-                    <i class="fas fa-building fa-2x"></i>
-                    <h2>إضافة شقة</h2>
-<button class="details-btn" onclick="window.location.href='add-apartments.html';">
-    <i class="fas fa-arrow-left"></i> إضافة شقة جديدة
-</button>                </div>
-                <div class="card">
-                    <i class="fas fa-list fa-2x"></i>
-                    <h2>جميع الشقق</h2>
-<button class="details-btn" onclick="window.location.href='all-apartments.html';">
-    <i class="fas fa-arrow-left"></i>الانتقال لجمبع الشقق
-</button>                </div>
-            </div>
-        </div>
-    </div>
+    <!-- جدول الشقق -->
+    <table id="apartments-table" class="display">
+        <thead>
+        <tr>
+            <th>اسم الشقة</th>
+            <th>العنوان</th>
+            <th>المجمع</th>
+            <th>وضع الشقة</th>
+            <th>نوع التعاقد</th>
+            <th>الحالة</th>
+            <th>تاريخ الإضافة</th>
+            <th>المستخدم</th>
+            <th>الخيارات</th>
+        </tr>
+        </thead>
+        <tbody>
+        <!-- الصفوف الديناميكية -->
+        <tr>
+            <td>شقة 1</td>
+            <td>الرياض</td>
+            <td>مجمع A</td>
+            <td>جاهزة</td>
+            <td>تعاقد سابق</td>
+            <td>نشطة</td>
+            <td>2024-09-10</td>
+            <td>admin</td>
+            <td class="action-btns">
+                <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
+                <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
+            </td>
+        </tr>
+        <tr>
+            <td>شقة 2</td>
+            <td>جدة</td>
+            <td>مجمع B</td>
+            <td>غير جاهزة</td>
+            <td>تعاقد ساري</td>
+            <td>غير نشطة</td>
+            <td>2024-09-12</td>
+            <td>admin</td>
+            <td class="action-btns">
+                <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
+                <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
+            </td>
+        </tr>
+        <!-- المزيد من الصفوف -->
+        </tbody>
+    </table>
+</div>
+
+<!-- إضافة المكاتب المطلوبة -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+<!-- مكتبة PDFMake لتصدير PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- DataTables -->
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<!-- DataTables Buttons -->
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+<!-- JSZip (for Excel export) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<!-- PDFMake (for PDF export) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<!-- Buttons for Excel and PDF export -->
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+
+
+    <script>
+        $(document).ready(function() {
+            $('#apartments-table').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                  
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="fas fa-file-excel"></i> تصدير Excel',
+                        className: 'btn-export',
+                        titleAttr: 'تصدير إلى Excel'
+                    }
+                ],
+                language: {
+                    "lengthMenu": "عرض _MENU_ شقق لكل صفحة",
+                    "zeroRecords": "لا توجد شقق متاحة",
+                    "info": "عرض الصفحة _PAGE_ من _PAGES_",
+                    "infoEmpty": "لا توجد شقق متاحة",
+                    "infoFiltered": "(تمت تصفية _MAX_ من الشقق)",
+                    "search": "بحث:",
+                    "paginate": {
+                        "next": "التالي",
+                        "previous": "السابق"
+                    }
+                }
+            });
+        });
+    </script>
 
 
 <script src="script.js"></script>
