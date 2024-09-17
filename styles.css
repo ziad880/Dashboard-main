@@ -534,7 +534,9 @@ a{
     flex-direction: column;
     justify-content: space-between;
 }
-
+.breadcrumb-container {
+    border-radius: 10px 10px 0 0;
+}
 .card i {
     color: #2980b9;
     margin-bottom: 10px;
