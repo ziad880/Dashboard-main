@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>لوحة التحكم</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-r" >
+        <div class="user-info">
+            <img src="user-photo.jpg" alt="User Photo" class="user-photo">
+            <span class="user-name">Admin </span>
+            <div class="dropdown">
+                <button class="dropbtn">▼</button>
+                <div class="dropdown-content">
+                    <span class="dropdown-name"> Admin</span>
+                    <button class="logout">تسجيل خروج</button>
+                </div>
+            </div>
+        </div>
+<i style="padding-right:20px ;padding-left: 20px;"  class="fa-solid fa-bell"></i>
+
+<label class="switch">
+  <span class="sun"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><g fill="#ffd43b"><circle r="5" cy="12" cx="12"></circle><path d="m21 13h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm-17 0h-1a1 1 0 0 1 0-2h1a1 1 0 0 1 0 2zm13.66-5.66a1 1 0 0 1 -.66-.29 1 1 0 0 1 0-1.41l.71-.71a1 1 0 1 1 1.41 1.41l-.71.71a1 1 0 0 1 -.75.29zm-12.02 12.02a1 1 0 0 1 -.71-.29 1 1 0 0 1 0-1.41l.71-.66a1 1 0 0 1 1.41 1.41l-.71.71a1 1 0 0 1 -.7.24zm6.36-14.36a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm0 17a1 1 0 0 1 -1-1v-1a1 1 0 0 1 2 0v1a1 1 0 0 1 -1 1zm-5.66-14.66a1 1 0 0 1 -.7-.29l-.71-.71a1 1 0 0 1 1.41-1.41l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.29zm12.02 12.02a1 1 0 0 1 -.7-.29l-.66-.71a1 1 0 0 1 1.36-1.36l.71.71a1 1 0 0 1 0 1.41 1 1 0 0 1 -.71.24z"></path></g></svg></span>
+  <span class="moon"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512"><path d="m223.5 32c-123.5 0-223.5 100.3-223.5 224s100 224 223.5 224c60.6 0 115.5-24.2 155.8-63.4 5-4.9 6.3-12.5 3.1-18.7s-10.1-9.7-17-8.5c-9.8 1.7-19.8 2.6-30.1 2.6-96.9 0-175.5-78.8-175.5-176 0-65.8 36-123.1 89.3-153.3 6.1-3.5 9.2-10.5 7.7-17.3s-7.3-11.9-14.3-12.5c-6.3-.5-12.6-.8-19-.8z"></path></svg></span>   
+  <input type="checkbox" class="input"id="mode-toggle">
+  <span class="slider"></span>
+</label>
+        </div>
+        <div class="dashboard-text">
+            <span>لوحة التحكم أوروك للطيران</span>
+        </div>
+    </div>
+    <nav  class="sidebar">
+        <div class="user-info">
+        <div style="    margin-left: 20px;"><a href=""><i class="fa-solid fa-gear"></i></a></div>
+<div>
+    <span  class="user-name"> Admin</>
+<img src="user-photo.jpg" alt="User Photo" class="user-photo">
+
+</div>
+
+
+        </div>
+        <ul class="sidebar-menu">
+            <li><i class="fas fa-building"></i> الشقق <span class="arrow"><i class="fa-solid fa-greater-than fa-2xs"></i></span></li>
+            <li><i class="fas fa-key"></i> التأجير <span class="arrow"><i class="fa-solid fa-greater-than fa-2xs"></i></span></li>
+            <li><i class="fas fa-file-contract"></i> العقود <span class="arrow"><i class="fa-solid fa-greater-than fa-2xs"></i></span></li>
+            <li><i class="fas fa-file-alt"></i>  اصحاب الشقق <span class="arrow"><i class="fa-solid fa-greater-than fa-2xs"></i></span></li>
+            <li><i class="fas fa-money-check-alt"></i> النثرية  <span class="arrow"><i class="fa-solid fa-greater-than fa-2xs"></i></span></li>
+            <li><i class="fas fa-file-alt"></i> تقرير الإيجارات <span class="arrow"><i class="fa-solid fa-greater-than fa-2xs"></i></span></li>
+            <li><i class="fas fa-money-check-alt"></i> تقرير المصاريف <span class="arrow"><i class="fa-solid fa-greater-than fa-2xs"></i></span></li>
+            <li><i class="fas fa-file-alt"></i> تقرير أصحاب الشقق <span class="arrow"><i class="fa-solid fa-greater-than fa-2xs"></i></span></li>
+            <li><i class="fas fa-list"></i> الجرود الكلي للشقق <span class="arrow"><i class="fa-solid fa-greater-than fa-2xs"></i></span></li>
+            <li><i class="fas fa-file-alt"></i>  بطاقات النظام <span class="arrow"><i class="fa-solid fa-greater-than fa-2xs"></i></span></li>
+        </ul>
+    </nav>
+    
+
+    <div class="content">
+        <div class="breadcrumb-container">
+            <div class="breadcrumb">
+                <div class="breadcrumb-item">الرئيسية - لوحة التحكم
+                    <a id="lf" href=""><i class="fa-solid fa-circle-right"></i></a>
+                </div>
+                <hr class="breadcrumb-divider">
+                <div class="breadcrumb-path">
+                    
+                    <a href="#">الرئيسية</a>
+                    <p>/</p>
+                    <a href="#">لوحة التحكم</a>
+                    <i class="fa-solid fa-house"></i>
+                </div>
+            </div>
+        </div>
+        
+        <div class="dashboard">
+            <h2 >أحصائيات التطبيق</h2>
+            <div class="row">
+                <div class="card">
+                    <i class="fas fa-building fa-2x"></i>
+                    <h2>إجمالي الشقق</h2>
+                    <p>عدد الشقق: 34</p>
+                                            <button class="details-btn"><i class="fas fa-arrow-left"></i> عرض التفاصيل</button>
+                </div>
+                <div class="card">
+                    <i class="fas fa-money-bill-wave fa-2x"></i>
+                    <h2>الإيجارات المستحقة</h2>
+                    <p>عدد الإيجارات: 12</p>
+                        <button class="details-btn"><i class="fas fa-arrow-left"></i> عرض التفاصيل</button>
+
+                </div>
+                <div class="card">
+                    <i class="fas fa-calendar-alt fa-2x"></i>
+                    <h2>الشقق المسلمة</h2>
+                    <p>عدد الشقق المسلمة: 3 </p>
+                                            <button class="details-btn"><i class="fas fa-arrow-left"></i> عرض التفاصيل</button>
+                </div>
+            </div>
+        </div>
+    </div>
+<script>
+document.getElementById('mode-toggle').addEventListener('change', function() {
+    const isDarkMode = this.checked;
+
+    document.body.classList.toggle('dark-mode', isDarkMode);
+    document.querySelector('.header').classList.toggle('dark-mode', isDarkMode);
+    document.querySelector('.sidebar').classList.toggle('dark-mode', isDarkMode);
+    document.querySelectorAll('.card').forEach(card => card.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.breadcrumb').forEach(breadcrumb => breadcrumb.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.dropdown-content').forEach(dropdown => dropdown.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.details-btn').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.sidebar-menu li').forEach(li => li.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.dropbtn').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.dashboard-text').forEach(text => text.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.dashboard > h2').forEach(h2 => h2.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.dashboard').forEach(dashboard => dashboard.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.breadcrumb-container').forEach(container => container.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.breadcrumb-item').forEach(item => item.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.breadcrumb-path').forEach(path => path.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.breadcrumb-path a').forEach(link => link.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.fa-solid').forEach(icon => icon.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.fas').forEach(icon => icon.classList.toggle('dark-mode', isDarkMode));
+    document.getElementById('lf').classList.toggle('dark-mode', isDarkMode);
+});
+;
+
+</script>
+</body>
+</html>
