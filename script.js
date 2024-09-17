@@ -11,9 +11,8 @@
         localStorage.setItem('darkMode', isDarkMode);  // تخزين الحالة
         toggleDarkMode(isDarkMode);
     });
-
-    // تفعيل/تعطيل الوضع الداكن بناءً على القيمة
-    function toggleDarkMode(isDarkMode) {
+    document.getElementById('mode-toggle').addEventListener('change', function() {
+        const isDarkMode = this.checked;
         document.body.classList.toggle('dark-mode', isDarkMode);
         document.querySelector('.header').classList.toggle('dark-mode', isDarkMode);
         document.querySelector('.sidebar').classList.toggle('dark-mode', isDarkMode);
@@ -32,10 +31,23 @@
         document.querySelectorAll('.breadcrumb-path a').forEach(link => link.classList.toggle('dark-mode', isDarkMode));
         document.querySelectorAll('.fa-solid').forEach(icon => icon.classList.toggle('dark-mode', isDarkMode));
         document.querySelectorAll('.fas').forEach(icon => icon.classList.toggle('dark-mode', isDarkMode));
-        document.querySelectorAll('.sidebar-item').forEach(icon => icon.classList.toggle('dark-mode', isDarkMode));
+        document.querySelectorAll('h4').forEach(h4 => h4.classList.toggle('dark-mode', isDarkMode));
         document.getElementById('lf').classList.toggle('dark-mode', isDarkMode);
-};
+        document.querySelectorAll('.social-container .social i').forEach(icon => icon.classList.toggle('dark-mode', isDarkMode));
+    });
+    
 function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');
     sidebar.classList.toggle('active');
 }
+const signUpButton = document.getElementById('signUp');
+const signInButton = document.getElementById('signIn');
+const container = document.getElementById('container');
+
+signUpButton.addEventListener('click', () => {
+	container.classList.add("right-panel-active");
+});
+
+signInButton.addEventListener('click', () => {
+	container.classList.remove("right-panel-active");
+});
