@@ -60,21 +60,12 @@
         </div>
 
         <ul class="sidebar-menu">
-                        <li><a href="index.html" class="sidebar-item">
+             <li><a href="index.html" class="sidebar-item">
                 <i class="fas fa-home"></i> <span>الصفحة الرئيسية</span>
             </a></li>
-<li class="sidebar-item-with-submenu">
-    <a href="apartments.html" class="sidebar-item">
-        <i class="fas fa-building"></i> 
-        <span>الشقق</span>
-    </a>
-    <ul class="submenu">
-        <li><a href="add-apartment.html" class="sidebar-item">                    <i class="fas fa-list "></i>
-اضافة شقة   </a></li>
-        <li><a href="all-apartments.html" class="sidebar-item">                    <i class="fas fa-building "></i>
- جميع الشقق</a></li>
-    </ul>
-</li>
+            <li><a href="apartments.html" class="sidebar-item">
+                <i class="fas fa-building"></i> <span>الشقق</span>
+            </a></li>
             <li><a href="rental.html" class="sidebar-item">
                 <i class="fas fa-key"></i> <span>التأجير</span>
             </a></li>
@@ -105,40 +96,97 @@
         </ul>
     </nav>
 
-
-    <div class="content">
-        <div class="breadcrumb-container">
+ <div class="content">
+     <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - الشقق
+                <div class="breadcrumb-item">  الشقق - إضافة شقة
                     <a id="lf" href=""><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="#">الرئيسية</a>
-                    <p>/</p>
+                    
                     <a href="#">الشقق</a>
-                    <i class="fa-solid fa-building"></i>
+                    <p>/</p>
+                    <a href="#">إضافة شقة</a>
+                    <i class="fa-solid fa-house"></i>
                 </div>
             </div>
         </div>
-
-        <div class="dashboard">
-            <h2>إدارة الشقق</h2>
-            <div class="row">
-                <div class="card">
-                    <i class="fas fa-building fa-2x"></i>
-                    <h2>إضافة شقة</h2>
-<button class="details-btn" onclick="window.location.href='add-apartments.html';">
-    <i class="fas fa-arrow-left"></i> إضافة شقة جديدة
-</button>                </div>
-                <div class="card">
-                    <i class="fas fa-list fa-2x"></i>
-                    <h2>جميع الشقق</h2>
-<button class="details-btn" onclick="window.location.href='all-apartments.html';">
-    <i class="fas fa-arrow-left"></i>الانتقال لجمبع الشقق
-</button>                </div>
+        
+        <form action="#" method="POST" enctype="multipart/form-data">
+            <!-- اسم الشقة -->
+            <div class="form-group">
+                <label for="apartment-name">
+                    <i class="fas fa-building icon"></i> اسم الشقة:
+                </label>
+                <input type="text" id="apartment-name" name="apartment-name" required>
             </div>
-        </div>
+
+            <!-- العنوان -->
+            <div class="form-group">
+                <label for="address">
+                    <i class="fas fa-map-marker-alt icon"></i> العنوان:
+                </label>
+                <input type="text" id="address" name="address" required>
+            </div>
+
+            <!-- المجمع -->
+            <div class="form-group">
+                <label for="complex">
+                    <i class="fas fa-city icon"></i> المجمع:
+                </label>
+                <input type="text" id="complex" name="complex" required>
+            </div>
+
+            <!-- البناية -->
+            <div class="form-group">
+                <label for="building">
+                    <i class="fas fa-warehouse icon"></i> مستقل، بناية:
+                </label>
+                  <select id="building" name="building" required>
+                    <option value="new"> مستقل،</option>
+                    <option value="existing"> بناية</option>
+                </select>
+            </div>
+
+            <!-- التعاقد -->
+            <div class="form-group">
+                <label for="contract-type">
+                    <i class="fas fa-file-contract icon"></i> التعاقد:
+                </label>
+                <select id="contract-type" name="contract-type" required>
+                    <option value="new">تعاقد سابق</option>
+                    <option value="existing">تعاقد ساري</option>
+                </select>
+            </div>
+
+            <!-- صور الشقة -->
+            <div class="form-group">
+                <label for="apartment-photos">
+                    <i class="fas fa-camera icon"></i> صور الشقة:
+                </label>
+                <input type="file" id="apartment-photos" name="apartment-photos[]" multiple>
+            </div>
+
+            <!-- حالة الشقة -->
+            <div class="checkbox-group">
+                <input type="checkbox" id="apartment-ready" name="apartment-ready">
+                <label for="apartment-ready">الشقة جاهزة</label>
+            </div>
+
+            <!-- النواقص والملاحظات -->
+            <div class="form-group">
+                <label for="missing-items">
+                    <i class="fas fa-exclamation-triangle icon"></i> النواقص والملاحظات:
+                </label>
+                <textarea id="missing-items" name="missing-items" rows="4"></textarea>
+            </div>
+
+            <!-- زر الإرسال -->
+            <button type="submit" class="btn-submit">
+                <i class="fas fa-save"></i> حفظ الشقة
+            </button>
+        </form>
     </div>
 
 
