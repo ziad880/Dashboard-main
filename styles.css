@@ -965,7 +965,7 @@ body.dark-mode {
 /* الوضع الغامق */
 @media (prefers-color-scheme: dark) {
     .sidebar-menu li:hover {
-        background-color: #3c4a56; /* لون خلفية عند التمرير في الوضع الغامق */
+        background-color: #34495e; /* لون خلفية عند التمرير في الوضع الغامق */
         color: #ecf0f1; /* لون النص عند التمرير في الوضع الغامق */
     }
 .sidebar-menu li:hover .fas {
