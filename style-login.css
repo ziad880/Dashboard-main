@@ -247,6 +247,7 @@ body.dark-mode input::placeholder {
   /* Light mode (default) */
 .container {
   background-color: #ffffff;
+  color: #333;
 }
 
 .form-container {
