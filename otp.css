@@ -64,6 +64,25 @@ button {
   background: #494949;
   transition: all 0.2s ease;
 }
-button:hover {
-  background: #474747;
+
+button {
+  margin-top: 25px;
+  width: 100%;
+  color: #fff;
+  font-size: 1rem;
+  border: none;
+  padding: 9px 0;
+  cursor: default; /* تغيير المؤشر إلى default */
+  border-radius: 6px;
+  background: #cccccc; /* لون فاتح عند عدم الاكتمال */
+  transition: all 0.2s ease;
+}
+
+button.active {
+  background: #494949; /* لون داكن عند الاكتمال */
+}
+
+/* تأثير المؤشر غير المفعل */
+button:disabled {
+  cursor: not-allowed;
 }
