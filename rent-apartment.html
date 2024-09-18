@@ -60,38 +60,49 @@
         </div>
 
         <ul class="sidebar-menu">
-             <li><a href="index.html" class="sidebar-item">
+            <li><a href="index.html" class="sidebar-item">
                 <i class="fas fa-home"></i> <span>الصفحة الرئيسية</span>
             </a></li>
-            <li><a href="apartments.html" class="sidebar-item">
-                <i class="fas fa-building"></i> <span>الشقق</span>
-            </a></li>
+            <li class="sidebar-item-with-submenu">
+                <a href="apartments.html" class="sidebar-item">
+                    <i class="fas fa-building"></i> 
+                    <span>الشقق</span>
+                </a>
+                <ul class="submenu">
+                    <li><a href="add-apartment.html" class="sidebar-item">
+                        <i class="fas fa-plus"></i> <span>إضافة شقة</span>
+                    </a></li>
+                    <li><a href="all-apartments.html" class="sidebar-item">
+                        <i class="fas fa-th-list"></i> <span>جميع الشقق </span>
+                    </a></li>
+                </ul>
+            </li>
             <li><a href="rental.html" class="sidebar-item">
-                <i class="fas fa-key"></i> <span>التأجير</span>
+                <i class="fas fa-calendar-check"></i> <span>التأجير</span>
             </a></li>
             <li><a href="contracts.html" class="sidebar-item">
-                <i class="fas fa-file-contract"></i> <span>العقود</span>
+                <i class="fas fa-file-signature"></i> <span>العقود</span>
             </a></li>
             <li><a href="owners.html" class="sidebar-item">
-                <i class="fas fa-file-alt"></i> <span>أصحاب الشقق</span>
+                <i class="fas fa-users"></i> <span>أصحاب الشقق</span>
             </a></li>
             <li><a href="expenses.html" class="sidebar-item">
-                <i class="fas fa-money-check-alt"></i> <span>النثرية</span>
+                <i class="fas fa-wallet"></i> <span>النثرية</span>
             </a></li>
             <li><a href="rental-report.html" class="sidebar-item">
-                <i class="fas fa-file-alt"></i> <span>تقرير الإيجارات</span>
+                <i class="fas fa-chart-line"></i> <span>تقرير الإيجارات</span>
             </a></li>
             <li><a href="expenses-report.html" class="sidebar-item">
-                <i class="fas fa-money-check-alt"></i> <span>تقرير المصاريف</span>
+                <i class="fas fa-chart-pie"></i> <span>تقرير المصاريف</span>
             </a></li>
             <li><a href="owners-report.html" class="sidebar-item">
-                <i class="fas fa-file-alt"></i> <span>تقرير أصحاب الشقق</span>
+                <i class="fas fa-user-tag"></i> <span>تقرير أصحاب الشقق</span>
             </a></li>
             <li><a href="inventory.html" class="sidebar-item">
-                <i class="fas fa-list"></i> <span>الجرود الكلي للشقق</span>
+                <i class="fas fa-clipboard-list"></i> <span>الجرد الكلي للشقق</span>
             </a></li>
             <li><a href="system-cards.html" class="sidebar-item">
-                <i class="fas fa-file-alt"></i> <span>بطاقات النظام</span>
+                <i class="fas fa-credit-card"></i> <span>بطاقات النظام</span>
             </a></li>
         </ul>
     </nav>
@@ -104,10 +115,10 @@
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="rental.html">التأجبر</a>
-                    <p>/</p>
                     <a href="rent-apartment.html">تأجير شقة</a>
-                    <i class="fa-solid fa-file-contract"></i>
+                    <p>/</p>
+                    <a href="rental.html">التأجبر</a>
+                    <i class="fas fa-calendar-check"></i>
                 </div>
             </div>
         </div>

@@ -113,15 +113,15 @@
      <div class="breadcrumb-container">
             <div class="breadcrumb">
                 <div class="breadcrumb-item">  التأجبر -   جميع الشقق المؤجرة
-                    <a id="lf" href="apartments.html"><i class="fa-solid fa-circle-right"></i></a>
+                    <a id="lf" href="rental.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
                     
-                    <a href="apartments.html">التأجبر</a>
+                    <a href="all-rent-appartment.html">جميع الشقق المؤجرة</a>
                     <p>/</p>
-                    <a href="all-rent-apartments.html">جميع الشقق المؤجرة</a>
-                    <i class="fa-solid fa-house"></i>
+                    <a href="rental.html">التأجبر</a>
+                    <i class="fas fa-calendar-check"></i>
                 </div>
             </div>
         </div>
@@ -130,47 +130,49 @@
         <table id="apartments-table" class="display">
             <thead>
                 <tr>
-                    <th>اسم الشقة</th>
-                    <th>المبلغ الكلي</th>
-                    <th>المبلغ المدفوع</th>
-                    <th>المبلغ المتبقي</th>
-                    <th>ربح المكتب</th>
-                    <th>التاريخ</th>
-                    <th>المستخدم</th>
                     <th>الإجراءات</th>
-                    
+                    <th>المستخدم</th>
+                    <th>التاريخ</th>
+                    <th>ربح المكتب</th>
+                    <th>المبلغ المتبقي</th>
+                    <th>المبلغ المدفوع</th>
+                    <th>المبلغ الكلي</th>
+                    <th>اسم الشقة</th>
                 </tr>
+                
             </thead>
             <tbody>
                 <!-- الصفوف الديناميكية -->
                 <tr>
-                    <td>شقة 1</td>
-                    <td>10000</td>
-                    <td>5000</td>
-                    <td>5000</td>
-                    <td>1000</td>
-                    <td>18/9/2024</td>
+                    <td class="action-btns">
+                        <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
+                        <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
+                        <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل التأجير</button>
+                    </td>
                     <td>محمد حامد</td>
-                    <td class="action-btns">
-                        <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
-                        <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
-                        <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل التأجير</button>
-                    </td>
-                </tr>
-                <tr>
-                    <td>شقة 2</td>
-                    <td>15000</td>
-                    <td>10000</td>
-                    <td>5000</td>
-                    <td>1500</td>
                     <td>18/9/2024</td>
-                    <td>زياد أيمن</td>
+                    <td>1000</td>
+                    <td>5000</td>
+                    <td>5000</td>
+                    <td>10000</td>
+                    <td>شقة 1</td>
+                </tr>
+                
+                <tr>
                     <td class="action-btns">
                         <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
                         <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
                         <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل التأجير</button>
                     </td>
+                    <td>زياد أيمن</td>
+                    <td>18/9/2024</td>
+                    <td>1500</td>
+                    <td>5000</td>
+                    <td>10000</td>
+                    <td>15000</td>
+                    <td>شقة 2</td>
                 </tr>
+                
                 <!-- المزيد من الصفوف -->
             </tbody>
         </table>
