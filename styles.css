@@ -1048,14 +1048,20 @@ body.dark-mode {
     justify-content: center;
     align-items: center;
     padding: 20px;
+
 }
 
 .apartment-form {
-    width: 100%;
-    max-width: 700px;
+
+
     background-color: #fff;
     padding: 30px;
     border-radius: 10px;
+
+    width: 80%; /* لجعل النموذج يأخذ عرض الصفحة بالكامل */
+    max-width: 70%; /* التأكد من أنه لا يوجد حد أقصى للعرض */
+    margin: 0 auto; /* لتوسيط المحتوى */
+    direction: rtl; /* العرض من اليمين */
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
 }
 
