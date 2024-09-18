@@ -1002,7 +1002,15 @@ body.dark-mode {
 .sidebar-item-with-submenu {
     position: relative;
 }
-
+.content{
+    direction: rtl; /* العرض من اليمين */
+}
+.breadcrumb{
+    direction: ltr;
+}
+.apartment-form {
+    direction: rtl; /* العرض من اليمين */
+}
 .submenu {
     display: none;
     position: absolute;
