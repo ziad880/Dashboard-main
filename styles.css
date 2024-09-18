@@ -1295,4 +1295,16 @@ th {
     background-color: #2980b9;
 }
 
+.btn-print, .btn-submit {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
 
+.btn-print {
+    background-color: #000000;
+    color: white;
+}
