@@ -107,103 +107,100 @@
 </ul>
     </nav>
 
- <div class="content">
-     <div class="breadcrumb-container">
-            <div class="breadcrumb">
-                <div class="breadcrumb-item">  الشقق - إضافة شقة
-                    <a id="lf" href="apartments.html"><i class="fa-solid fa-circle-right"></i></a>
-                </div>
-                <hr class="breadcrumb-divider">
-                <div class="breadcrumb-path">
-                    
-                    <a href="add-apartment.html">إضافة شقة</a>
-                    <p>/</p>
-                    <a href="apartments.html">الشقق</a>
-                    <i class="fas fa-building"></i>
-                </div>
-            </div>
+    <div class="content">
+        <div style="margin-bottom: 3em;" class="breadcrumb-container">
+           <div class="breadcrumb">
+               <div class="breadcrumb-item">الشقق - إضافة شقة 
+                   <a id="lf" href="apartments.html"><i class="fa-solid fa-circle-right"></i></a>
+               </div>
+               <hr class="breadcrumb-divider">
+               <div class="breadcrumb-path">
+                   <a href="add-apartment.html">إضافة شقة</a>
+                   <p>/</p>
+                   <a href="apartments.html">الشقق</a>
+                   <i class="fas fa-building"></i>
+               </div>
+           </div>
+       </div>
+
+       <form  action="#" method="POST" enctype="multipart/form-data" class="">
+        <!-- اسم الشقة -->
+        <div class="form-group">
+            <label for="apartment-name">
+                <i class="fas fa-building icon"></i> اسم الشقة:
+            </label>
+            <input type="text" id="apartment-name" name="apartment-name" required>
         </div>
- </div></div>
-        <div class="container">
+    
+        <!-- العنوان -->
+        <div class="form-group">
+            <label for="address">
+                <i class="fas fa-map-marker-alt icon"></i> العنوان:
+            </label>
+            <input type="text" id="address" name="address" required>
+        </div>
+    
+        <!-- المجمع -->
+        <div class="form-group">
+            <label for="complex">
+                <i class="fas fa-city icon"></i> المجمع:
+            </label>
+            <input type="text" id="complex" name="complex" required>
+        </div>
+    
+        <!-- البناية -->
+        <div class="form-group">
+            <label for="building">
+                <i class="fas fa-warehouse icon"></i> مستقل، بناية:
+            </label>
+            <select id="building" name="building" required>
+                <option value="new">مستقل</option>
+                <option value="existing">بناية</option>
+            </select>
+        </div>
+    
+        <!-- التعاقد -->
+        <div class="form-group">
+            <label for="contract-type">
+                <i class="fas fa-file-contract icon"></i> التعاقد:
+            </label>
+            <select id="contract-type" name="contract-type" required>
+                <option value="new">تعاقد سابق</option>
+                <option value="existing">تعاقد ساري</option>
+            </select>
+        </div>
+    
+        <!-- صور الشقة -->
+        <div class="form-group">
+            <label for="apartment-photos">
+                <i class="fas fa-camera icon"></i> صور الشقة:
+            </label>
+            <input type="file" id="apartment-photos" name="apartment-photos[]" multiple>
+        </div>
+    
+        <!-- حالة الشقة -->
+        <div class="checkbox-group">
+            <input type="checkbox" id="apartment-ready" name="apartment-ready">
+            <label for="apartment-ready">الشقة جاهزة</label>
+        </div>
+    
+        <!-- النواقص والملاحظات -->
+        <div class="form-group">
+            <label for="missing-items">
+                <i class="fas fa-exclamation-triangle icon"></i> النواقص والملاحظات:
+            </label>
+            <textarea id="missing-items" name="missing-items" rows="4"></textarea>
+        </div>
+    
+        <!-- زر الإرسال -->
+        <div class="form-group">
+            <button type="submit" class="btn-submit">
+                <i class="fas fa-save"></i> حفظ الشقة
+            </button>
+        </div>
+    </form>
+   </div>
 
-<form action="#" method="POST" enctype="multipart/form-data" class="apartment-form">
-    <!-- اسم الشقة -->
-    <div class="form-group">
-        <label for="apartment-name">
-            <i class="fas fa-building icon"></i> اسم الشقة:
-        </label>
-        <input type="text" id="apartment-name" name="apartment-name" required>
-    </div>
-
-    <!-- العنوان -->
-    <div class="form-group">
-        <label for="address">
-            <i class="fas fa-map-marker-alt icon"></i> العنوان:
-        </label>
-        <input type="text" id="address" name="address" required>
-    </div>
-
-    <!-- المجمع -->
-    <div class="form-group">
-        <label for="complex">
-            <i class="fas fa-city icon"></i> المجمع:
-        </label>
-        <input type="text" id="complex" name="complex" required>
-    </div>
-
-    <!-- البناية -->
-    <div class="form-group">
-        <label for="building">
-            <i class="fas fa-warehouse icon"></i> مستقل، بناية:
-        </label>
-        <select id="building" name="building" required>
-            <option value="new">مستقل</option>
-            <option value="existing">بناية</option>
-        </select>
-    </div>
-
-    <!-- التعاقد -->
-    <div class="form-group">
-        <label for="contract-type">
-            <i class="fas fa-file-contract icon"></i> التعاقد:
-        </label>
-        <select id="contract-type" name="contract-type" required>
-            <option value="new">تعاقد سابق</option>
-            <option value="existing">تعاقد ساري</option>
-        </select>
-    </div>
-
-    <!-- صور الشقة -->
-    <div class="form-group">
-        <label for="apartment-photos">
-            <i class="fas fa-camera icon"></i> صور الشقة:
-        </label>
-        <input type="file" id="apartment-photos" name="apartment-photos[]" multiple>
-    </div>
-
-    <!-- حالة الشقة -->
-    <div class="checkbox-group">
-        <input type="checkbox" id="apartment-ready" name="apartment-ready">
-        <label for="apartment-ready">الشقة جاهزة</label>
-    </div>
-
-    <!-- النواقص والملاحظات -->
-    <div class="form-group">
-        <label for="missing-items">
-            <i class="fas fa-exclamation-triangle icon"></i> النواقص والملاحظات:
-        </label>
-        <textarea id="missing-items" name="missing-items" rows="4"></textarea>
-    </div>
-
-    <!-- زر الإرسال -->
-    <div class="form-group">
-        <button type="submit" class="btn-submit">
-            <i class="fas fa-save"></i> حفظ الشقة
-        </button>
-    </div>
-</form>
- </div>
-</div>
 <script src="script.js"></script>
 
 </body>
