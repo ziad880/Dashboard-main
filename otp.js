@@ -1,50 +1,92 @@
-const inputs = document.querySelectorAll("input"),
-  button = document.querySelector("button");
+const phoneInputs = document.querySelectorAll("#phone-section input"),
+      phoneButton = document.querySelector("#phone-section button"),
+      codeInputs = document.querySelectorAll("#code-section input"),
+      codeButton = document.querySelector("#code-section button"),
+      phoneSection = document.getElementById("phone-section"),
+      codeSection = document.getElementById("code-section");
 
-// iterate over all inputs
-inputs.forEach((input, index1) => {
+// Function to handle phone input
+phoneInputs.forEach((input, index1) => {
   input.addEventListener("keyup", (e) => {
-    // This code gets the current input element and stores it in the currentInput variable
-    // This code gets the next sibling element of the current input element and stores it in the nextInput variable
-    // This code gets the previous sibling element of the current input element and stores it in the prevInput variable
     const currentInput = input,
-      nextInput = input.nextElementSibling,
-      prevInput = input.previousElementSibling;
+          nextInput = input.nextElementSibling,
+          prevInput = input.previousElementSibling;
 
-    // if the value has more than one character then clear it
+    // Check if the value length is more than 1
     if (currentInput.value.length > 1) {
       currentInput.value = "";
       return;
     }
-    // if the next input is disabled and the current value is not empty
-    //  enable the next input and focus on it
+
+    // Move focus to next input
     if (nextInput && nextInput.hasAttribute("disabled") && currentInput.value !== "") {
       nextInput.removeAttribute("disabled");
       nextInput.focus();
     }
 
-    // if the backspace key is pressed
+    // Move focus to previous input on Backspace
     if (e.key === "Backspace") {
-      // iterate over all inputs again
-      inputs.forEach((input, index2) => {
-        // if the index1 of the current input is less than or equal to the index2 of the input in the outer loop
-        // and the previous element exists, set the disabled attribute on the input and focus on the previous element
-        if (index1 <= index2 && prevInput) {
-          input.setAttribute("disabled", true);
-          input.value = "";
-          prevInput.focus();
-        }
-      });
+      if (prevInput) {
+        prevInput.removeAttribute("disabled");
+        prevInput.focus();
+        currentInput.value = "";
+      }
     }
-    //if the fourth input( which index number is 3) is not empty and has not disable attribute then
-    //add active class if not then remove the active class.
-    if (!inputs[3].disabled && inputs[3].value !== "") {
-      button.classList.add("active");
+
+    // Check if all phone inputs are filled
+    if (!phoneInputs[10].disabled && phoneInputs[10].value !== "") {
+      phoneButton.classList.add("active");
       return;
     }
-    button.classList.remove("active");
+    phoneButton.classList.remove("active");
   });
 });
 
-//focus the first input which index is 0 on window load
-window.addEventListener("load", () => inputs[0].focus());
+// Function to handle phone button click
+phoneButton.addEventListener("click", (e) => {
+  e.preventDefault();
+  // Hide phone section and show code section
+  phoneSection.style.display = "none";
+  codeSection.style.display = "block";
+  codeInputs[0].focus();  // Focus the first code input field
+});
+
+// Function to handle code input
+codeInputs.forEach((input, index1) => {
+  input.addEventListener("keyup", (e) => {
+    const currentInput = input,
+          nextInput = input.nextElementSibling,
+          prevInput = input.previousElementSibling;
+
+    // Check if the value length is more than 1
+    if (currentInput.value.length > 1) {
+      currentInput.value = "";
+      return;
+    }
+
+    // Move focus to next input
+    if (nextInput && nextInput.hasAttribute("disabled") && currentInput.value !== "") {
+      nextInput.removeAttribute("disabled");
+      nextInput.focus();
+    }
+
+    // Move focus to previous input on Backspace
+    if (e.key === "Backspace") {
+      if (prevInput) {
+        prevInput.removeAttribute("disabled");
+        prevInput.focus();
+        currentInput.value = "";
+      }
+    }
+
+    // Check if all code inputs are filled
+    if (!codeInputs[3].disabled && codeInputs[3].value !== "") {
+      codeButton.classList.add("active");
+      return;
+    }
+    codeButton.classList.remove("active");
+  });
+});
+
+// Focus the first phone input on window load
+window.addEventListener("load", () => phoneInputs[0].focus());
