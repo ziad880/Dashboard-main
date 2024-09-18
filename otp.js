@@ -1,6 +1,6 @@
 const phoneButton = document.querySelector("#phone-section button"),
       codeInputs = document.querySelectorAll("#code-section input"),
-      codeButton = document.querySelector("#code-section button"),
+      codeButton = document.querySelector(".verify-code"),
       phoneSection = document.getElementById("phone-section"),
       codeSection = document.getElementById("code-section"),
       countryCodeSelect = document.getElementById("country-code"),
@@ -36,39 +36,46 @@ phoneButton.addEventListener("click", (e) => {
   }
 });
 
-// Function to handle code input
-codeInputs.forEach((input, index1) => {
-  input.addEventListener("keyup", (e) => {
-    const currentInput = input,
-          nextInput = input.nextElementSibling,
-          prevInput = input.previousElementSibling;
-
-    // Check if the value length is more than 1
-    if (currentInput.value.length > 1) {
-      currentInput.value = "";
-      return;
+// Function to handle code input (OTP)
+codeInputs.forEach((input, index) => {
+  input.addEventListener("input", (e) => {
+    // Allow only single digit input
+    if (input.value.length > 1) {
+      input.value = input.value.slice(0, 1);
     }
 
-    // Move focus to next input
-    if (nextInput && nextInput.hasAttribute("disabled") && currentInput.value !== "") {
+    // Move to the next input field if a digit is entered
+    const nextInput = input.nextElementSibling;
+    if (nextInput && input.value !== "") {
       nextInput.removeAttribute("disabled");
       nextInput.focus();
     }
 
-    // Move focus to previous input on Backspace
-    if (e.key === "Backspace") {
+    // Check if all OTP inputs are filled to enable the verify button
+    let allFilled = true;
+    codeInputs.forEach((otpInput) => {
+      if (otpInput.value === "") {
+        allFilled = false;
+      }
+    });
+
+    if (allFilled) {
+      codeButton.removeAttribute("disabled"); // Enable the button when all inputs are filled
+    } else {
+      codeButton.setAttribute("disabled", "true"); // Disable the button if not all inputs are filled
+    }
+  });
+
+  input.addEventListener("keydown", (e) => {
+    // If Backspace is pressed, move to the previous input field
+    if (e.key === "Backspace" && input.value === "") {
+      const prevInput = input.previousElementSibling;
       if (prevInput) {
-        prevInput.removeAttribute("disabled");
         prevInput.focus();
-        currentInput.value = "";
       }
     }
-
-    // Check if all code inputs are filled
-    if (!codeInputs[3].disabled && codeInputs[3].value !== "") {
-      codeButton.classList.add("active");
-      return;
-    }
-    codeButton.classList.remove("active");
   });
 });
+
+// Focus the first phone input on window load
+window.addEventListener("load", () => phoneInputs[0].focus());
