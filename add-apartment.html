@@ -7,6 +7,7 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
+
 <body>
     <div class="header">
         <div class="header-r">
@@ -121,61 +122,62 @@
                 </div>
             </div>
         </div>
-        <form action="#" method="POST" enctype="multipart/form-data">
+ </div></div>
+        <div class="container">
+
+<form action="#" method="POST" enctype="multipart/form-data" class="apartment-form">
     <!-- اسم الشقة -->
     <div class="form-group">
-        <input type="text" id="apartment-name" name="apartment-name" required>
         <label for="apartment-name">
             <i class="fas fa-building icon"></i> اسم الشقة:
         </label>
+        <input type="text" id="apartment-name" name="apartment-name" required>
     </div>
 
     <!-- العنوان -->
     <div class="form-group">
-        <input type="text" id="address" name="address" required>
         <label for="address">
             <i class="fas fa-map-marker-alt icon"></i> العنوان:
         </label>
+        <input type="text" id="address" name="address" required>
     </div>
 
     <!-- المجمع -->
     <div class="form-group">
-        <input type="text" id="complex" name="complex" required>
         <label for="complex">
             <i class="fas fa-city icon"></i> المجمع:
         </label>
+        <input type="text" id="complex" name="complex" required>
     </div>
 
     <!-- البناية -->
     <div class="form-group">
-        <select id="building" name="building" required>
-            <option value="new"> مستقل،</option>
-            <option value="existing"> بناية</option>
-        </select>
         <label for="building">
             <i class="fas fa-warehouse icon"></i> مستقل، بناية:
         </label>
+        <select id="building" name="building" required>
+            <option value="new">مستقل</option>
+            <option value="existing">بناية</option>
+        </select>
     </div>
 
     <!-- التعاقد -->
     <div class="form-group">
+        <label for="contract-type">
+            <i class="fas fa-file-contract icon"></i> التعاقد:
+        </label>
         <select id="contract-type" name="contract-type" required>
             <option value="new">تعاقد سابق</option>
             <option value="existing">تعاقد ساري</option>
         </select>
-        <label for="contract-type">
-            <i class="fas fa-file-contract icon"></i> التعاقد:
-        </label>
     </div>
 
     <!-- صور الشقة -->
     <div class="form-group">
-        <input type="file" id="apartment-photos" name="apartment-photos[]" multiple>
         <label for="apartment-photos">
-            :صور الشقة
-                  
-            <i class="fas fa-camera icon"></i> 
+            <i class="fas fa-camera icon"></i> صور الشقة:
         </label>
+        <input type="file" id="apartment-photos" name="apartment-photos[]" multiple>
     </div>
 
     <!-- حالة الشقة -->
@@ -186,19 +188,21 @@
 
     <!-- النواقص والملاحظات -->
     <div class="form-group">
-        <textarea id="missing-items" name="missing-items" rows="4"></textarea>
         <label for="missing-items">
             <i class="fas fa-exclamation-triangle icon"></i> النواقص والملاحظات:
         </label>
+        <textarea id="missing-items" name="missing-items" rows="4"></textarea>
     </div>
 
     <!-- زر الإرسال -->
-    <button type="submit" class="btn-submit">
-        <i class="fas fa-save"></i> حفظ الشقة
-    </button>
+    <div class="form-group">
+        <button type="submit" class="btn-submit">
+            <i class="fas fa-save"></i> حفظ الشقة
+        </button>
+    </div>
 </form>
  </div>
-
+</div>
 <script src="script.js"></script>
 
 </body>
