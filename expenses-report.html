@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تقرير المصاريف</title>
+    <title> تقرير المصاريف</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-  <div class="header">
+    <div class="header">
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
@@ -106,38 +106,118 @@
 </ul>
     </nav>
 
-    <div class="content">
-        <div class="breadcrumb-container">
+ <div class="content">
+     <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - تقرير المصاريف
-                    <a id="lf" href=""><i class="fa-solid fa-circle-right"></i></a>
+                <div class="breadcrumb-item">  الرئيسية -  تقرير المصاريف
+                    <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="#">الرئيسية</a>
+                    
+                    <a href="expenses-report.html">تقرير المصاريف</a>
                     <p>/</p>
-                    <a href="#">تقرير المصاريف</a>
-                    <i class="fa-solid fa-file-alt"></i>
+                    <a href="index.html"> الرئيسية</a>
+                    <i class="fas fa-chart-pie"></i>
                 </div>
             </div>
         </div>
 
-        <div class="dashboard">
-            <h2>تقرير المصاريف</h2>
-            <div class="row">
-                <div class="card">
-                    <i class="fas fa-file-alt fa-2x"></i>
-                    <h2>عرض تقرير</h2>
-                    <button class="details-btn"><i class="fas fa-arrow-left"></i> عرض تقرير المصاريف</button>
-                </div>
-                <div class="card">
-                    <i class="fas fa-file-alt fa-2x"></i>
-                    <h2>تحميل التقرير</h2>
-                    <button class="details-btn"><i class="fas fa-arrow-left"></i> تحميل تقرير المصاريف</button>
-                </div>
-            </div>
-        </div>
-    </div>
+    <!-- جدول الشقق -->
+    <table id="apartments-table" class="display">
+        <thead>
+        <tr>
+
+            <th>المجمع</th>
+            <th> الاجمالي</th>
+            <th> التاريخ</th>
+            <th>الوصف</th>
+            <th> المصروف</th>
+            <th>الشقة</th>
+
+        </tr>
+        </thead>
+        <tbody>
+        <!-- الصفوف الديناميكية -->
+        <tr>
+            <td> -</td>
+            <td>-</td>
+            <td> -</td>
+            <td>-</td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <tr>
+            <td>-</td>
+            <td> -</td>
+            <td>-</td>
+            <td>- </td>
+            <td>-</td>
+            <td>-</td>
+        </tr>
+        <!-- المزيد من الصفوف -->
+        </tbody>
+    </table>
+</div>
+
+<!-- إضافة المكاتب المطلوبة -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+<!-- مكتبة PDFMake لتصدير PDF -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<!-- jQuery -->
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<!-- DataTables -->
+<script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+<!-- DataTables Buttons -->
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+<!-- JSZip (for Excel export) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+<!-- PDFMake (for PDF export) -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+<!-- Buttons for Excel and PDF export -->
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+<script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+
+ <script>
+        $(document).ready(function() {
+            $('#apartments-table').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="fas fa-file-excel"></i> تصدير Excel',
+                        className: 'btn-export',
+                        titleAttr: 'تصدير إلى Excel'
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
+                        className: 'btn-export',
+                        titleAttr: 'تصدير إلى PDF'
+                    }
+                ],
+                language: {
+                    "lengthMenu": "عرض _MENU_ شقق لكل صفحة",
+                    "zeroRecords": "لا توجد شقق متاحة",
+                    "info": "عرض الصفحة _PAGE_ من _PAGES_",
+                    "infoEmpty": "لا توجد شقق متاحة",
+                    "infoFiltered": "(تمت تصفية _MAX_ من الشقق)",
+                    "search": "بحث:",
+                    "paginate": {
+                        "next": "التالي",
+                        "previous": "السابق"
+                    }
+                }
+            });
+        });
+    </script>
 
 
 <script src="script.js"></script>
