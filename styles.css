@@ -1048,7 +1048,6 @@ body.dark-mode {
     justify-content: center;
     align-items: center;
     padding: 20px;
-    background-color: #f8f8f8;
 }
 
 .apartment-form {
@@ -1068,7 +1067,6 @@ body.dark-mode {
     display: block;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #333;
 }
 
 .form-group input,
