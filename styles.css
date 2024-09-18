@@ -1208,7 +1208,7 @@ th {
 
     /* جعل الجدول قابلاً للتمرير على الشاشات الصغيرة */
     table {
-        display: block;
+
         overflow-x: auto;
         white-space: nowrap;
     }
