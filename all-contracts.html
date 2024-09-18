@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>العقود</title>
+    <title>جميع العقود</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
 </head>
 <body>
-   <div class="header">
+    <div class="header">
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
@@ -106,40 +111,103 @@
 </ul>
     </nav>
 
-    <div class="content">
-        <div class="breadcrumb-container">
+ <div class="content">
+     <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - العقود
-                    <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
+                <div class="breadcrumb-item">  العقود -  جميع العقود
+                    <a id="lf" href="contracts.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="index.html">الرئيسية</a>
+                    
+                    <a href="all-contract.html">جميع العقود</a>
                     <p>/</p>
                     <a href="contracts.html">العقود</a>
-                    <i class="fa-solid fa-file-contract"></i>
+                    <i class="fas fa-building"></i>
                 </div>
             </div>
         </div>
 
-        <div class="dashboard">
-            <h2>إدارة العقود</h2>
-            <div class="row">
-                <div class="card">
-                    <i class="fas fa-file-contract fa-2x"></i>
-                    <h2>إضافة عقد</h2>
-<button class="details-btn" onclick="window.location.href='add-contract.html';">
-اضافة عقد جديد <i class="fas fa-arrow-left"></i></button>                </div>
-                <div class="card">
-                    <i class="fas fa-list fa-2x"></i>
-                    <h2>جميع العقود</h2>
-<button class="details-btn" onclick="window.location.href='all-contracts.html';">
-عرض جميع العقود <i class="fas fa-arrow-left"></i></button>                    </div>
-            </div>
+        <table id="rental-table" class="display">
+            <thead>
+                <tr>
+                    <th>اسم الشقة</th>
+                    <th>تاريخ التأجير</th>
+                    <th>المستخدم</th>
+                    <th>طباعة</th>
+                    <th>تصدير</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- بيانات العقود -->
+                <tr>
+                    <td>شقة 1</td>
+                    <td>2024-09-18</td>
+                    <td>المستخدم 1</td>
+                    <td><button class="btn-print"><i class="fas fa-print"></i> طباعة</button></td>
+                    <td><button class="btn-export"><i class="fas fa-file-export"></i> تصدير</button></td>
+                </tr>
+                <tr>
+                    <td>شقة 2</td>
+                    <td>2024-09-15</td>
+                    <td>المستخدم 2</td>
+                    <td><button class="btn-print"><i class="fas fa-print"></i> طباعة</button></td>
+                    <td><button class="btn-export"><i class="fas fa-file-export"></i> تصدير</button></td>
+                </tr>
+                <!-- يمكن إضافة المزيد من العقود هنا -->
+            </tbody>
+        </table>
+
+        <!-- أزرار تصدير كامل البيانات -->
+        <div class="export-buttons">
+            <button id="export-pdf" class="btn-export"><i class="fas fa-file-pdf"></i> تصدير PDF</button>
+            <button id="export-excel" class="btn-export"><i class="fas fa-file-excel"></i> تصدير Excel</button>
         </div>
     </div>
 
+    <!-- المكاتب المطلوبة -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPDF/2.3.1/jspdf.umd.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            // تفعيل DataTables للجدول
+            $('#rental-table').DataTable({
+                "language": {
+                    "url": "//cdn.datatables.net/plug-ins/1.11.5/i18n/ar.json" // لدعم اللغة العربية
+                }
+            });
 
+            // طباعة عقد معين
+            $(".btn-print").on("click", function() {
+                alert("يتم الآن طباعة عقد التأجير.");
+                // يمكنك هنا إضافة منطق الطباعة لعقد محدد
+            });
+
+            // تصدير العقد إلى PDF
+            $(".btn-export").on("click", function() {
+                alert("يتم تصدير العقد إلى PDF أو Excel.");
+                // يمكن إضافة منطق تصدير العقد إلى PDF أو Excel
+            });
+
+            // تصدير كامل البيانات إلى PDF
+            $("#export-pdf").on("click", function() {
+                const doc = new jsPDF();
+                doc.text("جميع عقود التأجير", 10, 10);
+                doc.autoTable({ html: '#rental-table' });
+                doc.save('عقود-التأجير.pdf');
+            });
+
+            // تصدير كامل البيانات إلى Excel
+            $("#export-excel").on("click", function() {
+                var table = document.getElementById("rental-table");
+                var workbook = XLSX.utils.table_to_book(table, {sheet: "Sheet1"});
+                XLSX.writeFile(workbook, "عقود-التأجير.xlsx");
+            });
+        });
+    </script>
 <script src="script.js"></script>
 
 </body>

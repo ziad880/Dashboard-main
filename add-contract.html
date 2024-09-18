@@ -3,12 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>العقود</title>
+    <title>إضافة عقد</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+
+        <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
 </head>
 <body>
-   <div class="header">
+    <div class="header">
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
@@ -106,40 +111,89 @@
 </ul>
     </nav>
 
-    <div class="content">
-        <div class="breadcrumb-container">
+ <div class="content">
+     <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - العقود
-                    <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
+                <div class="breadcrumb-item">  العقود -  إضافة عقد
+                    <a id="lf" href="contracts.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="index.html">الرئيسية</a>
+                    
+                    <a href="add-contract.html">إضافة عقد</a>
                     <p>/</p>
                     <a href="contracts.html">العقود</a>
-                    <i class="fa-solid fa-file-contract"></i>
+                    <i class="fas fa-building"></i>
                 </div>
             </div>
         </div>
 
-        <div class="dashboard">
-            <h2>إدارة العقود</h2>
-            <div class="row">
-                <div class="card">
-                    <i class="fas fa-file-contract fa-2x"></i>
-                    <h2>إضافة عقد</h2>
-<button class="details-btn" onclick="window.location.href='add-contract.html';">
-اضافة عقد جديد <i class="fas fa-arrow-left"></i></button>                </div>
-                <div class="card">
-                    <i class="fas fa-list fa-2x"></i>
-                    <h2>جميع العقود</h2>
-<button class="details-btn" onclick="window.location.href='all-contracts.html';">
-عرض جميع العقود <i class="fas fa-arrow-left"></i></button>                    </div>
+        <form id="rental-form">
+            <div class="form-group">
+                <label for="apartment">اختيار الشقة:</label>
+                <select id="apartment" name="apartment" required>
+                    <option value="">اختر الشقة</option>
+                    <option value="شقة 1">شقة 1</option>
+                    <option value="شقة 2">شقة 2</option>
+                    <option value="شقة 3">شقة 3</option>
+                </select>
             </div>
-        </div>
+
+            <div class="form-group">
+                <label for="rent-amount">مبلغ الإيجار:</label>
+                <input type="number" id="rent-amount" name="rent-amount" placeholder="أدخل مبلغ الإيجار" required>
+            </div>
+
+            <div class="form-group">
+                <label for="start-date">تاريخ البداية:</label>
+                <input type="text" id="start-date" name="start-date" placeholder="اختر تاريخ البداية" required>
+            </div>
+
+            <div class="form-group">
+                <label for="contract">طباعة عقد الإيجار:</label>
+                <button type="button" id="print-contract" class="btn-print"><i class="fas fa-print"></i> طباعة عقد الإيجار</button>
+            </div>
+
+            <div class="form-group">
+                <button type="submit" class="btn-submit">إضافة عقد الإيجار</button>
+            </div>
+        </form>
     </div>
 
+    <!-- المكاتب المطلوبة -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    
+    <script>
+        // تفعيل تقويم jQuery UI لتحديد تاريخ البداية
+        $(document).ready(function() {
+            $("#start-date").datepicker({
+                dateFormat: "yy-mm-dd",
+                minDate: 0 // لمنع اختيار تاريخ قديم
+            });
 
+            // طباعة عقد الإيجار - استعراض العقد عند الضغط على الزر
+            $("#print-contract").on("click", function() {
+                alert("سيتم إنشاء عقد الإيجار وفتحه في نافذة جديدة للطباعة.");
+                // هنا يمكنك إضافة منطق لطباعة العقد، مثل إنشاء عقد بصيغة PDF
+            });
+
+            // تحقق من ملء جميع الحقول المطلوبة قبل إرسال النموذج
+            $("#rental-form").on("submit", function(e) {
+                e.preventDefault();
+                const apartment = $("#apartment").val();
+                const rentAmount = $("#rent-amount").val();
+                const startDate = $("#start-date").val();
+
+                if (apartment && rentAmount && startDate) {
+                    alert("تم إضافة عقد الإيجار بنجاح!");
+                    // هنا يمكنك إرسال البيانات إلى الخادم باستخدام AJAX أو أي منطق آخر
+                } else {
+                    alert("يرجى ملء جميع الحقول المطلوبة.");
+                }
+            });
+        });
+    </script>
 <script src="script.js"></script>
 
 </body>
