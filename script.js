@@ -50,6 +50,7 @@ function toggleDarkMode(isDarkMode) {
     document.getElementById('lf').classList.toggle('dark-mode', isDarkMode);
     document.querySelectorAll('.social-container .social i').forEach(icon => icon.classList.toggle('dark-mode', isDarkMode));
     document.querySelectorAll('.sidebar-item').forEach(icon => icon.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.user-info a').forEach(icon => icon.classList.toggle('dark-mode', isDarkMode));
 }
     
 function toggleSidebar() {
