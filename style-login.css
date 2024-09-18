@@ -382,8 +382,8 @@ body.dark-mode input::placeholder {
         margin: 8px 0;
     }
     .slider:before {
-        height: 23px;
-        width: 28px;
+        height: 27px;
+        width: 27px;
     }
     .form-container{
             font-size: 4px;
