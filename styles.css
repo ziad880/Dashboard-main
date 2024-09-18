@@ -1225,13 +1225,27 @@ th {
     }
 }
 
-.sidebar {
-    background-color: #ffffff;
-    max-width: 300px; /* يمكنك ضبط هذا العرض حسب الحاجة */
-    overflow: auto; /* التأكد من ظهور المحتوى إذا كان هناك الكثير منه */
-}
+
 .user-info a.dark-mode {
   color: #ffffff; /* لجعل الأيقونة بيضاء */
 }
 
 
+.sidebar {
+    background-color: #ffffff;
+    color: #333;
+    padding: 0rem; /* استخدام وحدات نسبية */
+    height: 93vh; /* تأكد من أن الشريط الجانبي يملأ ارتفاع الشاشة */
+    overflow-y: auto; /* تفعيل التمرير العمودي */
+    display: flex;
+    flex-direction: column; /* أو adjust بناءً على التصميم */
+}
+
+/* معلومات المستخدم في الشريط الجانبي */
+.sidebar .user-info {
+    display: flex;
+    padding: 1rem; /* استخدام وحدات نسبية */
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* يسمح بالعناصر بالتدفق بشكل أفضل */
+}
