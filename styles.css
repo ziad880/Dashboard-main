@@ -515,7 +515,7 @@ a{
 }
 
 .user-info a {
-  color: white; /* لجعل الأيقونة بيضاء */
+  color: rgb(0, 0, 0); /* لجعل الأيقونة بيضاء */
 
 }
 
@@ -794,13 +794,11 @@ body {
 }
 
 .fa-solid, .fas {
-  color: #333;
 }
 
 /* Dark mode styles */
 body.dark-mode {
   background-color: #1e1e1e;
-  color: #e0e0e0;
 }
 .details-btn.dark-mode {
     background-color: #cac5c5;
@@ -884,7 +882,6 @@ body.dark-mode {
 }
 
 .fa-solid.dark-mode, .fas.dark-mode {
-  color: #e0e0e0;
 }
 @media (max-width: 768px) {
     .dashboard-text {
@@ -935,7 +932,6 @@ body.dark-mode {
     color: #333; 
 }
 .sidebar-menu li:hover .fas {
-    color: #333; 
 }
 
 .details-btn:hover {
@@ -974,7 +970,6 @@ body.dark-mode {
         color: #ecf0f1; /* لون النص عند التمرير في الوضع الغامق */
     }
 .sidebar-menu li:hover .fas {
-    color: #f0ecec; 
 }
 .sidebar-item.dark-mode {
     display: flex;
@@ -1086,8 +1081,6 @@ body.dark-mode {
 }
 
 .btn-submit {
-    background-color: #3498DB;
-    color: #fff;
     padding: 15px;
     border: none;
     border-radius: 5px;
@@ -1231,3 +1224,14 @@ th {
         font-size: 10px;
     }
 }
+
+.sidebar {
+    background-color: #ffffff;
+    max-width: 300px; /* يمكنك ضبط هذا العرض حسب الحاجة */
+    overflow: auto; /* التأكد من ظهور المحتوى إذا كان هناك الكثير منه */
+}
+.user-info a.dark-mode {
+  color: #ffffff; /* لجعل الأيقونة بيضاء */
+}
+
+
