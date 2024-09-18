@@ -117,10 +117,10 @@
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
                     
-                    <a href="apartments.html">الشقق</a>
-                    <p>/</p>
                     <a href="all-apartments.html">جميع الشقق</a>
-                    <i class="fa-solid fa-house"></i>
+                    <p>/</p>
+                    <a href="apartments.html">الشقق</a>
+                    <i class="fas fa-building"></i>
                 </div>
             </div>
         </div>
@@ -128,48 +128,50 @@
     <!-- جدول الشقق -->
     <table id="apartments-table" class="display">
         <thead>
-        <tr>
-            <th>اسم الشقة</th>
-            <th>العنوان</th>
-            <th>المجمع</th>
-            <th>وضع الشقة</th>
-            <th>نوع التعاقد</th>
-            <th>الحالة</th>
-            <th>تاريخ الإضافة</th>
-            <th>المستخدم</th>
-            <th>الخيارات</th>
-        </tr>
+            <tr>
+                <th>الخيارات</th>
+                <th>المستخدم</th>
+                <th>تاريخ الإضافة</th>
+                <th>الحالة</th>
+                <th>نوع التعاقد</th>
+                <th>وضع الشقة</th>
+                <th>المجمع</th>
+                <th>العنوان</th>
+                <th>اسم الشقة</th>
+            </tr>
+            
         </thead>
         <tbody>
         <!-- الصفوف الديناميكية -->
         <tr>
-            <td>شقة 1</td>
-            <td>الرياض</td>
-            <td>مجمع A</td>
-            <td>جاهزة</td>
-            <td>تعاقد سابق</td>
-            <td>نشطة</td>
-            <td>2024-09-10</td>
-            <td>admin</td>
             <td class="action-btns">
                 <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
                 <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
             </td>
+            <td>admin</td>
+            <td>2024-09-10</td>
+            <td>نشطة</td>
+            <td>تعاقد سابق</td>
+            <td>جاهزة</td>
+            <td>مجمع A</td>
+            <td>الرياض</td>
+            <td>شقة 1</td>
         </tr>
         <tr>
-            <td>شقة 2</td>
-            <td>جدة</td>
-            <td>مجمع B</td>
-            <td>غير جاهزة</td>
-            <td>تعاقد ساري</td>
-            <td>غير نشطة</td>
-            <td>2024-09-12</td>
-            <td>admin</td>
             <td class="action-btns">
                 <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
                 <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
             </td>
+            <td>admin</td>
+            <td>2024-09-12</td>
+            <td>غير نشطة</td>
+            <td>تعاقد ساري</td>
+            <td>غير جاهزة</td>
+            <td>مجمع B</td>
+            <td>جدة</td>
+            <td>شقة 2</td>
         </tr>
+        
         <!-- المزيد من الصفوف -->
         </tbody>
     </table>
