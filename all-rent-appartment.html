@@ -1,10 +1,9 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة التحكم</title>
+    <title>جميع الشقق</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
@@ -42,7 +41,7 @@
             </label>
         </div>
         <div class="dashboard-text">
-            <span>لوحة التحكم أوروك للطيران</span>
+            <span> أوروك للطيران</span>
         </div>
         <button class="sidebar-toggle" onclick="toggleSidebar()">
             <i class="fas fa-bars"></i>
@@ -77,20 +76,9 @@
             </a></li>
         </ul>
     </li>
-    <li class="sidebar-item-with-submenu">
-        <a href="rental.html" class="sidebar-item">
-            <i class="fas fa-calendar-check"></i> 
-            <span>التأجير</span>
-        </a>
-        <ul class="submenu">
-            <li><a href="rent-apartment.html" class="sidebar-item">
-                 <span> تأجير شقة</span>
-            </a></li>
-            <li><a href="" class="sidebar-item">
-                 <span> جميع الشقق المؤجرة</span>
-            </a></li>
-        </ul>
-    </li>
+    <li><a href="rental.html" class="sidebar-item">
+        <i class="fas fa-calendar-check"></i> <span>التأجير</span>
+    </a></li>
     <li><a href="contracts.html" class="sidebar-item">
         <i class="fas fa-file-signature"></i> <span>العقود</span>
     </a></li>
@@ -118,50 +106,117 @@
 </ul>
     </nav>
 
-    <div class="content">
-        <div class="breadcrumb-container">
+ <div class="content">
+     <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - لوحة التحكم
-                    <a id="lf" href=""><i class="fa-solid fa-circle-right"></i></a>
+                <div class="breadcrumb-item">  الشقق -  جميع الشقق
+                    <a id="lf" href="apartments.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
                     
-                    <a href="#">الرئيسية</a>
+                    <a href="apartments.html">الشقق</a>
                     <p>/</p>
-                    <a href="#">لوحة التحكم</a>
+                    <a href="all-apartments.html">جميع الشقق</a>
                     <i class="fa-solid fa-house"></i>
                 </div>
             </div>
         </div>
-        
-        <div class="dashboard">
-            <h2 >أحصائيات التطبيق</h2>
-            <div class="row">
-                <div class="card">
-                    <i class="fas fa-building fa-2x"></i>
-                    <h2>إجمالي الشقق</h2>
-                    <p>عدد الشقق: 34</p>
-                                            <button class="details-btn"><i class="fas fa-arrow-left"></i> عرض التفاصيل</button>
-                </div>
-                <div class="card">
-                    <i class="fas fa-money-bill-wave fa-2x"></i>
-                    <h2>الإيجارات المستحقة</h2>
-                    <p>عدد الإيجارات: 12</p>
-                        <button class="details-btn"><i class="fas fa-arrow-left"></i> عرض التفاصيل</button>
 
-                </div>
-                <div class="card">
-                    <i class="fas fa-calendar-alt fa-2x"></i>
-                    <h2>الشقق المسلمة</h2>
-                    <p>عدد الشقق المسلمة: 3 </p>
-                                            <button class="details-btn"><i class="fas fa-arrow-left"></i> عرض التفاصيل</button>
-                </div>
-            </div>
-        </div>
+        <!-- جدول الشقق -->
+        <table id="apartments-table" class="display">
+            <thead>
+                <tr>
+                    <th>اسم الشقة</th>
+                    <th>المبلغ الكلي</th>
+                    <th>المبلغ المدفوع</th>
+                    <th>المبلغ المتبقي</th>
+                    <th>ربح المكتب</th>
+                    <th>التاريخ</th>
+                    <th>المستخدم</th>
+                    <th>الإجراءات</th>
+                    
+                </tr>
+            </thead>
+            <tbody>
+                <!-- الصفوف الديناميكية -->
+                <tr>
+                    <td>شقة 1</td>
+                    <td>10000</td>
+                    <td>5000</td>
+                    <td>5000</td>
+                    <td>1000</td>
+                    <td>18/9/2024</td>
+                    <td>محمد حامد</td>
+                    <td class="action-btns">
+                        <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
+                        <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
+                        <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل التأجير</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>شقة 2</td>
+                    <td>15000</td>
+                    <td>10000</td>
+                    <td>5000</td>
+                    <td>1500</td>
+                    <td>18/9/2024</td>
+                    <td>زياد أيمن</td>
+                    <td class="action-btns">
+                        <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
+                        <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
+                        <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل التأجير</button>
+                    </td>
+                </tr>
+                <!-- المزيد من الصفوف -->
+            </tbody>
+        </table>
     </div>
 
-<script src="script.js"></script>
+    <!-- إضافة المكاتب المطلوبة -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.datatables.net/1.11.5/js/jquery.dataTables.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/dataTables.buttons.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jszip/3.1.3/jszip.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
+    <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
+    
+    <script>
+        $(document).ready(function() {
+            $('#apartments-table').DataTable({
+                dom: 'Bfrtip',
+                buttons: [
+                    {
+                        extend: 'excelHtml5',
+                        text: '<i class="fas fa-file-excel"></i> تصدير Excel',
+                        className: 'btn-export',
+                        titleAttr: 'تصدير إلى Excel'
+                    },
+                    {
+                        extend: 'pdfHtml5',
+                        text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
+                        className: 'btn-export',
+                        titleAttr: 'تصدير إلى PDF'
+                    }
+                ],
+                language: {
+                    "lengthMenu": "عرض _MENU_ شقق لكل صفحة",
+                    "zeroRecords": "لا توجد شقق متاحة",
+                    "info": "عرض الصفحة _PAGE_ من _PAGES_",
+                    "infoEmpty": "لا توجد شقق متاحة",
+                    "infoFiltered": "(تمت تصفية _MAX_ من الشقق)",
+                    "search": "بحث:",
+                    "paginate": {
+                        "next": "التالي",
+                        "previous": "السابق"
+                    }
+                }
+            });
+        });
+    </script>
 
+    <script src="script.js"></script>
 </body>
 </html>

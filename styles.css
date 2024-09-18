@@ -726,6 +726,10 @@ body {
   background-color: #f0f4f8;
   color: #333;
 }
+body.dark-mode {
+  background-color: #f0f4f8;
+  color: #ffffff;
+}
 
 .header {
   background-color: #ffffff;
@@ -1117,7 +1121,6 @@ table {
 }
 
 table, th, td {
-    border: 1px solid #e0e0e0;
 }
 
 th, td {
@@ -1249,3 +1252,39 @@ th {
     justify-content: space-between;
     flex-wrap: wrap; /* يسمح بالعناصر بالتدفق بشكل أفضل */
 }
+
+
+
+.rental-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rental-form label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.rental-form input, .rental-form select {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.rental-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #000000;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.rental-form button:hover {
+    background-color: #2980b9;
+}
+
+
