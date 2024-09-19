@@ -797,8 +797,7 @@ body.dark-mode {
   text-decoration: underline;
 }
 
-.fa-solid, .fas {
-}
+
 
 /* Dark mode styles */
 body.dark-mode {
@@ -887,8 +886,7 @@ body.dark-mode {
 .btn-submit{
     margin-top: 1em;
 }
-.fa-solid.dark-mode, .fas.dark-mode {
-}
+
 @media (max-width: 768px) {
     .dashboard-text {
         display: none; 
@@ -937,8 +935,6 @@ body.dark-mode {
     background-color: #f0f0f0; 
     color: #333; 
 }
-.sidebar-menu li:hover .fas {
-}
 
 .details-btn:hover {
     background-color: #ececec; /* لون خلفية الزر عند التمرير في الوضع الفاتح */
@@ -975,8 +971,7 @@ body.dark-mode {
         background-color: #34495e; /* لون خلفية عند التمرير في الوضع الغامق */
         color: #ecf0f1; /* لون النص عند التمرير في الوضع الغامق */
     }
-.sidebar-menu li:hover .fas {
-}
+
 .sidebar-item.dark-mode {
     display: flex;
     align-items: center;
@@ -1130,8 +1125,6 @@ table {
     margin-bottom: 20px;
 }
 
-table, th, td {
-}
 
 th, td {
     padding: 12px;
@@ -1310,3 +1303,59 @@ th {
     background-color: #000000;
     color: white;
 }
+/* Light Mode (Default) */
+#apartments-table {
+    background-color: #ffffff;
+    color: #333;
+    border-collapse: collapse;
+  }
+  
+  #apartments-table th, #apartments-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #apartments-table th {
+    background-color: #f0f4f8;
+    color: #333;
+  }
+  
+  /* Dark Mode */
+  .dark-mode #apartments-table {
+    background-color: #2c2c2c;
+    color: #ffffff;
+  }
+  
+  .dark-mode #apartments-table th {
+    background-color: #3a3a3a;
+    color: #ffffff;
+  }
+  
+  .dark-mode #apartments-table td {
+    border-bottom: 1px solid #555;
+  }
+  /* Light Mode (Default) */
+.dt-button, .buttons-pdf, .buttons-html5, .btn-export {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .dt-button:hover, .buttons-pdf:hover, .buttons-html5:hover, .btn-export:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Dark Mode */
+  .dark-mode .dt-button, .dark-mode .buttons-pdf, .dark-mode .buttons-html5, .dark-mode .btn-export {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  .dark-mode .dt-button:hover, .dark-mode .buttons-pdf:hover, .dark-mode .buttons-html5:hover, .dark-mode .btn-export:hover {
+    background-color: #333;
+  }
