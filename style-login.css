@@ -406,10 +406,8 @@ body.dark-mode input::placeholder {
         font-size: 12px; /* Smaller font size */
         padding: 8px; /* Adjust padding */
     }
-    .form-container input{
 
-
-    }
+    
     button {
         font-size: 12px; /* Ensure consistent size */
         padding: 8px 20px; /* Adjust padding */
@@ -424,4 +422,3 @@ body.dark-mode input::placeholder {
 
     }
 
-}
