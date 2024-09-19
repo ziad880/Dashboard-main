@@ -4,28 +4,11 @@
         document.getElementById('mode-toggle').checked = isDarkMode;
         toggleDarkMode(isDarkMode);
     };
-
-window.onload = function() {
-    // تحقق مما إذا كان الوضع الداكن مفعلًا في localStorage
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
-    
-    // ضبط الزر بناءً على الحالة المحفوظة
-    document.getElementById('mode-toggle').checked = isDarkMode;
-    
-    // تفعيل الوضع الداكن إذا كان محفوظًا
-    toggleDarkMode(isDarkMode);
-};
-
-document.getElementById('mode-toggle').addEventListener('change', function() {
-    // تغيير الوضع بناءً على حالة الزر
-    const isDarkMode = this.checked;
-    
-    // تطبيق الوضع الداكن على العناصر المختلفة
-    toggleDarkMode(isDarkMode);
-    
-    // حفظ الحالة في localStorage
-    localStorage.setItem('darkMode', isDarkMode);
-});
+    document.getElementById('mode-toggle').addEventListener('change', function() {
+        const isChecked = this.checked;
+        localStorage.setItem('darkMode', isChecked);
+        toggleDarkMode(isChecked);
+    });
 
 function toggleDarkMode(isDarkMode) {
     document.body.classList.toggle('dark-mode', isDarkMode);
