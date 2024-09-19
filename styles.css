@@ -1887,3 +1887,19 @@ table.dataTable th,table.dataTable td {
     .card {
         width: 30%;
     }}
+
+
+
+    button {
+            background-color: #000000;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-top: 10px;
+            color: #f6f6f6;
+        }
+
+button:hover {
+    background-color: #000000;
+}
