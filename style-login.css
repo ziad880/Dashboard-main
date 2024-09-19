@@ -423,7 +423,7 @@ body.dark-mode input::placeholder {
         padding: 8px; /* Adjust padding */
     }
     .form-container input{
-
+        margin: 1em;
             font-size: 5px;
 
     }
