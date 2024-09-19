@@ -1838,6 +1838,9 @@ table.dataTable th,table.dataTable td {
     .dataTables_wrapper .dataTables_filter {
         margin-top: .5em
     }
+    .dataTables_wrapper .dataTables_filter input{
+        margin-bottom: 1em;
+    }
 }
 
 
@@ -1880,6 +1883,8 @@ table.dataTable th,table.dataTable td {
     .card {
         width: 48%;
     }
+    
+    
 }
 
 @media (min-width: 1024px) {
