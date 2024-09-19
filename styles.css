@@ -1902,12 +1902,3 @@ table.dataTable th,table.dataTable td {
 button:hover {
     background-color: #000000;
 }
-.remember-me-label {
-    display: flex;
-    justify-content: flex-end;
-    width: 100%;
-}
-
-#remember {
-    margin-left: 5px; /* المسافة بين الـ checkbox والنص */
-}
