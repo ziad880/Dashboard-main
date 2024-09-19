@@ -235,7 +235,6 @@ input {
     gap: 0;
     margin: 0;
     padding: 0;
-    direction: rtl; /* لضبط اتجاه النص من اليمين لليسار */
 }
 
 #remember {
