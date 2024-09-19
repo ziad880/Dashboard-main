@@ -68,7 +68,7 @@ button {
   padding: 9px 0;
   cursor: pointer;
   border-radius: 6px;
-  background: #494949;
+  background: #000000;
   transition: all 0.2s ease;
 }
 
@@ -81,15 +81,25 @@ button {
   padding: 9px 0;
   cursor: default; /* تغيير المؤشر إلى default */
   border-radius: 6px;
-  background: #cccccc; /* لون فاتح عند عدم الاكتمال */
+  background: #000000; /* لون فاتح عند عدم الاكتمال */
   transition: all 0.2s ease;
 }
 
 button.active {
-  background: #494949; /* لون داكن عند الاكتمال */
+  background: #000000; /* لون داكن عند الاكتمال */
 }
 
 /* تأثير المؤشر غير المفعل */
 button:disabled {
   cursor: not-allowed;
+}
+/* Remove the spinner arrows in number input fields */
+input[type=number] {
+  -moz-appearance: textfield; /* Firefox */
+}
+
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button {
+  -webkit-appearance: none;
+  margin: 0; /* Chrome, Safari, Edge, Opera */
 }
