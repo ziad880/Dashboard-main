@@ -1367,3 +1367,27 @@ th {
   .dark-mode .dt-button:hover, .dark-mode .buttons-pdf:hover, .dark-mode .buttons-html5:hover, .dark-mode .btn-export:hover {
     background-color: #333;
   }
+/* Light Mode (Default) */
+.btn-print, .btn-submit {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .btn-print:hover, .btn-submit:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Dark Mode */
+  .dark-mode .btn-print, .dark-mode .btn-submit {
+    background-color: #343a40;
+    color: #e0e0e0;
+  }
+  
+  .dark-mode .btn-print:hover, .dark-mode .btn-submit:hover {
+    background-color: #1d2124;
+  }
