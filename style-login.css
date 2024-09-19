@@ -348,7 +348,7 @@ body.dark-mode input::placeholder {
 @media (max-width: 768px) {
 
     .container {
-        max-width: 85%;
+        max-width: 90%;
         padding: 20px;
         min-height: 22em; /* تقليل الطول على الشاشات الصغيرة */
     }
@@ -370,12 +370,6 @@ body.dark-mode input::placeholder {
         max-width: 100%; /* Ensure image fits within the container */
         max-height: 150px; /* Adjust height for smaller screens */
     }
-
-  
- 
-
-  
-
     .social-container a {
         height: 9px;
         width: 9px;
@@ -387,11 +381,46 @@ body.dark-mode input::placeholder {
         height: 27px;
         width: 27px;
     }
-
-
     #remember {
         transform: scale(0.5); /* تصغير الحجم قليلاً */
     }
+    a {
+        font-size: 10px;
+        margin: 5px 0;
+    }
+    .dashboard-text1 span {
+        font-size: 1em; /* Ensure consistent size */
+        font-weight: bold;
+}
+.remember-me-label {
+font-size: .7em;
+}
+.form-container input, .form-container button {
+    font-size: .1em;
+}
+.remember-me-label {
+display: flex;
+align-items: center;  
+justify-content: flex-start; 
+width: 100%; 
+box-sizing: border-box;
+}
+input[type="checkbox"] {
+width: 20px;
+cursor: pointer;
+accent-color: #000000; 
+margin-left: 10px; 
+}
+.remember-me-label span {
+font-size: 10px;
+}
+.dashboard-text1 span {
+font-size: 1.2em;
+font-weight: bold;
+}
+span {
+    font-size: 6px;
+}
 }
 
 /* Extra small devices (phones, 480px and down) */
@@ -416,34 +445,4 @@ body.dark-mode input::placeholder {
         font-size: 10px;
     }
     
-}
-@media (max-width: 768px) {
-
-    } .dashboard-text1 span {
-                font-size: 17px; /* Ensure consistent size */
-    font-weight: bold;
-
-    }
-
-.remember-me-label {
-    display: flex;
-    align-items: center;  
-    justify-content: flex-start; 
-    width: 100%; 
-    box-sizing: border-box;
-}
-
-input[type="checkbox"] {
-    width: 20px;
-    cursor: pointer;
-    accent-color: #000000; 
-    margin-left: 10px; 
-}
-
-.remember-me-label span {
-    font-size: 10px;
-}
-.dashboard-text1 span {
-    font-size: 1.2em;
-    font-weight: bold;
 }
