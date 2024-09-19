@@ -435,13 +435,11 @@ body.dark-mode input::placeholder {
 
 input[type="checkbox"] {
     width: 20px;
-    height: 20px;
     cursor: pointer;
     accent-color: #000000; 
     margin-left: 10px; 
 }
 
 .remember-me-label span {
-    font-size: 16px;
-    color: #333;
+    font-size: 10px;
 }
