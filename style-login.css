@@ -351,13 +351,11 @@ body.dark-mode input::placeholder {
         min-height: 22em; /* تقليل الطول على الشاشات الصغيرة */
     }
     input {
-        font-size: 10px; /* Increase font size for better readability */
         padding: 10px; /* Adjust padding for smaller screens */
         width: 170%;
     }
 
     button {
-        font-size: 1px; /* Increase font size */
         padding: 10px 30px; /* Adjust padding */
         margin-top: 5px; /* Reduce margin */
     }
@@ -371,17 +369,10 @@ body.dark-mode input::placeholder {
         max-height: 150px; /* Adjust height for smaller screens */
     }
 
-    h1, h2 {
-        font-size: 1.1em;
-    }
-    .remember-me-label {
-    font-size: 7px;
-    }
+  
+ 
 
-    span, a {
-        font-size: 12px;
-            margin: 0px 0;
-    }
+  
 
     .social-container a {
         height: 9px;
@@ -394,12 +385,8 @@ body.dark-mode input::placeholder {
         height: 27px;
         width: 27px;
     }
-    .form-container{
-            font-size: 4px;
-    }
-    .form-container button {
-        font-size: 6.5px;
-    }
+
+
     #remember {
         transform: scale(0.5); /* تصغير الحجم قليلاً */
     }
@@ -408,7 +395,7 @@ body.dark-mode input::placeholder {
 /* Extra small devices (phones, 480px and down) */
 @media (max-width: 480px) {
     h1 {
-        font-size: 18px;
+        font-size: 15px;
     }
 
     h2 {
