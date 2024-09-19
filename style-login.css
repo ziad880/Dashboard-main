@@ -443,3 +443,7 @@ input[type="checkbox"] {
 .remember-me-label span {
     font-size: 10px;
 }
+.dashboard-text1 span {
+    font-size: 1.2em;
+    font-weight: bold;
+}
