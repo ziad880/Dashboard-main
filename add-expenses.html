@@ -118,6 +118,93 @@
         </div>
 
 
+        <form id="rental-form">
+            <div class="form-group">
+                <label for="apartment">وصف النثرية:</label>
+                <input type="text" id="address" placeholder="أدخل الوصف " name="address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="rent-amount">المبلغ :</label>
+                <input type="number" id="rent-amount" name="rent-amount" placeholder="أدخل مبلغ " required>
+            </div>
+
+            <div class="form-group">
+                <label for="start-date">التاريخ :</label>
+                <input type="text" id="start-date" name="start-date" placeholder="اختر تاريخ " required>
+            </div>
+            <div class="form-group">
+                <label for="missing-items">
+                       الملاحظات:
+                </label>
+                <textarea id="missing-items" name="missing-items" rows="4"></textarea>
+            </div>
+        
+            <div class="form-group">
+                <label for="contract">طباعة الوصل :</label>
+                <button type="button" id="print-contract" class="btn-print"><i class="fas fa-print"></i> طباعة الوصل </button>
+            </div>
+
+        </form>
+    </div>
+
+    <!-- المكاتب المطلوبة -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    
+    <script>
+$(document).ready(function() {
+    // تفعيل تقويم jQuery UI لتحديد تاريخ البداية
+    $("#start-date").datepicker({
+        dateFormat: "yy-mm-dd",
+        minDate: 0 // لمنع اختيار تاريخ قديم
+    });
+
+    // طباعة الوصل - استعراض الوصل عند الضغط على الزر
+    $("#print-contract").on("click", function() {
+        const address = $("#address").val();
+        const rentAmount = $("#rent-amount").val();
+        const startDate = $("#start-date").val();
+        const missingItems = $("#missing-items").val();
+
+        if (!address || !rentAmount || !startDate) {
+            alert("يرجى ملء جميع الحقول المطلوبة قبل الطباعة.");
+        } else {
+            const printContent = `
+                <div>
+                    <h2>وصل النثرية</h2>
+                    <p><strong>وصف النثرية:</strong> ${address}</p>
+                    <p><strong>المبلغ:</strong> ${rentAmount}</p>
+                    <p><strong>التاريخ:</strong> ${startDate}</p>
+                    <p><strong>الملاحظات:</strong> ${missingItems || "لا توجد ملاحظات"}</p>
+                </div>
+            `;
+            const newWindow = window.open();
+            newWindow.document.write(printContent);
+            newWindow.document.close();
+            newWindow.focus();
+            newWindow.print();
+            newWindow.close();
+        }
+    });
+
+    // تحقق من ملء جميع الحقول المطلوبة قبل إرسال النموذج
+    $("#rental-form").on("submit", function(e) {
+        e.preventDefault();
+        const address = $("#address").val();
+        const rentAmount = $("#rent-amount").val();
+        const startDate = $("#start-date").val();
+
+        if (address && rentAmount && startDate) {
+            alert("تم إضافة الوصل بنجاح!");
+            // يمكنك إرسال البيانات إلى الخادم باستخدام AJAX أو أي منطق آخر
+        } else {
+            alert("يرجى ملء جميع الحقول المطلوبة.");
+        }
+    });
+});
+
+    </script>
 
 <script src="script.js"></script>
 

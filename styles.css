@@ -884,7 +884,9 @@ body.dark-mode {
 .breadcrumb-path.dark-mode a:hover {
   text-decoration: underline;
 }
-
+.btn-submit{
+    margin-top: 1em;
+}
 .fa-solid.dark-mode, .fas.dark-mode {
 }
 @media (max-width: 768px) {
