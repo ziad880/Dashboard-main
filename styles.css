@@ -1325,8 +1325,7 @@ th {
   }
   
   #apartments-table th {
-    background-color: #f0f4f8;
-    color: #333;
+    background-color: #000000;
   }
   
   /* Dark Mode */
@@ -1344,7 +1343,6 @@ th {
   }
   /* Light Mode (Default) */
 .dt-button, .buttons-pdf, .buttons-html5, .btn-export {
-    background-color: #007bff;
     color: #fff;
     border: none;
     padding: 8px 12px;
