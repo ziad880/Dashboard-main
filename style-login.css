@@ -379,7 +379,7 @@ body.dark-mode input::placeholder {
     }
 
     span, a {
-        font-size: 6px; /* Adjust font size for better readability */
+        font-size: 12px;
             margin: 0px 0;
     }
 
@@ -398,7 +398,7 @@ body.dark-mode input::placeholder {
             font-size: 4px;
     }
     .form-container button {
-        font-size: 4px;
+        font-size: 6.5px;
     }
     #remember {
         transform: scale(0.5); /* تصغير الحجم قليلاً */
@@ -421,7 +421,6 @@ body.dark-mode input::placeholder {
     }
     .form-container input{
 
-            font-size: 5px;
 
     }
     button {
@@ -430,4 +429,12 @@ body.dark-mode input::placeholder {
         font-size: 10px;
     }
     
+}
+@media (max-width: 768px) {
+
+    } .dashboard-text1 span {
+                font-size: 17px; /* Ensure consistent size */
+
+    }
+
 }
