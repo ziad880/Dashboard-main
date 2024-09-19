@@ -346,7 +346,7 @@ body.dark-mode input::placeholder {
 @media (max-width: 768px) {
 
     .container {
-        max-width: 85%;
+        max-width: 90%;
         padding: 20px;
         min-height: 22em; /* تقليل الطول على الشاشات الصغيرة */
     }
@@ -398,8 +398,11 @@ body.dark-mode input::placeholder {
             font-size: 4px;
     }
     .form-container button {
-        font-size: 4px;
+        font-size: 1.2em;
     }
+    .social-container .social i {
+        font-size: .7em; /* تصغير الأيقونات على شاشات التلفون */
+      }
     #remember {
         transform: scale(0.5); /* تصغير الحجم قليلاً */
     }
@@ -408,7 +411,7 @@ body.dark-mode input::placeholder {
 /* Extra small devices (phones, 480px and down) */
 @media (max-width: 480px) {
     h1 {
-        font-size: 18px;
+        font-size: 3.8em;
     }
 
     h2 {
