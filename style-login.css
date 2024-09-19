@@ -421,6 +421,7 @@ body.dark-mode input::placeholder {
 
     } .dashboard-text1 span {
                 font-size: 17px; /* Ensure consistent size */
+    font-weight: bold;
 
     }
 
