@@ -346,6 +346,15 @@ body.dark-mode input::placeholder {
 }
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
+    .remember-me-label {
+    display: flex;
+    align-items: center;  
+    justify-content: flex-start; 
+    width: 100%; 
+    box-sizing: border-box;
+        width: 200px;
+ 
+}
 
     .container {
         max-width: 90%;
@@ -404,6 +413,8 @@ align-items: center;
 justify-content: flex-start; 
 width: 100%; 
 box-sizing: border-box;
+    width: 200px;
+
 }
 input[type="checkbox"] {
 width: 20px;
@@ -428,7 +439,15 @@ span {
     h1 {
         font-size: 15px;
     }
-
+.remember-me-label {
+    display: flex;
+    align-items: center;  
+    justify-content: flex-start; 
+    width: 100%; 
+    box-sizing: border-box;
+        width: 200px;
+ 
+}
     h2 {
         font-size: 14px; /* Further reduce font size */
     }
@@ -445,4 +464,23 @@ span {
         font-size: 10px;
     }
     
+}
+.remember-me-label {
+    display: flex;
+    align-items: start;  
+    justify-content: flex-start; 
+    width: auto; 
+    box-sizing: border-box;
+
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    cursor: pointer;
+    accent-color: #000000; 
+    margin-left: 10px; 
+}
+
+.remember-me-label span {
+    font-size: 16px;
 }
