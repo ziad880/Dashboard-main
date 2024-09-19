@@ -1715,7 +1715,6 @@ table.dataTable th,table.dataTable td {
     text-decoration: none !important;
     cursor: pointer;
     *cursor: hand;
-    color: #333 !important;
     border: 1px solid transparent;
     border-radius: 2px
 }
