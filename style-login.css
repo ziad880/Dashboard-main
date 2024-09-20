@@ -508,4 +508,7 @@ input[type="checkbox"] {
     .remember-me-label span {
         margin-right: -5px;
     }
+    input::placeholder {
+        font-size: .4rem; /* حدد الحجم الذي تريده */
+    }
 }
