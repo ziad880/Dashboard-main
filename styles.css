@@ -1911,7 +1911,27 @@ button:hover {
     margin: 0;
 }
 
-#apartments-table {
-    display: inline-block;
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
 
+#apartments-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+
+@media only screen and (max-width: 768px) {
+    .table-responsive {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch; 
+        touch-action: pan-x; 
+        white-space: nowrap; 
+    }
+
+    #apartments-table {
+        display: inline-block;
+        white-space: nowrap; 
+    }
 }
