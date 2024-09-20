@@ -2032,10 +2032,10 @@ td {
 }
 
 /* تخصيص التصميم لشاشات أصغر من 480px */
-@media only screen and (max-width: 480px) {
+@media  (max-width: 480px) {
     #apartments-table th, 
     #apartments-table td {
-        width: 50%; /* تجعل العرض تلقائيًا يتناسب مع المحتوى */
+        width: 100%; /* تجعل العرض تلقائيًا يتناسب مع المحتوى */
     }
 }
 
