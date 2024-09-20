@@ -1886,13 +1886,10 @@ table.dataTable th,table.dataTable td {
     
     
 }
-
 @media (min-width: 1024px) {
     .card {
         width: 30%;
     }}
-
-
 
     button {
             background-color: #000000;
@@ -1919,19 +1916,35 @@ button:hover {
 #apartments-table {
     width: 100%;
     border-collapse: collapse;
+    table-layout: auto; 
 }
 
 
-@media only screen and (max-width: 768px) {
+@media only screen and (max-width: 668px) {
     .table-responsive {
         overflow-x: scroll;
         -webkit-overflow-scrolling: touch; 
+        white-space: nowrap;
         touch-action: pan-x; 
-        white-space: nowrap; 
     }
 
     #apartments-table {
-        display: inline-block;
+        display: block;
+        width: auto; 
         white-space: nowrap; 
+    }
+
+
+    #apartments-table th, #apartments-table td {
+        font-size: 12px; 
+        padding: 8px;
+    }
+}
+@media (max-width: 668px) {
+
+    table {
+        display: block;
+        width: auto; 
+        white-space: nowrap; /
     }
 }
