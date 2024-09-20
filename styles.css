@@ -2039,7 +2039,7 @@ td {
 }
 
 .dt-button, .buttons-pdf, .buttons-html5, .btn-export {
-    margin-bottom: 0;
+    margin-bottom: 1em;
 }
 /* Light Mode (الوضع العادي) */
 .btn-print {
