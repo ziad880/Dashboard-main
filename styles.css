@@ -1996,3 +1996,94 @@ td {
     background-color: #3a3a3a !important; /* خلفية داكنة */
     color: #e0e0e0 !important; /* نص فاتح */
 }
+
+#apartments-table th, 
+#apartments-table td {
+    text-align: center; /* محاذاة النصوص في الوسط */
+}
+
+/* تخصيص التصميم للهواتف */
+@media only screen and (max-width: 768px) {
+    #apartments-table th, 
+    #apartments-table td {
+        width: auto; /* تجعل العرض تلقائيًا يتناسب مع المحتوى */
+    }
+}
+#apartments-table {
+    width: 100%;
+
+}
+
+#apartments-table th, 
+#apartments-table td {
+    text-align: center; /* محاذاة النصوص في الوسط */
+}
+
+/* تخصيص التصميم للهواتف */
+@media only screen and (max-width: 768px) {
+    #apartments-table th, 
+    #apartments-table td {
+        width: auto; /* تجعل العرض تلقائيًا يتناسب مع المحتوى */
+    }
+}
+
+/* تخصيص التصميم لشاشات أصغر من 480px */
+@media  (max-width: 480px) {
+    #apartments-table th, 
+    #apartments-table td {
+        width: 100%; /* تجعل العرض تلقائيًا يتناسب مع المحتوى */
+    }
+}
+.rental-form button {
+    margin-bottom: 1em;
+}
+
+.dt-button, .buttons-pdf, .buttons-html5, .btn-export {
+    margin-bottom: 1em;
+}
+/* Light Mode (الوضع العادي) */
+.btn-print {
+    background-color: #ffffff; /* خلفية بيضاء */
+    color: #333; /* لون النص داكن */
+    border: 1px solid #ccc; /* إطار */
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover Effect in Light Mode */
+.btn-print:hover {
+    background-color: #f0f0f0; /* لون الخلفية عند تمرير الماوس */
+    color: #000; /* لون النص عند تمرير الماوس */
+    border-color: #bbb; /* تغيير لون الإطار عند تمرير الماوس */
+}
+
+/* Dark Mode (الوضع الداكن) */
+.dark-mode .btn-print {
+    background-color: #3a3a3a; /* خلفية داكنة */
+    color: #e0e0e0; /* نص فاتح */
+    border: 1px solid #555; /* إطار داكن */
+}
+/* Light Mode (الوضع العادي) */
+.btn-export {
+    background-color: #ffffff; /* خلفية بيضاء */
+    color: #333; /* لون النص داكن */
+    border: 1px solid #ccc; /* إطار */
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover Effect in Light Mode */
+.btn-export:hover {
+    background-color: #f0f0f0; /* لون الخلفية عند تمرير الماوس */
+    color: #000; /* لون النص عند تمرير الماوس */
+    border-color: #bbb; /* تغيير لون الإطار عند تمرير الماوس */
+}
+
+/* Dark Mode (الوضع الداكن) */
+.dark-mode .btn-export {
+    background-color: #3a3a3a; /* خلفية داكنة */
+    color: #e0e0e0; /* نص فاتح */
+    border: 1px solid #555; /* إطار داكن */
+}
