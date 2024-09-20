@@ -1965,3 +1965,13 @@ button:hover {
     margin-top: 0px;
 }
 }
+/* Light Mode (Default) */
+.fas.fa-bars {
+    color: #333; /* لون الأيقونة في الوضع الافتراضي */
+  }
+  
+  /* Dark Mode */
+  .dark-mode .fas.fa-bars {
+    color: #e0e0e0; /* لون الأيقونة في الوضع الداكن */
+  }
+  
