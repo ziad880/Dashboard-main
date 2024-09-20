@@ -344,6 +344,9 @@ body.dark-mode input::placeholder {
     margin: 0 auto; /* يوسّط الصورة داخل الحاوية */
     max-height: 200px; /* يحدد الحد الأقصى لارتفاع الصورة (يمكنك تعديل القيمة حسب الحاجة) */
 }
+.remember-me-label span {
+    font-size: .9em;
+}
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
     .remember-me-label {
@@ -481,6 +484,27 @@ input[type="checkbox"] {
     margin-left: 10px; 
 }
 
-.remember-me-label span {
-    font-size: 16px;
+@media (max-width: 768px) {
+    .container {
+        max-width: 350px; /* تقليل الحد الأقصى للعرض */
+    }
+    
+    button {
+        font-size: 0.7rem; /* تصغير حجم النص في الأزرار */
+    }
+    
+    h1 {
+        font-size: 1rem; /* تقليل حجم العناوين */
+    }
+    .form-container button {
+        font-size: 0.3rem; /* حجم النص داخل الزر */
+
+    }
+    #remember {
+        transform: scale(0.7);
+        margin-right: -30px;
+    }
+    .remember-me-label span {
+        margin-right: -5px;
+    }
 }
