@@ -1996,10 +1996,6 @@ td {
     background-color: #3a3a3a !important; /* خلفية داكنة */
     color: #e0e0e0 !important; /* نص فاتح */
 }
-#apartments-table {
-    width: 100%;
-    table-layout: fixed; /* يضمن توزيع الأعمدة بالتساوي */
-}
 
 #apartments-table th, 
 #apartments-table td {
