@@ -1910,3 +1910,8 @@ button:hover {
 .dropbtn{
     margin: 0;
 }
+
+#apartments-table {
+    display: inline-block;
+
+}
