@@ -1947,6 +1947,9 @@ button:hover {
         width: auto; 
         white-space: nowrap; /
     }
+    .btn-edit, .btn-delete {
+    margin-top: 0;
+    }
     .btn-print {
         font-size: 12px; /* تصغير حجم الخط */
         padding: 5px 10px; /* تقليل حجم التباعد الداخلي */
