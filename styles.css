@@ -1960,8 +1960,39 @@ button:hover {
     .btn-print i,.btn-disable,.btn-export ,.btn-edit{
         font-size: 10px; /* تصغير حجم الأيقونة */
     }
-.btn-export,.btn-edit{
+.btn-export{
     margin-bottom: 0;
-    margin-top: 10px;
+    margin-top: 0px;
 }
+}
+/* Light Mode (Default) */
+.fas.fa-bars {
+    color: #333; /* لون الأيقونة في الوضع الافتراضي */
+  }
+  
+  /* Dark Mode */
+  .dark-mode .fas.fa-bars {
+    color: #e0e0e0; /* لون الأيقونة في الوضع الداكن */
+  }
+  /* Light Mode (Default) */
+td {
+  background-color: #ffffff; /* خلفية بيضاء */
+  color: #333; /* نص غامق */
+}
+
+/* Dark Mode */
+.dark-mode td {
+  background-color: #3a3a3a; /* خلفية داكنة */
+  color: #e0e0e0; /* نص فاتح */
+}
+/* Light Mode (Default) */
+.sorting_1 {
+    background-color: #ffffff; /* خلفية بيضاء */
+    color: #333; /* نص غامق */
+  }
+  
+/* Dark Mode */
+.dark-mode .sorting_1 {
+    background-color: #3a3a3a !important; /* خلفية داكنة */
+    color: #e0e0e0 !important; /* نص فاتح */
 }
