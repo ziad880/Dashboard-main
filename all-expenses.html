@@ -162,30 +162,57 @@
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
 
-    <script>
-        $(document).ready(function() {
-            $('#apartments-table').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    {
-                        extend: 'excelHtml5',
-                        text: '<i class="fas fa-file-excel"></i> تصدير Excel',
-                        className: 'btn-export',
-                        titleAttr: 'تصدير إلى Excel'
-                    },
-                    {
-                        extend: 'pdfHtml5',
-                        text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
-                        className: 'btn-export',
-                        titleAttr: 'تصدير إلى PDF'
-                    }
-                ],
-              
-                
-            });
-        });
-    </script>
-<script src="script.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
 
+<script>
+// إعداد خطوط مخصصة لدعم اللغة العربية
+pdfMake.fonts = {
+    Cairo: {
+        normal: 'Cairo-Regular.ttf',
+        bold: 'Cairo-Regular.ttf',
+    }
+};
+
+pdfMake.fonts = {
+    Cairo: {
+        normal: 'Cairo-Regular.ttf',
+        bold: 'Cairo-Regular.ttf',
+    }
+};
+
+$(document).ready(function() {    $('#apartments-table').DataTable({
+        dom: 'Bfrtip',
+        buttons: [
+            {
+                extend: 'excelHtml5',
+                text: '<i class="fas fa-file-excel"></i> تصدير Excel',
+                className: 'btn-export',
+                titleAttr: 'تصدير إلى Excel'
+            },
+            {
+                extend: 'pdfHtml5',
+                text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
+                className: 'btn-export',
+                titleAttr: 'تصدير إلى PDF',
+                customize: function (doc) {
+                    doc.defaultStyle = {
+                        font: 'Cairo',
+                        alignment: 'right'  // محاذاة النص لليمين
+                    };
+                    // محاذاة خلايا الجدول
+                    doc.content[1].table.body.forEach(function(row) {
+                        row.forEach(function(cell) {
+                            cell.alignment = 'right';  // محاذاة خلايا الجدول لليمين
+                        });
+                    });
+                }
+            }
+        ]
+    });
+});
+</script>
+<script src="script.js"></script>
+<script src="vfs_fonts.js"></script> <!-- تحميل الخطوط بعد pdfmake -->
 </body>
 </html>

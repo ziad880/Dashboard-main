@@ -151,6 +151,12 @@
     <script src="https://cdn.jsdelivr.net/npm/xlsx/dist/xlsx.full.min.js"></script>
     
     <script>
+        pdfMake.fonts = {
+    Cairo: {
+        normal: 'Cairo-Regular.ttf',
+        bold: 'Cairo-Regular.ttf',
+    }
+};
         $(document).ready(function() {
             // تفعيل DataTables للجدول
             $('#rental-table').DataTable({
