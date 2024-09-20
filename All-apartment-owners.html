@@ -108,7 +108,7 @@
         </div>
 
     <!-- جدول الشقق -->
-    <table id="rental-table" class="display">
+    <table id="apartments-table" class="display">
         <thead>
             <tr>
                 <th>الخيارات</th>
@@ -181,58 +181,53 @@
 <!-- Buttons for Excel and PDF export -->
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
-
- <script>
-        $(document).ready(function() {
-            $('#rental-table').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                    {
+    <script>
+        pdfMake.fonts = {
+    Cairo: {
+        normal: 'Cairo-Regular.ttf',
+        bold: 'Cairo-Bold.ttf',
+    }
+};
+      $(document).ready(function() {
+    $('#apartments-table').DataTable({
+        dom: 'Bfrtip',
+        buttons: [  
+            {
                         extend: 'excelHtml5',
                         text: '<i class="fas fa-file-excel"></i> تصدير Excel',
                         className: 'btn-export',
                         titleAttr: 'تصدير إلى Excel'
                     },
-                    {
-                        extend: 'pdfHtml5',
-                        text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
-                        className: 'btn-export',
-                        titleAttr: 'تصدير إلى PDF'
-                    }
-                ],
-             
-            });
-        });
-        $(document).ready(function() {
-    $('#apartments-table').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-            {
-                extend: 'excelHtml5',
-                text: '<i class="fas fa-file-excel"></i> تصدير Excel',
-                className: 'btn-export',
-                titleAttr: 'تصدير إلى Excel'
-            },
             {
                 extend: 'pdfHtml5',
                 text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
                 className: 'btn-export',
-                titleAttr: 'تصدير إلى PDF'
+                titleAttr: 'تصدير إلى PDF',
+                customize: function (doc) {
+                    doc.defaultStyle = {
+                        font: 'Cairo',
+                        alignment: 'center'  // محاذاة النص لليمين
+                    };
+                    doc.styles.tableHeader = {
+                        font: 'Cairo',
+                        alignment: 'center'
+                    };
+                }
             }
-        ],
-
+        ]
     });
-
-    // إضافة حدث طباعة عند الضغط على زر الطباعة
+  // إضافة حدث طباعة عند الضغط على زر الطباعة
     $(document).on('click', '.btn-print', function() {
         window.print();
     });
 });
 
     </script>
-
-
 <script src="script.js"></script>
+<script src="vfs_fonts.js"></script>
+
+
+
 
 </body>
 </html>
