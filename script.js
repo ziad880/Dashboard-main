@@ -38,6 +38,8 @@ function toggleDarkMode(isDarkMode) {
     document.querySelector('.header').classList.toggle('dark-mode', isDarkMode);
     document.querySelector('.sidebar').classList.toggle('dark-mode', isDarkMode);
     document.querySelector('#apartments-table').classList.toggle('dark-mode', isDarkMode);
+    // Toggle dark mode for sorting elements
+    document.querySelectorAll('.sorting_1').forEach(sort => sort.classList.toggle('dark-mode', isDarkMode));
 
     // Apply dark mode to DataTables buttons
     document.querySelectorAll('.dt-button').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
