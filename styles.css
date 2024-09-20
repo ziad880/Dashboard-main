@@ -1996,3 +1996,47 @@ td {
     background-color: #3a3a3a !important; /* خلفية داكنة */
     color: #e0e0e0 !important; /* نص فاتح */
 }
+#apartments-table {
+    width: 100%;
+    table-layout: fixed; /* يضمن توزيع الأعمدة بالتساوي */
+}
+
+#apartments-table th, 
+#apartments-table td {
+    text-align: center; /* محاذاة النصوص في الوسط */
+}
+
+/* تخصيص التصميم للهواتف */
+@media only screen and (max-width: 768px) {
+    #apartments-table th, 
+    #apartments-table td {
+        width: auto; /* تجعل العرض تلقائيًا يتناسب مع المحتوى */
+    }
+}
+#apartments-table {
+    width: 100%;
+
+}
+
+#apartments-table th, 
+#apartments-table td {
+    text-align: center; /* محاذاة النصوص في الوسط */
+}
+
+/* تخصيص التصميم للهواتف */
+@media only screen and (max-width: 768px) {
+    #apartments-table th, 
+    #apartments-table td {
+        width: auto; /* تجعل العرض تلقائيًا يتناسب مع المحتوى */
+    }
+}
+
+/* تخصيص التصميم لشاشات أصغر من 480px */
+@media only screen and (max-width: 480px) {
+    #apartments-table th, 
+    #apartments-table td {
+        width: 50%; /* تجعل العرض تلقائيًا يتناسب مع المحتوى */
+    }
+}
+
+
