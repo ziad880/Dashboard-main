@@ -1947,10 +1947,10 @@ button:hover {
         width: auto; 
         white-space: nowrap; /
     }
-    .btn-edit, .btn-delete {
+    .btn-edit, .btn-delete,.btn-disable {
     margin-top: 0;
     }
-    .btn-print {
+    .btn-print,.btn-disable {
         font-size: 12px; /* تصغير حجم الخط */
         padding: 5px 10px; /* تقليل حجم التباعد الداخلي */
         border-radius: 3px; /* تغيير حواف الزر */
@@ -1958,7 +1958,7 @@ button:hover {
         height: auto; /* تعديل الارتفاع */
     }
     
-    .btn-print i {
+    .btn-print i,.btn-disable {
         font-size: 10px; /* تصغير حجم الأيقونة */
     }
 }
