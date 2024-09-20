@@ -2038,3 +2038,35 @@ td {
     margin-bottom: 1em;
 }
 
+.dt-button, .buttons-pdf, .buttons-html5, .btn-export {
+    margin-bottom: 0;
+}
+/* Light Mode (الوضع العادي) */
+.btn-print {
+    background-color: #ffffff; /* لون خلفية فاتح */
+    color: #333; /* لون النص داكن */
+    border: 1px solid #ccc; /* إطار */
+}
+
+/* Dark Mode (الوضع الداكن) */
+.dark-mode .btn-print {
+    background-color: #3a3a3a; /* خلفية داكنة */
+    color: #e0e0e0; /* نص فاتح */
+    border: 1px solid #555; /* إطار داكن */
+}
+/* Light Mode (الوضع العادي) */
+.btn-export {
+    background-color: #ffffff; /* خلفية بيضاء */
+    color: #333; /* لون النص داكن */
+    border: 1px solid #ccc; /* إطار */
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Dark Mode (الوضع الداكن) */
+.dark-mode .btn-export {
+    background-color: #3a3a3a; /* خلفية داكنة */
+    color: #e0e0e0; /* نص فاتح */
+    border: 1px solid #555; /* إطار داكن */
+}
