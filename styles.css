@@ -2038,5 +2038,7 @@ td {
         width: 100%; /* تجعل العرض تلقائيًا يتناسب مع المحتوى */
     }
 }
-
+.rental-form button {
+    margin-bottom: 1em;
+}
 
