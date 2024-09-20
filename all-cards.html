@@ -161,29 +161,30 @@
 <!-- Buttons for Excel and PDF export -->
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
-    <script>
-        pdfMake.fonts = {
-    Cairo: {
-        normal: 'Cairo-Regular.ttf',
-        bold: 'Cairo-Bold.ttf',
-    }
-};
-      $(document).ready(function() {
-    $('#apartments-table').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-              {
-                        extend: 'excelHtml5',
-                        text: '<i class="fas fa-file-excel"></i> تصدير Excel',
-                        className: 'btn-export',
-                        titleAttr: 'تصدير إلى Excel'
-                    },
-            {
-                extend: 'pdfHtml5',
-                text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
-                className: 'btn-export',
-                titleAttr: 'تصدير إلى PDF',
-                customize: function (doc) {
+<script>
+    pdfMake.fonts = {
+        Cairo: {
+            normal: 'Cairo-Regular.ttf',
+            bold: 'Cairo-Bold.ttf',
+        }
+    };
+
+    $(document).ready(function() {
+        $('#apartments-table').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'excelHtml5',
+                    text: '<i class="fas fa-file-excel"></i> تصدير Excel',
+                    className: 'btn-export',
+                    titleAttr: 'تصدير إلى Excel'
+                },
+                {
+                    extend: 'pdfHtml5',
+                    text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
+                    className: 'btn-export',
+                    titleAttr: 'تصدير إلى PDF',
+                      customize: function (doc) {
                     doc.defaultStyle = {
                         font: 'Cairo',
                         alignment: 'center'  // محاذاة النص لليمين
@@ -192,15 +193,44 @@
                         font: 'Cairo',
                         alignment: 'center'
                     };
+                },
+                    action: function (e, dt, button, config) {
+                        // حفظ النصوص الأصلية
+                        const originalTexts = {};
+
+                        // حفظ النصوص الأصلية لجميع العناصر
+                        $('*').each(function() {
+                            const element = $(this);
+                            const tagName = element.prop("tagName").toLowerCase();
+
+                            // فقط نصوص العناصر التي تحتوي على نص
+                            if (element.is(':visible') && (tagName === 'td' || tagName === 'th' || tagName === 'p' || tagName === 'span')) {
+                                originalTexts[element.selector] = element.text();
+                                const reversedText = reverseWords(element.text());
+                                element.text(reversedText); // عكس النص
+                            }
+                        });
+
+                        // تصدير PDF
+                        $.fn.dataTable.ext.buttons.pdfHtml5.action.call(this, e, dt, button, config);
+
+                        // إعادة النصوص الأصلية بعد التصدير
+                        $.each(originalTexts, function(selector, originalText) {
+                            $(selector).text(originalText); // إعادة النص الأصلي
+                        });
+                    }
                 }
-            }
-        ]
+            ]
+        });
+
+        // دالة لعكس النصوص
+        function reverseWords(text) {
+            return text.split(' ').reverse().join(' ');
+        }
     });
-});
-    </script>
+</script>
 <script src="script.js"></script>
 <script src="vfs_fonts.js"></script>
-
 
 </body>
 </html>
