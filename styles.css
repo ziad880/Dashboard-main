@@ -1947,4 +1947,15 @@ button:hover {
         width: auto; 
         white-space: nowrap; /
     }
+    .btn-print {
+        font-size: 12px; /* تصغير حجم الخط */
+        padding: 5px 10px; /* تقليل حجم التباعد الداخلي */
+        border-radius: 3px; /* تغيير حواف الزر */
+        width: auto; /* تعديل العرض */
+        height: auto; /* تعديل الارتفاع */
+    }
+    
+    .btn-print i {
+        font-size: 10px; /* تصغير حجم الأيقونة */
+    }
 }
