@@ -2043,9 +2043,19 @@ td {
 }
 /* Light Mode (الوضع العادي) */
 .btn-print {
-    background-color: #ffffff; /* لون خلفية فاتح */
+    background-color: #ffffff; /* خلفية بيضاء */
     color: #333; /* لون النص داكن */
     border: 1px solid #ccc; /* إطار */
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover Effect in Light Mode */
+.btn-print:hover {
+    background-color: #f0f0f0; /* لون الخلفية عند تمرير الماوس */
+    color: #000; /* لون النص عند تمرير الماوس */
+    border-color: #bbb; /* تغيير لون الإطار عند تمرير الماوس */
 }
 
 /* Dark Mode (الوضع الداكن) */
@@ -2062,6 +2072,13 @@ td {
     padding: 10px 20px;
     border-radius: 4px;
     cursor: pointer;
+}
+
+/* Hover Effect in Light Mode */
+.btn-export:hover {
+    background-color: #f0f0f0; /* لون الخلفية عند تمرير الماوس */
+    color: #000; /* لون النص عند تمرير الماوس */
+    border-color: #bbb; /* تغيير لون الإطار عند تمرير الماوس */
 }
 
 /* Dark Mode (الوضع الداكن) */
