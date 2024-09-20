@@ -12,6 +12,7 @@ body {
   justify-content: center;
   background: #f2f2f2;
   padding: 10px; /* Padding for smaller screens */
+  overflow: hidden; /* إلغاء التمرير */
 }
 .container {
   background: #fff;
