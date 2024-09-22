@@ -97,7 +97,7 @@ button:disabled {
 }
 /* Remove the spinner arrows in number input fields */
 input[type=number] {
-  -moz-appearance: textfield; /* Firefox */
+  --moz-appearance: textfield; /* Firefox */
 }
 
 input[type=number]::-webkit-inner-spin-button, 
