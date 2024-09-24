@@ -108,46 +108,45 @@
         <form class="rental-form" enctype="multipart/form-data">
             <label for="apartment">اختيار الشقة:</label>
             <select id="apartment" name="apartment" required>
-                <option value="">اختر شقة</option>
-                <option value="1">شقة 1</option>
-                <option value="2">شقة 2</option>
+                <option value=""> شقة1 </option>
+                <option value="1">شقة 2</option>
+                <option value="2">شقة 3</option>
             </select>
-
-            <label for="office-profit">مبلغ ربح المكتب:</label>
+            <label for="apartment">نوع التعاقد:</label>
+            <select id="apartment" name="apartment" required>
+                <option value=""> سابق</option>
+                <option value="1">لاحق </option>
+            </select>
+            <label for="apartment">طريقة الدفع :</label>
+            <select id="apartment" name="apartment" required>
+                <option value=""> نقدي</option>
+                <option value="1">بنكي </option>
+            </select>
+            <label for="apartment">مدة التأجير  :</label>
+            <select id="apartment" name="apartment" required>
+                <option value=""> شهري</option>
+                <option value="1">سنوي </option>
+            </select>
+            <label for="office-profit">مبلغ الايجار الشهري:</label>
             <input type="number" id="office-profit" name="office-profit" step="0.01" required>
 
-            <label for="expenses">مبلغ المصاريف:</label>
+            <label for="expenses"> المصاريف:</label>
             <input type="number" id="expenses" name="expenses" step="0.01" required>
 
-            <label for="deposit">التأمين:</label>
-            <input type="number" id="deposit" name="deposit" step="0.01" required>
+            <label for="expenses"> العمولة:</label>
+            <input type="number" id="expenses" name="expenses" step="0.01" required>
 
-            <label for="payment-date">تاريخ الدفع:</label>
-            <input type="date" id="payment-date" name="payment-date" required>
+            <label for="expenses"> المبلغ الكلي:</label>
+            <input type="number" id="expenses" name="expenses" step="0.01" required>
+
+            <label for="expenses"> المبلغ المدفوع:</label>
+            <input type="number" id="expenses" name="expenses" step="0.01" required>
+
+            <label for="expenses"> المبلغ المتبقي:</label>
+            <input type="number" id="expenses" name="expenses" step="0.01" required>
 
             <label for="receipt">رفع إيصال الدفع:</label>
             <input type="file" id="receipt" name="receipt" accept=".jpg, .jpeg, .png, .pdf" required>
-
-            <label for="payment-method">اختيار طريقة الدفع:</label>
-            <select id="payment-method" name="payment-method" required>
-                <option value="cash">نقد</option>
-                <option value="bank-transfer">تحويل بنكي</option>
-            </select>
-
-            <label for="payment-status">حالة الدفع:</label>
-            <select id="payment-status" name="payment-status" required>
-                <option value="full">كامل</option>
-                <option value="partial">جزئي</option>
-            </select>
-
-            <label for="total-amount">المبلغ الكلي:</label>
-            <input type="number" id="total-amount" name="total-amount" step="0.01" required>
-
-            <label for="amount-paid">المبلغ المدفوع:</label>
-            <input type="number" id="amount-paid" name="amount-paid" step="0.01" required>
-
-            <label for="amount-remaining">المبلغ المتبقي:</label>
-            <input type="number" id="amount-remaining" name="amount-remaining" step="0.01" required readonly>
 
             <button type="submit">حفظ</button>
         </form>
