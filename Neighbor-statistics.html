@@ -1,14 +1,15 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أصحاب الشقق</title>
+    <title>لوحة التحكم</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
- <div class="header">
+    <div class="header">
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
@@ -67,10 +68,18 @@
                     <i class="fas fa-building"></i> 
                     <span>الشقق</span>
                 </a>
-             
+            </li>
+            <li class="sidebar-item-with-submenu">
+                <a href="outlay.html" class="sidebar-item">
+<i class="fa-solid fa-money-bill"></i>
+                    <span>المصاريف</span>
+                </a>
             </li>
             <li><a href="rental.html" class="sidebar-item">
                 <i class="fas fa-calendar-check"></i> <span>التأجير</span>
+            </a></li>
+                        <li><a href="rent-from-owner.html" class="sidebar-item">
+                <i class="fas fa-calendar-check"></i> <span>تأجير من المالك</span>
             </a></li>
             <li><a href="contracts.html" class="sidebar-item">
                 <i class="fas fa-file-signature"></i> <span>العقود</span>
@@ -86,6 +95,9 @@
             </a></li>
             <li><a href="system-cards.html" class="sidebar-item">
                 <i class="fas fa-credit-card"></i> <span>بطاقات النظام</span>
+            </a></li>            
+            <li><a href="account.html" class="sidebar-item">
+                <i class="fas fa-user"></i> <span> المستخدمين</span>
             </a></li>
         </ul>
     </nav>
@@ -93,45 +105,37 @@
     <div class="content">
         <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - أصحاب الشقق
+                <div class="breadcrumb-item"> لوحة التحكم -  الجارات
                     <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="owners.html">أصحاب الشقق</a>
+                    <a href="Neighbor-statistics.html">  الجارات</a>
                     <p>/</p>
-                    <a href="index.html">الرئيسية</a>
-                    <i class="fas fa-users"></i>
+                    <a href="index.html">لوحة التحكم</a>
+                    <i class="fa-solid fa-house"></i>
+                    
                 </div>
             </div>
         </div>
-
+        
         <div class="dashboard">
-            <h2>إدارة أصحاب الشقق</h2>
+            <h2 > احصائيات الجارات</h2>
             <div class="row">
+
                 <div class="card">
-                    <i class="fas fa-user fa-2x"></i>
-                    <h2>إضافة صاحب شقة</h2>
-                    <button class="details-btn" onclick="window.location.href='Add-apartment-owner.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                </div>
-                
-                <div class="card">
-                    <i class="fas fa-list fa-2x"></i>
-                    <h2>تسليم الايجار  </h2>
-                    <button class="details-btn" onclick="window.location.href='rental-payment.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
+                    <i class="fas fa-building fa-2x"></i>
+                    <h2>جارات الشقق </h2>
+                    <button onclick="window.location.href='';" class="details-btn"> انتقال <i class="fas fa-arrow-left"></i></button>
                 </div>
                 <div class="card">
-                    <i class="fas fa-list fa-2x"></i>
-                    <h2>جميع أصحاب الشقق</h2>
-                    <button class="details-btn" onclick="window.location.href='All-apartment-owners.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                </div> 
+                    <i class="fa-solid fa-building-user fa-2x"></i>
+                    <h2>جارات مدفوعات الإيجار</h2>
+                <button onclick="window.location.href='';" class="details-btn"> انتقال <i class="fas fa-arrow-left"></i></button>
+                </div>
             </div>
         </div>
     </div>
-
 
 <script src="script.js"></script>
 
