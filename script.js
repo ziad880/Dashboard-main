@@ -63,3 +63,15 @@ signUpButton.addEventListener('click', () => {
 signInButton.addEventListener('click', () => {
 	container.classList.remove("right-panel-active");
 });
+document.getElementById('select-all').addEventListener('change', function() {
+  const checkboxes = document.querySelectorAll('.permission-checkbox');
+  checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+});
+
+document.querySelectorAll('.permission-checkbox').forEach(checkbox => {
+  checkbox.addEventListener('change', function() {
+    const selectAll = document.getElementById('select-all');
+    const allChecked = Array.from(document.querySelectorAll('.permission-checkbox')).every(cb => cb.checked);
+    selectAll.checked = allChecked;
+  });
+});
