@@ -1,15 +1,14 @@
-
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة التحكم</title>
+    <title>تأجير</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-    <div class="header">
+ <div class="header">
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
@@ -68,18 +67,10 @@
                     <i class="fas fa-building"></i> 
                     <span>الشقق</span>
                 </a>
-            </li>
-            <li class="sidebar-item-with-submenu">
-                <a href="outlay.html" class="sidebar-item">
-<i class="fa-solid fa-money-bill"></i>
-                    <span>المصاريف</span>
-                </a>
+             
             </li>
             <li><a href="rental.html" class="sidebar-item">
                 <i class="fas fa-calendar-check"></i> <span>التأجير</span>
-            </a></li>
-                        <li><a href="rent-from-owner.html" class="sidebar-item">
-                <i class="fas fa-calendar-check"></i> <span>تأجير من المالك</span>
             </a></li>
             <li><a href="contracts.html" class="sidebar-item">
                 <i class="fas fa-file-signature"></i> <span>العقود</span>
@@ -102,46 +93,38 @@
     <div class="content">
         <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - لوحة التحكم
-                    <a id="lf" href="#"><i class="fa-solid fa-circle-right"></i></a>
+                <div class="breadcrumb-item">الرئيسية - تأجير من المالك
+                    <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="index.html">لوحة التحكم</a>
+                    <a href="rent-from-owner.html">تأجير من المالك</a>
                     <p>/</p>
                     <a href="index.html">الرئيسية</a>
-                    <i class="fa-solid fa-house"></i>
+                    <i class="fas fa-calendar-check"></i>
                 </div>
             </div>
         </div>
-        
+
         <div class="dashboard">
-            <h2 >أحصائيات التطبيق</h2>
+            <h2> تأجير من المالك </h2>
             <div class="row">
                 <div class="card">
-                    <i class="fas fa-building fa-2x"></i>
-                    <h2>إجمالي الشقق</h2>
-                    <p>عدد الشقق: 34</p>
-                                            <button class="details-btn"> انتقال <i class="fas fa-arrow-left"></i></button>
-                </div>
+<i class="fa-solid fa-person-walking-luggage fa-2x"></i>
+                    <h2>  تأجير من المالك</h2>
+   <button class="details-btn" onclick="window.location.href='new-owner-rent.html';">
+ انتقال   <i class="fas fa-arrow-left"></i></button>                </div>
                 <div class="card">
-                    <i class="fas fa-money-bill-wave fa-2x"></i>
-                    <h2>الإيجارات المستحقة</h2>
-                    <p>عدد الإيجارات: 12</p>
-                        <button class="details-btn">انتقال <i class="fas fa-arrow-left"></i>  </button>
-
-                </div>
-                <div class="card">
-                    <i class="fas fa-calendar-alt fa-2x"></i>
-                    <h2>الشقق المسلمة</h2>
-                    <p>عدد الشقق المسلمة: 3 </p>
-                                            <button class="details-btn"> انتقال <i class="fas fa-arrow-left"></i></button>
+<i class="fa-solid fa-receipt fa-2x"></i>
+                    <h2>جميع  التأجيرات</h2>
+                                        <button class="details-btn" onclick="window.location.href='all-owners-rents.html';">
+  انتقال <i class="fas fa-arrow-left"></i></button>
                 </div>
             </div>
         </div>
     </div>
 
+س
 <script src="script.js"></script>
-
 </body>
 </html>
