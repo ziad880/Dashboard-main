@@ -119,44 +119,31 @@
                 </select>
             </div>
 
-            <!-- صاحب الشقة (يتم جلبه تلقائيا) -->
-            <div class="rental-form">
-                <label for="owner">صاحب الشقة:</label>
-                <input type="text" id="owner" name="owner" readonly>
-            </div>
 
             <!-- مبلغ الإيجار -->
             <div class="rental-form">
                <label for="rent-amount">مبلغ الإيجار:</label>
                 <input type="text" id="rent-amount" name="rent-amount" readonly>
             </div>
-
-            <!-- طريقة الدفع -->
             <div class="rental-form">
-                <label for="payment-method">طريقة الدفع:</label>
-                <select id="payment-method" name="payment-method" required>
-                    <option value="" disabled selected>اختر طريقة الدفع</option>
-                    <option value="cash">نقدًا</option>
-                    <option value="bank-transfer">تحويل بنكي</option>
-                    <option value="cheque">شيك</option>
-                    <option value="credit-card">بطاقة ائتمان</option>
-                </select>
-            </div>
-
+                <label for="rent-amount"> التاريخ:</label>
+                 <input type="text" id="rent-amount" name="rent-amount" readonly>
+             </div>
+ 
+             <div class="rental-form">
+                <label for="rent-amount">حصة المكتب:</label>
+                 <input type="text" id="rent-amount" name="rent-amount" readonly>
+             </div>
             <!-- مرفق إيصال الدفع -->
             <div class="rental-form">
                 <label for="payment-receipt">مرفق إيصال الدفع:</label>
                 <input type="file" id="payment-receipt" name="payment-receipt" accept=".pdf, .jpg, .png" required>
             </div>
         <div class="rental-form">
-            <!-- زر الدفع -->
-            <button type="button" id="pay-button">دفع</button>
-
             <!-- زر الحفظ -->
             <button type="submit" id="save-button">حفظ</button>
-
             <!-- زر طباعة وصل استلام -->
-            <button type="button" id="print-receipt-button">طباعة وصل استلام</button>
+            <button type="button" id="print-receipt-button">طباعة وصل الدفع</button>
 </div>
         </form>
     </div>
