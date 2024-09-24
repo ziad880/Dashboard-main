@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>لوحة التحكم</title>
+    <title>جارت مدفوعات الإيجارات</title>
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
@@ -105,12 +105,12 @@
     <div class="content">
         <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">  لوحة التحكم - الجارات - جارات مدفوعات الإيجار
+                <div class="breadcrumb-item">  لوحة التحكم - الجارات - جارت مدفوعات الإيجار
                     <a id="lf" href="Neighbor-statistics.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="n-Rent-payments.html">  جارات مدفوعات الإيجار</a>
+                    <a href="n-Rent-payments.html">  جارت مدفوعات الإيجار</a>
                     <p>/</p>
                     <a href="Neighbor-statistics.html">  الجارات</a>
                     <p>/</p>
@@ -121,6 +121,50 @@
             </div>
         </div>
         
+ <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+ <div class="chart-container">
+    <canvas id="apartmentsPieChart"></canvas>
+</div>
+
+<script>
+    var ctx1 = document.getElementById('apartmentsPieChart').getContext('2d');
+    var apartmentsPieChart = new Chart(ctx1, {
+        type: 'pie',
+        data: {
+            labels: ['الايجارات المدفوعة', 'الايجارات الغير مدفوعة'],
+            datasets: [{
+                label: 'نسبة الايجارات المدفوعه',
+                data: [70, 30],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(255, 99, 132, 0.6)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+</script>       
 
 <script src="script.js"></script>
 

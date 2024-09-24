@@ -2087,3 +2087,21 @@ td {
     color: #e0e0e0; /* نص فاتح */
     border: 1px solid #555; /* إطار داكن */
 }
+/* لتوسيط الرسوم البيانية في منتصف الصفحة */
+.chart-container {
+    display: flex;
+    justify-content: center;   /* لتوسيطها أفقياً */
+    align-items: center;       /* لتوسيطها عمودياً */
+    height: 75vh;             /* تأخذ كامل ارتفاع الشاشة */
+    flex-wrap: wrap;           /* لجعل الرسوم تتكيف مع الشاشة */
+    gap: 20px;                 /* مسافة بين الرسوم */
+}
+
+canvas {
+    max-width: 60vw;         
+    max-height: 60vh;          
+    width: 100%;             
+    height: 100%;  
+                border-radius: 10px;       
+
+}
