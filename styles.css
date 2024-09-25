@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap');
+* {
+    font-family: "Noto Kufi Arabic", sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+
 }
 body{
   background-color: #eceff4;
@@ -299,7 +304,7 @@ a{
 }
 
 .card h2 {
-    font-size: 1.5em;
+    font-size: 1em;
     margin-bottom: 10px;
 }
 
@@ -515,7 +520,7 @@ a{
 }
 
 .user-info a {
-  color: white; /* لجعل الأيقونة بيضاء */
+  color: rgb(0, 0, 0); /* لجعل الأيقونة بيضاء */
 
 }
 
@@ -542,12 +547,12 @@ a{
 }
 
 .card h2 {
-    font-size: 1.5em;
+    font-size: 1em;
     margin-bottom: 10px;
 }
 
 .card p {
-    font-size: 1.2em;
+    font-size: .8em;
     margin-bottom: 20px;
     flex-grow: 1;
 }
@@ -586,7 +591,7 @@ a{
     }
 
     .content {
-        margin-right: 20px;
+        margin-right: 0px;
     }
 
     .sidebar-toggle {
@@ -726,6 +731,10 @@ body {
   background-color: #f0f4f8;
   color: #333;
 }
+body.dark-mode {
+  background-color: #f0f4f8;
+  color: #ffffff;
+}
 
 .header {
   background-color: #ffffff;
@@ -749,6 +758,10 @@ body {
 .sidebar-menu li {
   background-color: #ffffff;
   color: #333;
+    
+    padding-top: 8px;
+    padding-bottom: 8px;
+
 }
 
 .dropbtn {
@@ -793,14 +806,11 @@ body {
   text-decoration: underline;
 }
 
-.fa-solid, .fas {
-  color: #333;
-}
+
 
 /* Dark mode styles */
 body.dark-mode {
   background-color: #1e1e1e;
-  color: #e0e0e0;
 }
 .details-btn.dark-mode {
     background-color: #cac5c5;
@@ -882,10 +892,10 @@ body.dark-mode {
 .breadcrumb-path.dark-mode a:hover {
   text-decoration: underline;
 }
-
-.fa-solid.dark-mode, .fas.dark-mode {
-  color: #e0e0e0;
+.btn-submit{
+    margin-top: 1em;
 }
+
 @media (max-width: 768px) {
     .dashboard-text {
         display: none; 
@@ -934,9 +944,6 @@ body.dark-mode {
     background-color: #f0f0f0; 
     color: #333; 
 }
-.sidebar-menu li:hover .fas {
-    color: #333; 
-}
 
 .details-btn:hover {
     background-color: #ececec; /* لون خلفية الزر عند التمرير في الوضع الفاتح */
@@ -962,7 +969,7 @@ body.dark-mode {
 }
 
 .sidebar-item:hover {
-    background: #34495e;
+    background: #2c2d2e;
     color: #ffffff;
 }
 
@@ -970,12 +977,10 @@ body.dark-mode {
 /* الوضع الغامق */
 @media (prefers-color-scheme: dark) {
     .sidebar-menu li:hover {
-        background-color: #34495e; /* لون خلفية عند التمرير في الوضع الغامق */
+        background-color: #2c2d2e; /* لون خلفية عند التمرير في الوضع الغامق */
         color: #ecf0f1; /* لون النص عند التمرير في الوضع الغامق */
     }
-.sidebar-menu li:hover .fas {
-    color: #f0ecec; 
-}
+
 .sidebar-item.dark-mode {
     display: flex;
     align-items: center;
@@ -995,6 +1000,10 @@ body.dark-mode {
     display: block; /* جعل العنصر كله قابل للنقر */
 
     text-align: right; /* محاذاة النص لليمين */
+    
+    padding-top: 10px;
+    padding-bottom: 10px;
+
 }
 
 
@@ -1003,7 +1012,15 @@ body.dark-mode {
 .sidebar-item-with-submenu {
     position: relative;
 }
-
+.content{
+    direction: rtl; /* العرض من اليمين */
+}
+.breadcrumb{
+    direction: ltr;
+}
+.apartment-form {
+    direction: rtl; /* العرض من اليمين */
+}
 .submenu {
     display: none;
     position: absolute;
@@ -1033,70 +1050,70 @@ body.dark-mode {
 .sidebar-item-with-submenu:hover .submenu {
     display: block;
 }
- .form-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-            
-        }
+/* تنسيق المحتوى الرئيسي */
+.main-content {
+    margin-left: 250px; /* تعديل المساحة للتأكد من أن المحتوى لا يتداخل مع الـ sidebar */
+    padding: 20px;
+}
 
-        .form-group label {
-            flex: 1;
-            font-size: 16px;
-            display: flex;
-            align-items: center;
-        }
+.breadcrumb-container {
+    margin-bottom: 20px;
+}
 
-        .form-group input,
-        .form-group select,
-        .form-group textarea {
-            flex: 2;
-            padding: 10px;
-            font-size: 14px;
-            border: 1px solid #ccc;
-            border-radius: 4px;
-        }
+.container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+}
 
-        .form-group input[type="file"] {
-            border: none;
-        }
+.apartment-form {
+    width: 100%;
+    max-width: 700px;
+    background-color: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
+}
 
-        .form-group .icon {
-            margin-right: 10px;
-        }
+.form-group {
+    margin-bottom: 20px;
+}
 
-        .form-group textarea {
-            resize: vertical;
-            
-        }
+.form-group label {
+    display: block;
+    margin-bottom: 10px;
+    font-weight: bold;
+}
 
-        .checkbox-group {
-            display: flex;
-            align-items: center;
-            margin-bottom: 15px;
-        }
+.form-group input,
+.form-group select,
+.form-group textarea {
+    width: 100%;
+    padding: 12px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    font-size: 16px;
+}
 
-        .checkbox-group label {
-            margin-left: 10px;
-        }
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+    border-color: #3498DB;
+}
 
-        .btn-submit {
-            background-color: #000000;
-            color: #ffffff;
-            padding: 10px 20px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-size: 16px;
-            width: 100%;
-            text-align: center;
-        }
-.btn-submit .icon {
-            color: #ffffff;
-        }
-        .btn-submit:hover {
-            background-color: #232d51;
-        }
+.btn-submit {
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 18px;
+    text-align: center;
+}
+
+.btn-submit:hover {
+    background-color: #2980B9;
+}
 /* زر التصدير */
 .btn-export {
     background-color: #000000;
@@ -1121,9 +1138,6 @@ table {
     margin-bottom: 20px;
 }
 
-table, th, td {
-    border: 1px solid #e0e0e0;
-}
 
 th, td {
     padding: 12px;
@@ -1207,7 +1221,6 @@ th {
 
     /* جعل الجدول قابلاً للتمرير على الشاشات الصغيرة */
     table {
-        display: block;
         overflow-x: auto;
         white-space: nowrap;
     }
@@ -1228,4 +1241,1079 @@ th {
         padding: 4px 6px;
         font-size: 10px;
     }
+}
+
+
+.user-info a.dark-mode {
+  color: #ffffff; /* لجعل الأيقونة بيضاء */
+}
+
+
+.sidebar {
+    background-color: #ffffff;
+    color: #333;
+    padding: 0rem; /* استخدام وحدات نسبية */
+    height: 93vh; /* تأكد من أن الشريط الجانبي يملأ ارتفاع الشاشة */
+    overflow-y: auto; /* تفعيل التمرير العمودي */
+    display: flex;
+    flex-direction: column; /* أو adjust بناءً على التصميم */
+}
+
+/* معلومات المستخدم في الشريط الجانبي */
+.sidebar .user-info {
+    display: flex;
+    padding: 1rem; /* استخدام وحدات نسبية */
+    align-items: center;
+    justify-content: space-between;
+    flex-wrap: wrap; /* يسمح بالعناصر بالتدفق بشكل أفضل */
+}
+
+
+
+.rental-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.rental-form label {
+    margin-bottom: 10px;
+    font-weight: bold;
+}
+
+.rental-form input, .rental-form select {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    border: 1px solid #ccc;
+}
+
+.rental-form button {
+    padding: 10px 20px;
+    border: none;
+    background-color: #000000;
+    color: white;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.rental-form button:hover {
+    background-color: #2980b9;
+}
+
+.btn-print, .btn-submit {
+    display: inline-block;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-print {
+    background-color: #000000;
+    color: white;
+}
+/* Light Mode (Default) */
+#apartments-table {
+    background-color: #ffffff;
+    color: #333;
+    border-collapse: collapse;
+  }
+  
+  #apartments-table th, #apartments-table td {
+    padding: 10px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  #apartments-table th {
+    background-color: #000000;
+  }
+  
+  /* Dark Mode */
+  .dark-mode #apartments-table {
+    background-color: #2c2c2c;
+  }
+  
+  .dark-mode #apartments-table th {
+    background-color: #3a3a3a;
+    color: #ffffff;
+  }
+  
+  .dark-mode #apartments-table td {
+    border-bottom: 1px solid #555;
+  }
+  /* Light Mode (Default) */
+.dt-button, .buttons-pdf, .buttons-html5, .btn-export {
+    color: #fff;
+    border: none;
+    padding: 8px 12px;
+    cursor: pointer;
+    border-radius: 4px;
+    font-size: 14px;
+  }
+  
+  .dt-button:hover, .buttons-pdf:hover, .buttons-html5:hover, .btn-export:hover {
+    background-color: #0056b3;
+  }
+  
+  /* Dark Mode */
+  .dark-mode .dt-button, .dark-mode .buttons-pdf, .dark-mode .buttons-html5, .dark-mode .btn-export {
+    background-color: #444;
+    color: #fff;
+  }
+  
+  .dark-mode .dt-button:hover, .dark-mode .buttons-pdf:hover, .dark-mode .buttons-html5:hover, .dark-mode .btn-export:hover {
+    background-color: #333;
+  }
+
+
+
+  table.dataTable th.dt-left,table.dataTable td.dt-left {
+    text-align: left
+}
+
+table.dataTable th.dt-center,table.dataTable td.dt-center,table.dataTable td.dataTables_empty {
+    text-align: center
+}
+
+table.dataTable th.dt-right,table.dataTable td.dt-right {
+    text-align: right
+}
+
+table.dataTable th.dt-justify,table.dataTable td.dt-justify {
+    text-align: justify
+}
+
+table.dataTable th.dt-nowrap,table.dataTable td.dt-nowrap {
+    white-space: nowrap
+}
+
+table.dataTable thead th.dt-head-left,table.dataTable thead td.dt-head-left,table.dataTable tfoot th.dt-head-left,table.dataTable tfoot td.dt-head-left {
+    text-align: left
+}
+
+table.dataTable thead th.dt-head-center,table.dataTable thead td.dt-head-center,table.dataTable tfoot th.dt-head-center,table.dataTable tfoot td.dt-head-center {
+    text-align: center
+}
+
+table.dataTable thead th.dt-head-right,table.dataTable thead td.dt-head-right,table.dataTable tfoot th.dt-head-right,table.dataTable tfoot td.dt-head-right {
+    text-align: right
+}
+
+table.dataTable thead th.dt-head-justify,table.dataTable thead td.dt-head-justify,table.dataTable tfoot th.dt-head-justify,table.dataTable tfoot td.dt-head-justify {
+    text-align: justify
+}
+
+table.dataTable thead th.dt-head-nowrap,table.dataTable thead td.dt-head-nowrap,table.dataTable tfoot th.dt-head-nowrap,table.dataTable tfoot td.dt-head-nowrap {
+    white-space: nowrap
+}
+
+table.dataTable tbody th.dt-body-left,table.dataTable tbody td.dt-body-left {
+    text-align: left
+}
+
+table.dataTable tbody th.dt-body-center,table.dataTable tbody td.dt-body-center {
+    text-align: center
+}
+
+table.dataTable tbody th.dt-body-right,table.dataTable tbody td.dt-body-right {
+    text-align: right
+}
+
+table.dataTable tbody th.dt-body-justify,table.dataTable tbody td.dt-body-justify {
+    text-align: justify
+}
+
+table.dataTable tbody th.dt-body-nowrap,table.dataTable tbody td.dt-body-nowrap {
+    white-space: nowrap
+}
+
+table.dataTable td.dt-control {
+    text-align: center;
+    cursor: pointer
+}
+
+table.dataTable td.dt-control:before {
+    height: 1em;
+    width: 1em;
+    margin-top: -9px;
+    display: inline-block;
+    color: white;
+    border: .15em solid white;
+    border-radius: 1em;
+    box-shadow: 0 0 .2em #444;
+    box-sizing: content-box;
+    text-align: center;
+    text-indent: 0 !important;
+    font-family: "Courier New",Courier,monospace;
+    line-height: 1em;
+    content: "+";
+    background-color: #31b131
+}
+
+table.dataTable tr.dt-hasChild td.dt-control:before {
+    content: "-";
+    background-color: #d33333
+}
+
+table.dataTable {
+    width: 100%;
+    margin: 0 auto;
+    clear: both;
+    border-collapse: separate;
+    border-spacing: 0
+}
+
+table.dataTable thead th,table.dataTable tfoot th {
+    font-weight: bold
+}
+
+table.dataTable thead th,table.dataTable thead td {
+    padding: 10px 18px;
+    border-bottom: 1px solid #111
+}
+
+table.dataTable thead th:active,table.dataTable thead td:active {
+    outline: none
+}
+
+table.dataTable tfoot th,table.dataTable tfoot td {
+    padding: 10px 18px 6px 18px;
+    border-top: 1px solid #111
+}
+
+table.dataTable thead .sorting,table.dataTable thead .sorting_asc,table.dataTable thead .sorting_desc,table.dataTable thead .sorting_asc_disabled,table.dataTable thead .sorting_desc_disabled {
+    cursor: pointer;
+    cursor: hand;
+    background-repeat: no-repeat;
+    background-position: center right
+}
+
+table.dataTable thead .sorting {
+    background-image: url("../images/sort_both.png")
+}
+
+table.dataTable thead .sorting_asc {
+    background-image: url("../images/sort_asc.png") !important
+}
+
+table.dataTable thead .sorting_desc {
+    background-image: url("../images/sort_desc.png") !important
+}
+
+table.dataTable thead .sorting_asc_disabled {
+    background-image: url("../images/sort_asc_disabled.png")
+}
+
+table.dataTable thead .sorting_desc_disabled {
+    background-image: url("../images/sort_desc_disabled.png")
+}
+
+table.dataTable tbody tr {
+    background-color: #fff
+}
+
+table.dataTable tbody tr.selected {
+    background-color: #b0bed9
+}
+
+table.dataTable tbody th,table.dataTable tbody td {
+    padding: 8px 10px
+}
+
+table.dataTable.row-border tbody th,table.dataTable.row-border tbody td,table.dataTable.display tbody th,table.dataTable.display tbody td {
+    border-top: 1px solid #ddd
+}
+
+table.dataTable.row-border tbody tr:first-child th,table.dataTable.row-border tbody tr:first-child td,table.dataTable.display tbody tr:first-child th,table.dataTable.display tbody tr:first-child td {
+    border-top: none
+}
+
+table.dataTable.cell-border tbody th,table.dataTable.cell-border tbody td {
+    border-top: 1px solid #ddd;
+    border-right: 1px solid #ddd
+}
+
+table.dataTable.cell-border tbody tr th:first-child,table.dataTable.cell-border tbody tr td:first-child {
+    border-left: 1px solid #ddd
+}
+
+table.dataTable.cell-border tbody tr:first-child th,table.dataTable.cell-border tbody tr:first-child td {
+    border-top: none
+}
+
+table.dataTable.stripe tbody tr.odd,table.dataTable.display tbody tr.odd {
+    background-color: #f9f9f9
+}
+
+table.dataTable.stripe tbody tr.odd.selected,table.dataTable.display tbody tr.odd.selected {
+    background-color: #acbad4
+}
+
+table.dataTable.hover tbody tr:hover,table.dataTable.display tbody tr:hover {
+    background-color: #f6f6f6
+}
+
+table.dataTable.hover tbody tr:hover.selected,table.dataTable.display tbody tr:hover.selected {
+    background-color: #aab7d1
+}
+
+table.dataTable.order-column tbody tr>.sorting_1,table.dataTable.order-column tbody tr>.sorting_2,table.dataTable.order-column tbody tr>.sorting_3,table.dataTable.display tbody tr>.sorting_1,table.dataTable.display tbody tr>.sorting_2,table.dataTable.display tbody tr>.sorting_3 {
+    background-color: #fafafa
+}
+
+table.dataTable.order-column tbody tr.selected>.sorting_1,table.dataTable.order-column tbody tr.selected>.sorting_2,table.dataTable.order-column tbody tr.selected>.sorting_3,table.dataTable.display tbody tr.selected>.sorting_1,table.dataTable.display tbody tr.selected>.sorting_2,table.dataTable.display tbody tr.selected>.sorting_3 {
+    background-color: #acbad5
+}
+
+table.dataTable.display tbody tr.odd>.sorting_1,table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+    background-color: #f1f1f1
+}
+
+table.dataTable.display tbody tr.odd>.sorting_2,table.dataTable.order-column.stripe tbody tr.odd>.sorting_2 {
+    background-color: #f3f3f3
+}
+
+table.dataTable.display tbody tr.odd>.sorting_3,table.dataTable.order-column.stripe tbody tr.odd>.sorting_3 {
+    background-color: whitesmoke
+}
+
+table.dataTable.display tbody tr.odd.selected>.sorting_1,table.dataTable.order-column.stripe tbody tr.odd.selected>.sorting_1 {
+    background-color: #a6b4cd
+}
+
+table.dataTable.display tbody tr.odd.selected>.sorting_2,table.dataTable.order-column.stripe tbody tr.odd.selected>.sorting_2 {
+    background-color: #a8b5cf
+}
+
+table.dataTable.display tbody tr.odd.selected>.sorting_3,table.dataTable.order-column.stripe tbody tr.odd.selected>.sorting_3 {
+    background-color: #a9b7d1
+}
+
+table.dataTable.display tbody tr.even>.sorting_1,table.dataTable.order-column.stripe tbody tr.even>.sorting_1 {
+    background-color: #fafafa
+}
+
+table.dataTable.display tbody tr.even>.sorting_2,table.dataTable.order-column.stripe tbody tr.even>.sorting_2 {
+    background-color: #fcfcfc
+}
+
+table.dataTable.display tbody tr.even>.sorting_3,table.dataTable.order-column.stripe tbody tr.even>.sorting_3 {
+    background-color: #fefefe
+}
+
+table.dataTable.display tbody tr.even.selected>.sorting_1,table.dataTable.order-column.stripe tbody tr.even.selected>.sorting_1 {
+    background-color: #acbad5
+}
+
+table.dataTable.display tbody tr.even.selected>.sorting_2,table.dataTable.order-column.stripe tbody tr.even.selected>.sorting_2 {
+    background-color: #aebcd6
+}
+
+table.dataTable.display tbody tr.even.selected>.sorting_3,table.dataTable.order-column.stripe tbody tr.even.selected>.sorting_3 {
+    background-color: #afbdd8
+}
+
+table.dataTable.display tbody tr:hover>.sorting_1,table.dataTable.order-column.hover tbody tr:hover>.sorting_1 {
+    background-color: #eaeaea
+}
+
+table.dataTable.display tbody tr:hover>.sorting_2,table.dataTable.order-column.hover tbody tr:hover>.sorting_2 {
+    background-color: #ececec
+}
+
+table.dataTable.display tbody tr:hover>.sorting_3,table.dataTable.order-column.hover tbody tr:hover>.sorting_3 {
+    background-color: #efefef
+}
+
+table.dataTable.display tbody tr:hover.selected>.sorting_1,table.dataTable.order-column.hover tbody tr:hover.selected>.sorting_1 {
+    background-color: #a2aec7
+}
+
+table.dataTable.display tbody tr:hover.selected>.sorting_2,table.dataTable.order-column.hover tbody tr:hover.selected>.sorting_2 {
+    background-color: #a3b0c9
+}
+
+table.dataTable.display tbody tr:hover.selected>.sorting_3,table.dataTable.order-column.hover tbody tr:hover.selected>.sorting_3 {
+    background-color: #a5b2cb
+}
+
+table.dataTable.no-footer {
+    border-bottom: 1px solid #111
+}
+
+table.dataTable.nowrap th,table.dataTable.nowrap td {
+    white-space: nowrap
+}
+
+table.dataTable.compact thead th,table.dataTable.compact thead td {
+    padding: 4px 17px
+}
+
+table.dataTable.compact tfoot th,table.dataTable.compact tfoot td {
+    padding: 4px
+}
+
+table.dataTable.compact tbody th,table.dataTable.compact tbody td {
+    padding: 4px
+}
+
+table.dataTable th,table.dataTable td {
+    box-sizing: content-box
+}
+
+.dataTables_wrapper {
+    position: relative;
+    clear: both
+}
+
+.dataTables_wrapper .dataTables_length {
+    float: left
+}
+
+.dataTables_wrapper .dataTables_length select {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: transparent;
+    padding: 4px
+}
+
+.dataTables_wrapper .dataTables_filter {
+    float: right;
+    text-align: right
+}
+
+.dataTables_wrapper .dataTables_filter input {
+    border: 1px solid #aaa;
+    border-radius: 3px;
+    padding: 5px;
+    background-color: transparent;
+    margin-left: 3px
+}
+
+.dataTables_wrapper .dataTables_info {
+    clear: both;
+    float: left;
+    padding-top: .755em
+}
+
+.dataTables_wrapper .dataTables_paginate {
+    float: right;
+    text-align: right;
+    padding-top: .25em
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button {
+    box-sizing: border-box;
+    display: inline-block;
+    min-width: 1.5em;
+    padding: .5em 1em;
+    margin-left: 2px;
+    text-align: center;
+    text-decoration: none !important;
+    cursor: pointer;
+    cursor: hand;
+    border: 1px solid transparent;
+    border-radius: 2px
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.current,.dataTables_wrapper .dataTables_paginate .paginate_button.current:hover {
+    color: #333 !important;
+    border: 1px solid #979797;
+    background-color: white;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, white), color-stop(100%, #dcdcdc));
+    background: -webkit-linear-gradient(top, white 0%, #dcdcdc 100%);
+    background: -moz-linear-gradient(top, white 0%, #dcdcdc 100%);
+    background: -ms-linear-gradient(top, white 0%, #dcdcdc 100%);
+    background: -o-linear-gradient(top, white 0%, #dcdcdc 100%);
+    background: linear-gradient(to bottom, white 0%, #dcdcdc 100%)
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button.disabled,.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:hover,.dataTables_wrapper .dataTables_paginate .paginate_button.disabled:active {
+    cursor: default;
+    border: 1px solid transparent;
+    background: transparent;
+    box-shadow: none
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:hover {
+    color: white !important;
+    border: 1px solid #111;
+    background-color: #585858;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #585858), color-stop(100%, #111));
+    background: -webkit-linear-gradient(top, #585858 0%, #111 100%);
+    background: -moz-linear-gradient(top, #585858 0%, #111 100%);
+    background: -ms-linear-gradient(top, #585858 0%, #111 100%);
+    background: -o-linear-gradient(top, #585858 0%, #111 100%);
+    background: linear-gradient(to bottom, #585858 0%, #111 100%)
+}
+
+.dataTables_wrapper .dataTables_paginate .paginate_button:active {
+    outline: none;
+    background-color: #2b2b2b;
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%, #2b2b2b), color-stop(100%, #0c0c0c));
+    background: -webkit-linear-gradient(top, #2b2b2b 0%, #0c0c0c 100%);
+    background: -moz-linear-gradient(top, #2b2b2b 0%, #0c0c0c 100%);
+    background: -ms-linear-gradient(top, #2b2b2b 0%, #0c0c0c 100%);
+    background: -o-linear-gradient(top, #2b2b2b 0%, #0c0c0c 100%);
+    background: linear-gradient(to bottom, #2b2b2b 0%, #0c0c0c 100%);
+    box-shadow: inset 0 0 3px #111
+}
+
+.dataTables_wrapper .dataTables_paginate .ellipsis {
+    padding: 0 1em
+}
+
+.dataTables_wrapper .dataTables_processing {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 100%;
+    height: 40px;
+    margin-left: -50%;
+    margin-top: -25px;
+    padding-top: 20px;
+    text-align: center;
+    font-size: 1.2em;
+    background-color: white;
+    background: -webkit-gradient(linear, left top, right top, color-stop(0%, rgba(255, 255, 255, 0)), color-stop(25%, rgba(255, 255, 255, 0.9)), color-stop(75%, rgba(255, 255, 255, 0.9)), color-stop(100%, rgba(255, 255, 255, 0)));
+    background: -webkit-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -moz-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -ms-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+    background: -o-linear-gradient(left, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%);
+    background: linear-gradient(to right, rgba(255, 255, 255, 0) 0%, rgba(255, 255, 255, 0.9) 25%, rgba(255, 255, 255, 0.9) 75%, rgba(255, 255, 255, 0) 100%)
+}
+.dataTables_wrapper .dataTables_scroll {
+    clear: both
+}
+
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody {
+    margin-top: -1px;
+    -webkit-overflow-scrolling: touch
+}
+
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>thead>tr>th,.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>thead>tr>td,.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>tbody>tr>th,.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>tbody>tr>td {
+    vertical-align: middle
+}
+
+.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>thead>tr>th>div.dataTables_sizing,.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>thead>tr>td>div.dataTables_sizing,.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>tbody>tr>th>div.dataTables_sizing,.dataTables_wrapper .dataTables_scroll div.dataTables_scrollBody>table>tbody>tr>td>div.dataTables_sizing {
+    height: 0;
+    overflow: hidden;
+    margin: 0 !important;
+    padding: 0 !important
+}
+
+.dataTables_wrapper.no-footer .dataTables_scrollBody {
+    border-bottom: 1px solid #111
+}
+
+.dataTables_wrapper.no-footer div.dataTables_scrollHead table.dataTable,.dataTables_wrapper.no-footer div.dataTables_scrollBody>table {
+    border-bottom: none
+}
+
+.dataTables_wrapper:after {
+    visibility: hidden;
+    display: block;
+    content: "";
+    clear: both;
+    height: 0
+}
+
+@media screen and (max-width: 767px) {
+    .dataTables_wrapper .dataTables_info,.dataTables_wrapper .dataTables_paginate {
+        float:none;
+        text-align: center
+    }
+
+    .dataTables_wrapper .dataTables_paginate {
+        margin-top: .5em
+    }
+}
+
+@media screen and (max-width: 640px) {
+    .dataTables_wrapper .dataTables_length,.dataTables_wrapper .dataTables_filter {
+        float:none;
+        text-align: center
+    }
+
+    .dataTables_wrapper .dataTables_filter {
+        margin-top: .5em
+    }
+    .dataTables_wrapper .dataTables_filter input{
+        margin-bottom: 1em;
+    }
+}
+
+
+.dashboard {
+    padding: 20px;
+}
+
+.row {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.card {
+
+    border-radius: 8px;
+    padding: 20px;
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.card h2 {
+    font-size: 1em;
+}
+
+.details-btn {
+    margin-top: 10px;
+    padding: 10px 20px;
+
+    border: none;
+    cursor: pointer;
+}
+
+.details-btn i {
+    margin-left: 5px;
+}
+
+@media (min-width: 768px) {
+    .card {
+        width: 48%;
+    }
+    
+    
+}
+@media (min-width: 1024px) {
+    .card {
+        width: 30%;
+    }}
+
+    button {
+            background-color: #000000;
+            padding: 10px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            color: #f6f6f6;
+        }
+
+button:hover {
+    background-color: #000000;
+}
+.dropbtn{
+    margin: 0;
+}
+
+.table-responsive {
+    width: 100%;
+    overflow-x: auto;
+}
+
+#apartments-table {
+    width: 100%;
+    border-collapse: collapse;
+    table-layout: auto; 
+}
+
+
+@media only screen and (max-width: 668px) {
+    .table-responsive {
+        overflow-x: scroll;
+        -webkit-overflow-scrolling: touch; 
+        white-space: nowrap;
+        touch-action: pan-x; 
+    }
+
+    #apartments-table {
+        display: block;
+        width: auto; 
+        white-space: nowrap; 
+    }
+
+
+    #apartments-table th, #apartments-table td {
+        font-size: 12px; 
+        padding: 8px;
+    }
+}
+@media (max-width: 668px) {
+
+    table {
+        display: block;
+        width: auto; 
+        white-space: nowrap; /
+    }
+    .btn-edit, .btn-delete,.btn-disable ,.btn-export{
+    margin-top: 0;
+    }
+    .btn-print,.btn-disable,.btn-export ,.btn-edit{
+        font-size: 12px; /* تصغير حجم الخط */
+        padding: 5px 10px; /* تقليل حجم التباعد الداخلي */
+        border-radius: 3px; /* تغيير حواف الزر */
+        width: auto; /* تعديل العرض */
+        height: auto; /* تعديل الارتفاع */
+    }
+    
+    .btn-print i,.btn-disable,.btn-export ,.btn-edit{
+        font-size: 10px; /* تصغير حجم الأيقونة */
+    }
+.btn-export{
+    margin-bottom: 0;
+    margin-top: 0px;
+}
+}
+/* Light Mode (Default) */
+.fas.fa-bars {
+    color: #333; /* لون الأيقونة في الوضع الافتراضي */
+  }
+  
+  /* Dark Mode */
+  .dark-mode .fas.fa-bars {
+    color: #e0e0e0; /* لون الأيقونة في الوضع الداكن */
+  }
+  /* Light Mode (Default) */
+td {
+  background-color: #ffffff; /* خلفية بيضاء */
+  color: #333; /* نص غامق */
+}
+
+/* Dark Mode */
+.dark-mode td {
+  background-color: #3a3a3a; /* خلفية داكنة */
+  color: #e0e0e0; /* نص فاتح */
+}
+/* Light Mode (Default) */
+.sorting_1 {
+    background-color: #ffffff; /* خلفية بيضاء */
+    color: #333; /* نص غامق */
+  }
+  
+/* Dark Mode */
+.dark-mode .sorting_1 {
+    background-color: #3a3a3a !important; /* خلفية داكنة */
+    color: #e0e0e0 !important; /* نص فاتح */
+}
+
+#apartments-table th, 
+#apartments-table td {
+    text-align: center; /* محاذاة النصوص في الوسط */
+}
+
+/* تخصيص التصميم للهواتف */
+@media only screen and (max-width: 768px) {
+    #apartments-table th, 
+    #apartments-table td {
+        width: auto; /* تجعل العرض تلقائيًا يتناسب مع المحتوى */
+    }
+}
+#apartments-table {
+    width: 100%;
+
+}
+
+#apartments-table th, 
+#apartments-table td {
+    text-align: center; /* محاذاة النصوص في الوسط */
+}
+
+/* تخصيص التصميم للهواتف */
+@media only screen and (max-width: 768px) {
+    #apartments-table th, 
+    #apartments-table td {
+        width: auto; /* تجعل العرض تلقائيًا يتناسب مع المحتوى */
+    }
+}
+
+/* تخصيص التصميم لشاشات أصغر من 480px */
+@media  (max-width: 480px) {
+    #apartments-table th, 
+    #apartments-table td {
+        width: 100%; /* تجعل العرض تلقائيًا يتناسب مع المحتوى */
+    }
+}
+.rental-form button {
+    margin-bottom: 1em;
+}
+
+.dt-button, .buttons-pdf, .buttons-html5, .btn-export {
+    margin-bottom: 1em;
+}
+/* Light Mode (الوضع العادي) */
+.btn-print {
+    background-color: #ffffff; /* خلفية بيضاء */
+    color: #333; /* لون النص داكن */
+    border: 1px solid #ccc; /* إطار */
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover Effect in Light Mode */
+.btn-print:hover {
+    background-color: #f0f0f0; /* لون الخلفية عند تمرير الماوس */
+    color: #000; /* لون النص عند تمرير الماوس */
+    border-color: #bbb; /* تغيير لون الإطار عند تمرير الماوس */
+}
+
+/* Dark Mode (الوضع الداكن) */
+.dark-mode .btn-print {
+    background-color: #3a3a3a; /* خلفية داكنة */
+    color: #e0e0e0; /* نص فاتح */
+    border: 1px solid #555; /* إطار داكن */
+}
+/* Light Mode (الوضع العادي) */
+.btn-export {
+    background-color: #ffffff; /* خلفية بيضاء */
+    color: #333; /* لون النص داكن */
+    border: 1px solid #ccc; /* إطار */
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+/* Hover Effect in Light Mode */
+.btn-export:hover {
+    background-color: #f0f0f0; /* لون الخلفية عند تمرير الماوس */
+    color: #000; /* لون النص عند تمرير الماوس */
+    border-color: #bbb; /* تغيير لون الإطار عند تمرير الماوس */
+}
+
+/* Dark Mode (الوضع الداكن) */
+.dark-mode .btn-export {
+    background-color: #3a3a3a; /* خلفية داكنة */
+    color: #e0e0e0; /* نص فاتح */
+    border: 1px solid #555; /* إطار داكن */
+}
+
+/* From Uiverse.io by TimTrayler */ 
+.switchs {
+ --secondary-container: #3a4b39;
+ --primary: #84da89;
+ font-size: 17px;
+ position: relative;
+ display: inline-block;
+ width: 3.7em;
+ height: 1.8em;
+}
+
+.switchs input {
+ display: none;
+ opacity: 0;
+ width: 0;
+ height: 0;
+}
+
+.sliders {
+ position: absolute;
+ cursor: pointer;
+ top: 0;
+ left: 0;
+ right: 0;
+ bottom: 0;
+ background-color: #313033;
+ transition: .2s;
+ border-radius: 30px;
+}
+
+.sliders:before {
+ position: absolute;
+ content: "";
+ height: 1.4em;
+ width: 1.4em;
+ border-radius: 20px;
+ left: 0.2em;
+ bottom: 0.2em;
+ background-color: #aeaaae;
+ transition: .4s;
+}
+
+input:checked + .sliders::before {
+ background-color: var(--primary);
+}
+
+input:checked + .sliders {
+ background-color: var(--secondary-container);
+}
+
+input:focus + .sliders {
+ box-shadow: 0 0 1px var(--secondary-container);
+}
+
+input:checked + .sliders:before {
+ transform: translateX(1.9em);
+}
+/* From Uiverse.io by Shoh2008 */ 
+.checkbox-wrapper-4 * {
+    box-sizing: border-box;
+    color: white;
+  }
+  
+  .checkbox-wrapper-4 .cbx {
+    -webkit-user-select: none;
+    user-select: none;
+    cursor: pointer;
+    padding: 6px 8px;
+    border-radius: 6px;
+    overflow: hidden;
+    transition: all 0.2s ease;
+    display: inline-block;
+  }
+  
+  .checkbox-wrapper-4 .cbx:not(:last-child) {
+    margin-right: 6px;
+  }
+  
+  .checkbox-wrapper-4 .cbx:hover {
+    background: rgba(0, 119, 255, 0);
+  }
+  
+  .checkbox-wrapper-4 .cbx span {
+    float: left;
+    vertical-align: middle;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .checkbox-wrapper-4 .cbx span:first-child {
+    position: relative;
+    width: 18px;
+    height: 18px;
+    border-radius: 4px;
+    transform: scale(1);
+    border: 1px solid #cccfdb;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 1px rgba(0,16,75,0.05);
+  }
+  
+  .checkbox-wrapper-4 .cbx span:first-child svg {
+    position: absolute;
+    top: 3px;
+    left: 2px;
+    fill: none;
+    stroke: #fff;
+    stroke-width: 2;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 16px;
+    stroke-dashoffset: 16px;
+    transition: all 0.3s ease;
+    transition-delay: 0.1s;
+    transform: translate3d(0, 0, 0);
+  }
+  
+  .checkbox-wrapper-4 .cbx span:last-child {
+    padding-left: 8px;
+    line-height: 18px;
+  }
+  
+  .checkbox-wrapper-4 .cbx:hover span:first-child {
+    border-color: #07f;
+  }
+  
+  .checkbox-wrapper-4 .inp-cbx {
+    position: absolute;
+    visibility: hidden;
+  }
+  
+  .checkbox-wrapper-4 .inp-cbx:checked + .cbx span:first-child {
+    background: #07f;
+    border-color: #07f;
+    animation: wave-4 0.4s ease;
+  }
+  
+  .checkbox-wrapper-4 .inp-cbx:checked + .cbx span:first-child svg {
+    stroke-dashoffset: 0;
+  }
+  
+  .checkbox-wrapper-4 .inline-svg {
+    position: absolute;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    user-select: none;
+  }
+  
+  @media screen and (max-width: 640px) {
+    .checkbox-wrapper-4 .cbx {
+      width: 100%;
+      display: inline-block;
+    }
+  }
+  
+  @-moz-keyframes wave-4 {
+    50% {
+      transform: scale(0.9);
+    }
+  }
+  
+  @-webkit-keyframes wave-4 {
+    50% {
+      transform: scale(0.9);
+    }
+  }
+  
+  @-o-keyframes wave-4 {
+    50% {
+      transform: scale(0.9);
+    }
+  }
+  
+  @keyframes wave-4 {
+    50% {
+      transform: scale(0.9);
+    }
+  }
+ .charts-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: flex-start; 
+    margin: 20px 0;
+    padding-right: 1%; 
+}
+
+.chart-container {
+    width: 45%;
+    margin-bottom: 20px;
+}
+
+@media (max-width: 768px) {
+    .chart-container {
+        width: 100%; 
+    }
+     .charts-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 30px 30px;
+        padding-left: 35px;
+}
+    .chart-title {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+        padding-right: 20%; /* إضافة مساحة فارغة على اليمين */
+
+}
+}
+
+/* تنسيق العناوين */
+.chart-title {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+        padding-right: 5%; /* إضافة مساحة فارغة على اليمين */
+
+}
+
+canvas {
+    width: 90% !important;
+    height: 400px !important; /* ضبط ارتفاع الرسم البياني */
 }

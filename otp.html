@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>إعادة تعيين كلمة السر</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="otp.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-r">
+            <label class="switch">
+                <span class="sun">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <!-- SVG content omitted for brevity -->
+                    </svg>
+                </span>
+                <span class="moon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <!-- SVG content omitted for brevity -->
+                    </svg>
+                </span>
+                <input type="checkbox" class="input" id="mode-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="dashboard-text1">
+            <span style="    font-size: 1.2em;
+    font-weight: bold;">نظام إدارة تأجير العقارات</span>
+        </div> 
+    </div>
+
+    <div class="container">
+        <!-- إدخال رقم الهاتف -->
+        <div id="phone-section">
+            <header>
+                <img src="house-512 (1).png" alt="shield" />
+            </header>
+            <h4>أدخل رقم الهاتف</h4>
+            <form id="phone-form" action="#">
+                <div class="input-field phone-input">
+                    <!-- إضافة اختيار كود الدولة -->
+<select id="country-code">
+        <option value="+90">تركيا (+90)</option> 
+
+    <option value="+20">مصر (+20)</option>
+    <option value="+966">السعودية (+966)</option>
+    <option value="+971">الإمارات (+971)</option>
+    <option value="+962">الأردن (+962)</option>
+    <option value="+965">الكويت (+965)</option>
+    <option value="+973">البحرين (+973)</option>
+    <option value="+968">عمان (+968)</option>
+    <option value="+964">العراق (+964)</option>
+    <option value="+218">ليبيا (+218)</option>
+    <option value="+212">المغرب (+212)</option>
+    <option value="+961">لبنان (+961)</option>
+    <option value="+216">تونس (+216)</option>
+    <option value="+213">الجزائر (+213)</option>
+    <option value="+967">اليمن (+967)</option>
+    <option value="+963">سوريا (+963)</option>
+    <option value="+249">السودان (+249)</option>
+    <option value="+222">موريتانيا (+222)</option>
+    <option value="+90">تركيا (+90)</option> 
+</select>
+
+                    <!-- إدخال الرقم المتبقي -->
+                    <input type="number" id="phone-number" placeholder="أدخل الرقم" maxlength="10" />
+                </div>
+                <button class="send-code">إرسال الكود</button>
+            </form>
+        </div>
+
+        <!-- إدخال الكود -->
+        <div id="code-section" style="display: none;">
+            <header>
+                <img src="house-512 (1).png" alt="shield" />
+            </header>
+            <h4>أدخل الكود</h4>
+            <form id="code-form" action="#">
+                <div class="input-field1 code-input">
+                    <input type="number" maxlength="1" />
+                    <input type="number" maxlength="1" disabled />
+                    <input type="number" maxlength="1" disabled />
+                    <input type="number" maxlength="1" disabled />
+                    <input type="number" maxlength="1" disabled />
+                    <input type="number" maxlength="1" disabled />
+                </div>
+<button class="verify-code" disabled>تحقق</button>            </form>
+        </div>
+    </div>
+
+    <script src="otp.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>

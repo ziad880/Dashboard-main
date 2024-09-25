@@ -3,9 +3,10 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>تقرير الإيجارات</title>
+    <title>التقارير </title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 <body>
  <div class="header">
@@ -41,7 +42,7 @@
             </label>
         </div>
         <div class="dashboard-text">
-            <span> أوروك للطيران</span>
+            <span> نظام إدارة تأجير العقارات</span>
         </div>
         <button class="sidebar-toggle" onclick="toggleSidebar()">
             <i class="fas fa-bars"></i>
@@ -58,49 +59,48 @@
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
             </div>
         </div>
-
         <ul class="sidebar-menu">
-                        <li><a href="index.html" class="sidebar-item">
+            <li><a href="index.html" class="sidebar-item">
                 <i class="fas fa-home"></i> <span>الصفحة الرئيسية</span>
             </a></li>
-<li class="sidebar-item-with-submenu">
-    <a href="apartments.html" class="sidebar-item">
-        <i class="fas fa-building"></i> 
-        <span>الشقق</span>
-    </a>
-    <ul class="submenu">
-        <li><a href="add-apartment.html" class="sidebar-item">                    <i class="fas fa-list "></i>
-اضافة شقة   </a></li>
-        <li><a href="all-apartments.html" class="sidebar-item">                    <i class="fas fa-building "></i>
- جميع الشقق</a></li>
-    </ul>
-</li>
+            <li class="sidebar-item-with-submenu">
+                <a href="apartments.html" class="sidebar-item">
+                    <i class="fas fa-building"></i> 
+                    <span>الشقق</span>
+                </a>
+            </li>
+            <li class="sidebar-item-with-submenu">
+                <a href="outlay.html" class="sidebar-item">
+<i class="fa-solid fa-money-bill"></i>
+                    <span>المصاريف</span>
+                </a>
+            </li>
             <li><a href="rental.html" class="sidebar-item">
-                <i class="fas fa-key"></i> <span>التأجير</span>
+                <i class="fas fa-calendar-check"></i> <span>التأجير</span>
+            </a></li>
+                        <li><a href="rent-from-owner.html" class="sidebar-item">
+                <i class="fa-solid fa-building-user"></i> <span>تأجير من المالك</span>
             </a></li>
             <li><a href="contracts.html" class="sidebar-item">
-                <i class="fas fa-file-contract"></i> <span>العقود</span>
+                <i class="fas fa-file-signature"></i> <span>العقود</span>
             </a></li>
             <li><a href="owners.html" class="sidebar-item">
-                <i class="fas fa-file-alt"></i> <span>أصحاب الشقق</span>
+                <i class="fas fa-users"></i> <span>أصحاب الشقق</span>
             </a></li>
             <li><a href="expenses.html" class="sidebar-item">
-                <i class="fas fa-money-check-alt"></i> <span>النثرية</span>
+                <i class="fas fa-wallet"></i> <span>النثرية</span>
             </a></li>
             <li><a href="rental-report.html" class="sidebar-item">
-                <i class="fas fa-file-alt"></i> <span>تقرير الإيجارات</span>
-            </a></li>
-            <li><a href="expenses-report.html" class="sidebar-item">
-                <i class="fas fa-money-check-alt"></i> <span>تقرير المصاريف</span>
-            </a></li>
-            <li><a href="owners-report.html" class="sidebar-item">
-                <i class="fas fa-file-alt"></i> <span>تقرير أصحاب الشقق</span>
-            </a></li>
-            <li><a href="inventory.html" class="sidebar-item">
-                <i class="fas fa-list"></i> <span>الجرود الكلي للشقق</span>
+                <i class="fas fa-chart-line"></i> <span>التقارير </span>
             </a></li>
             <li><a href="system-cards.html" class="sidebar-item">
-                <i class="fas fa-file-alt"></i> <span>بطاقات النظام</span>
+                <i class="fas fa-credit-card"></i> <span>بطاقات النظام</span>
+            </a></li>            
+            <li><a href="account.html" class="sidebar-item">
+                <i class="fas fa-user"></i> <span> المستخدمين</span>
+            </a></li>
+            <li><a href="Permissions.html" class="sidebar-item">
+                <i class="fas fa-check-circle"></i> <span> الصلاحيات</span>
             </a></li>
         </ul>
     </nav>
@@ -108,31 +108,54 @@
     <div class="content">
         <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - تقرير الإيجارات
-                    <a id="lf" href=""><i class="fa-solid fa-circle-right"></i></a>
+                <div class="breadcrumb-item">الرئيسية - التقارير 
+                    <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="#">الرئيسية</a>
+                    <a href="rental-report.html">التقارير </a>
                     <p>/</p>
-                    <a href="#">تقرير الإيجارات</a>
-                    <i class="fa-solid fa-file-alt"></i>
+                    <a href="index.html">الرئيسية</a>
+                    <i class="fas fa-chart-line"></i>
                 </div>
             </div>
         </div>
 
         <div class="dashboard">
-            <h2>تقرير الإيجارات</h2>
+            <h2>إدارة التقارير </h2>
             <div class="row">
                 <div class="card">
-                    <i class="fas fa-file-alt fa-2x"></i>
-                    <h2>عرض تقرير</h2>
-                    <button class="details-btn"><i class="fas fa-arrow-left"></i> عرض تقرير الإيجارات</button>
+                    <i class="fas fa-chart-pie fa-2x"></i>
+                    <h2>تقرير مصاريف الشقق</h2>
+                    <button class="details-btn" onclick="window.location.href='expenses-report.html';">
+                        انتقال <i class="fas fa-arrow-left"></i>  
+                   </button> 
+                </div>
+                <div class="card">
+                    <i class="fas fa-file-signature fa-2x"></i>
+                    <h2>تقرير الإيجار</h2>
+                    <button class="details-btn" onclick="window.location.href='Rent-report.html';">
+                        انتقال <i class="fas fa-arrow-left"></i>  
+                   </button> 
                 </div>
                 <div class="card">
                     <i class="fas fa-file-alt fa-2x"></i>
-                    <h2>تحميل التقرير</h2>
-                    <button class="details-btn"><i class="fas fa-arrow-left"></i> تحميل تقرير الإيجارات</button>
+                    <h2>تقرير دفع الإيجار </h2>
+                    <button class="details-btn" onclick="window.location.href='Rent-payment-report.html';">
+                        انتقال <i class="fas fa-arrow-left"></i>  
+                </div>
+                <div class="card">
+                    <i class="fas fa-user-tag fa-2x"></i>
+                    <h2>تقرير التأجير من المالك </h2>
+                    <button class="details-btn" onclick="window.location.href='Rental-report-from-owner.html';">
+                        انتقال <i class="fas fa-arrow-left"></i>  
+                </div>
+                <div class="card">
+                    <i class="fa-solid fa-money-bill fa-2x"></i>
+                    <h2>تقرير النثرية  </h2>
+                    <button class="details-btn" onclick="window.location.href='Sundry-report.html';">
+                        انتقال <i class="fas fa-arrow-left"></i>  
+                   </button> 
                 </div>
             </div>
         </div>

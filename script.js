@@ -4,28 +4,11 @@
         document.getElementById('mode-toggle').checked = isDarkMode;
         toggleDarkMode(isDarkMode);
     };
-
-window.onload = function() {
-    // تحقق مما إذا كان الوضع الداكن مفعلًا في localStorage
-    const isDarkMode = localStorage.getItem('darkMode') === 'true';
-    
-    // ضبط الزر بناءً على الحالة المحفوظة
-    document.getElementById('mode-toggle').checked = isDarkMode;
-    
-    // تفعيل الوضع الداكن إذا كان محفوظًا
-    toggleDarkMode(isDarkMode);
-};
-
-document.getElementById('mode-toggle').addEventListener('change', function() {
-    // تغيير الوضع بناءً على حالة الزر
-    const isDarkMode = this.checked;
-    
-    // تطبيق الوضع الداكن على العناصر المختلفة
-    toggleDarkMode(isDarkMode);
-    
-    // حفظ الحالة في localStorage
-    localStorage.setItem('darkMode', isDarkMode);
-});
+    document.getElementById('mode-toggle').addEventListener('change', function() {
+        const isChecked = this.checked;
+        localStorage.setItem('darkMode', isChecked);
+        toggleDarkMode(isChecked);
+    });
 
 function toggleDarkMode(isDarkMode) {
     document.body.classList.toggle('dark-mode', isDarkMode);
@@ -50,6 +33,19 @@ function toggleDarkMode(isDarkMode) {
     document.getElementById('lf').classList.toggle('dark-mode', isDarkMode);
     document.querySelectorAll('.social-container .social i').forEach(icon => icon.classList.toggle('dark-mode', isDarkMode));
     document.querySelectorAll('.sidebar-item').forEach(icon => icon.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.user-info a').forEach(icon => icon.classList.toggle('dark-mode', isDarkMode));
+    document.body.classList.toggle('dark-mode', isDarkMode);
+    document.querySelector('.header').classList.toggle('dark-mode', isDarkMode);
+    document.querySelector('.sidebar').classList.toggle('dark-mode', isDarkMode);
+    document.querySelector('#apartments-table').classList.toggle('dark-mode', isDarkMode);
+    // Toggle dark mode for sorting elements
+    document.querySelectorAll('.sorting_1').forEach(sort => sort.classList.toggle('dark-mode', isDarkMode));
+
+    // Apply dark mode to DataTables buttons
+    document.querySelectorAll('.dt-button').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.buttons-pdf').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.buttons-html5').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+    document.querySelectorAll('.btn-export').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
 }
     
 function toggleSidebar() {
@@ -66,4 +62,16 @@ signUpButton.addEventListener('click', () => {
 
 signInButton.addEventListener('click', () => {
 	container.classList.remove("right-panel-active");
+});
+document.getElementById('select-all').addEventListener('change', function() {
+  const checkboxes = document.querySelectorAll('.permission-checkbox');
+  checkboxes.forEach(checkbox => checkbox.checked = this.checked);
+});
+
+document.querySelectorAll('.permission-checkbox').forEach(checkbox => {
+  checkbox.addEventListener('change', function() {
+    const selectAll = document.getElementById('select-all');
+    const allChecked = Array.from(document.querySelectorAll('.permission-checkbox')).every(cb => cb.checked);
+    selectAll.checked = allChecked;
+  });
 });

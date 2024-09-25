@@ -5,7 +5,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>جميع الشقق</title>
     <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
 </head>
 <body>
     <div class="header">
@@ -41,7 +42,7 @@
             </label>
         </div>
         <div class="dashboard-text">
-            <span> أوروك للطيران</span>
+            <span> نظام إدارة تأجير العقارات</span>
         </div>
         <button class="sidebar-toggle" onclick="toggleSidebar()">
             <i class="fas fa-bars"></i>
@@ -58,49 +59,48 @@
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
             </div>
         </div>
-
         <ul class="sidebar-menu">
-                        <li><a href="index.html" class="sidebar-item">
+            <li><a href="index.html" class="sidebar-item">
                 <i class="fas fa-home"></i> <span>الصفحة الرئيسية</span>
             </a></li>
-<li class="sidebar-item-with-submenu">
-    <a href="apartments.html" class="sidebar-item">
-        <i class="fas fa-building"></i> 
-        <span>الشقق</span>
-    </a>
-    <ul class="submenu">
-        <li><a href="add-apartment.html" class="sidebar-item">                    <i class="fas fa-list "></i>
-اضافة شقة   </a></li>
-        <li><a href="all-apartments.html" class="sidebar-item">                    <i class="fas fa-building "></i>
- جميع الشقق</a></li>
-    </ul>
-</li>
+            <li class="sidebar-item-with-submenu">
+                <a href="apartments.html" class="sidebar-item">
+                    <i class="fas fa-building"></i> 
+                    <span>الشقق</span>
+                </a>
+            </li>
+            <li class="sidebar-item-with-submenu">
+                <a href="outlay.html" class="sidebar-item">
+<i class="fa-solid fa-money-bill"></i>
+                    <span>المصاريف</span>
+                </a>
+            </li>
             <li><a href="rental.html" class="sidebar-item">
-                <i class="fas fa-key"></i> <span>التأجير</span>
+                <i class="fas fa-calendar-check"></i> <span>التأجير</span>
+            </a></li>
+                        <li><a href="rent-from-owner.html" class="sidebar-item">
+                <i class="fa-solid fa-building-user"></i> <span>تأجير من المالك</span>
             </a></li>
             <li><a href="contracts.html" class="sidebar-item">
-                <i class="fas fa-file-contract"></i> <span>العقود</span>
+                <i class="fas fa-file-signature"></i> <span>العقود</span>
             </a></li>
             <li><a href="owners.html" class="sidebar-item">
-                <i class="fas fa-file-alt"></i> <span>أصحاب الشقق</span>
+                <i class="fas fa-users"></i> <span>أصحاب الشقق</span>
             </a></li>
             <li><a href="expenses.html" class="sidebar-item">
-                <i class="fas fa-money-check-alt"></i> <span>النثرية</span>
+                <i class="fas fa-wallet"></i> <span>النثرية</span>
             </a></li>
             <li><a href="rental-report.html" class="sidebar-item">
-                <i class="fas fa-file-alt"></i> <span>تقرير الإيجارات</span>
-            </a></li>
-            <li><a href="expenses-report.html" class="sidebar-item">
-                <i class="fas fa-money-check-alt"></i> <span>تقرير المصاريف</span>
-            </a></li>
-            <li><a href="owners-report.html" class="sidebar-item">
-                <i class="fas fa-file-alt"></i> <span>تقرير أصحاب الشقق</span>
-            </a></li>
-            <li><a href="inventory.html" class="sidebar-item">
-                <i class="fas fa-list"></i> <span>الجرود الكلي للشقق</span>
+                <i class="fas fa-chart-line"></i> <span>التقارير </span>
             </a></li>
             <li><a href="system-cards.html" class="sidebar-item">
-                <i class="fas fa-file-alt"></i> <span>بطاقات النظام</span>
+                <i class="fas fa-credit-card"></i> <span>بطاقات النظام</span>
+            </a></li>            
+            <li><a href="account.html" class="sidebar-item">
+                <i class="fas fa-user"></i> <span> المستخدمين</span>
+            </a></li>
+            <li><a href="Permissions.html" class="sidebar-item">
+                <i class="fas fa-check-circle"></i> <span> الصلاحيات</span>
             </a></li>
         </ul>
     </nav>
@@ -114,10 +114,10 @@
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
                     
-                    <a href="apartments.html">الشقق</a>
-                    <p>/</p>
                     <a href="all-apartments.html">جميع الشقق</a>
-                    <i class="fa-solid fa-house"></i>
+                    <p>/</p>
+                    <a href="apartments.html">الشقق</a>
+                    <i class="fas fa-building"></i>
                 </div>
             </div>
         </div>
@@ -125,48 +125,44 @@
     <!-- جدول الشقق -->
     <table id="apartments-table" class="display">
         <thead>
-        <tr>
-            <th>اسم الشقة</th>
-            <th>العنوان</th>
-            <th>المجمع</th>
-            <th>وضع الشقة</th>
-            <th>نوع التعاقد</th>
-            <th>الحالة</th>
-            <th>تاريخ الإضافة</th>
-            <th>المستخدم</th>
-            <th>الخيارات</th>
-        </tr>
+            <tr>
+                <th>الخيارات</th>
+                <th>الاسم</th>
+                <th> النوع</th>
+                <th>الحالة</th>
+                <th> التاريخ</th>
+                <th> المستخدم</th>
+
+            </tr>
+            
         </thead>
         <tbody>
         <!-- الصفوف الديناميكية -->
         <tr>
-            <td>شقة 1</td>
-            <td>الرياض</td>
-            <td>مجمع A</td>
-            <td>جاهزة</td>
-            <td>تعاقد سابق</td>
-            <td>نشطة</td>
-            <td>2024-09-10</td>
-            <td>admin</td>
             <td class="action-btns">
                 <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
                 <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
             </td>
+            <td>admin</td>
+            <td>2024-09-10</td>
+            <td>نشطة</td>
+            <td> 2024-09-12</td>
+            <td>-</td>
+
         </tr>
         <tr>
-            <td>شقة 2</td>
-            <td>جدة</td>
-            <td>مجمع B</td>
-            <td>غير جاهزة</td>
-            <td>تعاقد ساري</td>
-            <td>غير نشطة</td>
-            <td>2024-09-12</td>
-            <td>admin</td>
             <td class="action-btns">
                 <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
                 <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
             </td>
+            <td>admin</td>
+            <td>2024-09-12</td>
+            <td>غير نشطة</td>
+            <td> 2024-09-12</td>
+            <td> -</td>
+
         </tr>
+        
         <!-- المزيد من الصفوف -->
         </tbody>
     </table>
@@ -197,38 +193,45 @@
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
 
-
     <script>
-        $(document).ready(function() {
-            $('#apartments-table').DataTable({
-                dom: 'Bfrtip',
-                buttons: [
-                  
-                    {
+        pdfMake.fonts = {
+    Cairo: {
+        normal: 'Cairo-Regular.ttf',
+        bold: 'Cairo-Bold.ttf',
+    }
+};
+      $(document).ready(function() {
+    $('#apartments-table').DataTable({
+        dom: 'Bfrtip',
+        buttons: [ 
+            {
                         extend: 'excelHtml5',
                         text: '<i class="fas fa-file-excel"></i> تصدير Excel',
                         className: 'btn-export',
                         titleAttr: 'تصدير إلى Excel'
-                    }
-                ],
-                language: {
-                    "lengthMenu": "عرض _MENU_ شقق لكل صفحة",
-                    "zeroRecords": "لا توجد شقق متاحة",
-                    "info": "عرض الصفحة _PAGE_ من _PAGES_",
-                    "infoEmpty": "لا توجد شقق متاحة",
-                    "infoFiltered": "(تمت تصفية _MAX_ من الشقق)",
-                    "search": "بحث:",
-                    "paginate": {
-                        "next": "التالي",
-                        "previous": "السابق"
-                    }
+                    },
+            {
+                extend: 'pdfHtml5',
+                text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
+                className: 'btn-export',
+                titleAttr: 'تصدير إلى PDF',
+                customize: function (doc) {
+                    doc.defaultStyle = {
+                        font: 'Cairo',
+                        alignment: 'center'  // محاذاة النص لليمين
+                    };
+                    doc.styles.tableHeader = {
+                        font: 'Cairo',
+                        alignment: 'center'
+                    };
                 }
-            });
-        });
+            }
+        ]
+    });
+});
     </script>
-
-
 <script src="script.js"></script>
+<script src="vfs_fonts.js"></script>
 
 </body>
 </html>

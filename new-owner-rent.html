@@ -3,13 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>العقود</title>
+    <title> تأجير جديد  </title>
     <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
-   <div class="header">
+  <div class="header">
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
@@ -106,37 +105,49 @@
     </nav>
 
     <div class="content">
-        <div class="breadcrumb-container">
+         <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - العقود
-                    <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
+                <div class="breadcrumb-item">التأجير من المالك -   تأجير جديد
+                    <a id="lf" href="rent-from-owner.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="contracts.html">العقود</a>
+                    <a href="new-owner-rent.html">  تأجير جديد</a>
                     <p>/</p>
-                    <a href="index.html">الرئيسية</a>
-                    <i class="fas fa-file-signature"></i>
+                    <a href="rent-from-owner.html">التأجير من المالك</a>
+                    <i class="fa-solid fa-person-walking-luggage"></i>
                 </div>
             </div>
         </div>
-
-        <div class="dashboard">
-            <h2>إدارة العقود</h2>
-            <div class="row">
-                <div class="card">
-                    <i class="fas fa-file-contract fa-2x"></i>
-                    <h2>إضافة عقد</h2>
-<button class="details-btn" onclick="window.location.href='add-contract.html';">
-  انتقال <i class="fas fa-arrow-left"></i></button>                </div>
-                <div class="card">
-                    <i class="fas fa-list fa-2x"></i>
-                    <h2>جميع العقود</h2>
-<button class="details-btn" onclick="window.location.href='all-contracts.html';">
-  انتقال <i class="fas fa-arrow-left"></i></button>                    </div>
+        <form class="rental-form" enctype="multipart/form-data">
+            <label for="apartment"> الشقة:</label>
+           <select id="apartment" name="apartment" required>
+                <option value="">اختر شقة</option>
+                <option value="1">شقة 1</option>
+                <option value="2">شقة 2</option>
+            </select>
+            <label for="office-profit"> المبلغ  :</label>
+            <input type="number" id="office-profit" name="office-profit" step="0.01" required>
+ 
+             <form class="rental-form" enctype="multipart/form-data">
+            <label for="apartment"> المالك:</label>
+           <select id="apartment" name="apartment" required>
+                <option value=""> المالك</option>
+   
+            </select>
+            <div class="form-group">
+                <label for="start-date">التاريخ :</label>
+                <input type="text" id="start-date" name="start-date" placeholder="اختر تاريخ " required>
             </div>
-        </div>
+            <label for="receipt">إرفاق وصل دفع  :</label>
+            <input type="file" id="receipt" name="receipt" accept=".jpg, .jpeg, .png, .pdf" required>
+
+ 
+            <button type="submit">حفظ</button>
+            <button>تصدير وصل التسليم</button>
+        </form>
     </div>
+
 
 
 <script src="script.js"></script>

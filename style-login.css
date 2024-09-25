@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap');
 * {
     box-sizing: border-box;
+    font-family: "Noto Kufi Arabic", sans-serif;
 }
 
 body {
@@ -9,24 +10,21 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
     height: 100vh;
     margin: -20px 0 50px;
+    overflow: hidden; /* إلغاء التمرير */
 }
 
-
-
-
-
 span {
-    font-size: 20px;
+    font-size: 1em;
+    font-weight: bold;
 }
 
 a {
     color: #000000; /* لون داكن */
     font-size: 14px;
     text-decoration: none;
-    margin: 15px 0;
+    margin: 10px 0;
 }
 
 button {
@@ -73,6 +71,7 @@ input {
     border: 1px solid black;
     padding: 12px 15px;
     margin: 8px 0;
+    text-align: right; /* محاذاة النص داخل الإدخال إلى اليمين */
     border-radius: 5px;
     width: 100%;
 }
@@ -227,11 +226,26 @@ input {
     color: #555; /* لون رمادي أغمق */
 }
 /* إعدادات تذكرني و نسيت كلمة السر */
+.remember-me-container {
+    text-align: right; /* لمحاذاة المحتوى بالكامل لليمين */
+    width: 100%; /* لضمان أخذ العنصر الأب العرض الكامل */
+}
 
 .remember-me-label {
-    display: flex;
+    display: inline-flex;
     align-items: center;
-    color: black;
+    gap: 0;
+    margin: 0;
+    padding: 0;
+        flex-direction: row-reverse;
+
+}
+
+#remember {
+    margin: 0 5px 0 5px; 
+    padding: 0;
+    margin-top: .6em;
+    transform: scale(1); /* يمكن تعديل الحجم إذا كان صغيرًا أو كبيرًا */
 }
 
 /* Light mode (default) */
@@ -333,22 +347,32 @@ body.dark-mode input::placeholder {
     margin: 0 auto; /* يوسّط الصورة داخل الحاوية */
     max-height: 200px; /* يحدد الحد الأقصى لارتفاع الصورة (يمكنك تعديل القيمة حسب الحاجة) */
 }
+.remember-me-label span {
+    font-size: .9em;
+}
 /* Media Query for Mobile Devices */
 @media (max-width: 768px) {
+    .remember-me-label {
+    display: flex;
+    align-items: center;  
+    justify-content: flex-start; 
+    width: 100%; 
+    box-sizing: border-box;
+        width: 200px;
+ 
+}
 
     .container {
-        max-width: 85%;
+        max-width: 90%;
         padding: 20px;
         min-height: 22em; /* تقليل الطول على الشاشات الصغيرة */
     }
     input {
-        font-size: 10px; /* Increase font size for better readability */
         padding: 10px; /* Adjust padding for smaller screens */
         width: 170%;
     }
 
     button {
-        font-size: 1px; /* Increase font size */
         padding: 10px 30px; /* Adjust padding */
         margin-top: 5px; /* Reduce margin */
     }
@@ -361,19 +385,6 @@ body.dark-mode input::placeholder {
         max-width: 100%; /* Ensure image fits within the container */
         max-height: 150px; /* Adjust height for smaller screens */
     }
-
-    h1, h2 {
-        font-size: 1.1em;
-    }
-    .remember-me-label {
-    font-size: 7px;
-    }
-
-    span, a {
-        font-size: 6px; /* Adjust font size for better readability */
-            margin: 0px 0;
-    }
-
     .social-container a {
         height: 9px;
         width: 9px;
@@ -382,26 +393,67 @@ body.dark-mode input::placeholder {
         margin: 8px 0;
     }
     .slider:before {
-        height: 27px;
-        width: 27px;
-    }
-    .form-container{
-            font-size: 4px;
-    }
-    .form-container button {
-        font-size: 4px;
+        height: 29px;
+        width: 29px;
     }
     #remember {
         transform: scale(0.5); /* تصغير الحجم قليلاً */
     }
+    a {
+        font-size: .35rem;
+        margin: 5px 0;
+    }
+    .dashboard-text1 span {
+        font-size: 1em; /* Ensure consistent size */
+        font-weight: bold;
+}
+.remember-me-label {
+font-size: .7em;
+}
+.form-container input, .form-container button {
+    font-size: .1em;
+}
+.remember-me-label {
+display: flex;
+align-items: center;  
+justify-content: flex-start; 
+width: 100%; 
+box-sizing: border-box;
+    width: 200px;
+
+}
+input[type="checkbox"] {
+width: 20px;
+cursor: pointer;
+accent-color: #000000; 
+margin-left: 10px; 
+}
+.remember-me-label span {
+font-size: 10px;
+}
+.dashboard-text1 span {
+font-size: .8em;
+font-weight: bold;
+}
+span {
+    font-size: 6px;
+}
 }
 
 /* Extra small devices (phones, 480px and down) */
 @media (max-width: 480px) {
     h1 {
-        font-size: 18px;
+        font-size: 15px;
     }
-
+.remember-me-label {
+    display: flex;
+    align-items: center;  
+    justify-content: flex-start; 
+    width: 100%; 
+    box-sizing: border-box;
+        width: 200px;
+ 
+}
     h2 {
         font-size: 14px; /* Further reduce font size */
     }
@@ -410,11 +462,8 @@ body.dark-mode input::placeholder {
         font-size: 12px; /* Smaller font size */
         padding: 8px; /* Adjust padding */
     }
-    .form-container input{
 
-            font-size: 5px;
-
-    }
+    
     button {
         font-size: 12px; /* Ensure consistent size */
         padding: 8px 20px; /* Adjust padding */
@@ -422,3 +471,54 @@ body.dark-mode input::placeholder {
     }
     
 }
+.remember-me-label {
+    display: flex;
+    align-items: start;  
+    justify-content: flex-start; 
+    width: auto; 
+    box-sizing: border-box;
+
+}
+
+input[type="checkbox"] {
+    width: 20px;
+    cursor: pointer;
+    accent-color: #000000; 
+    margin-left: 10px; 
+}
+
+@media (max-width: 768px) {
+    .container {
+        max-width: 350px; /* تقليل الحد الأقصى للعرض */
+    }
+    
+    button {
+        font-size: 0.7rem; /* تصغير حجم النص في الأزرار */
+    }
+    
+    h1 {
+        font-size: 1rem; /* تقليل حجم العناوين */
+    }
+    .form-container button {
+        font-size: 0.2rem; /* حجم النص داخل الزر */
+
+    }
+    #remember {
+        margin-top: 4px;
+        transform: scale(0.7);
+        margin-right: -30px;
+    }
+}
+    .remember-me-label span {
+        margin-right: -5px;
+        font-weight: normal;
+    }
+    input::placeholder {
+        font-size: .6rem; /* حدد الحجم الذي تريده */
+    }
+    .social-container a {
+        border: none; /* لإزالة الحدود */
+        border-radius: 0; /* لإزالة الدائرة */
+        padding: 0; /* إزالة أي فراغات داخل الأيقونة */
+    }
+

@@ -3,13 +3,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>العقود</title>
+    <title>ادخال نثرية</title>
     <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
+        <link rel="stylesheet" href="https://cdn.datatables.net/1.11.5/css/jquery.dataTables.min.css">
+    <link rel="stylesheet" href="https://cdn.datatables.net/buttons/2.2.2/css/buttons.dataTables.min.css">
+
 </head>
 <body>
-   <div class="header">
+    <div class="header">
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
@@ -105,39 +108,116 @@
         </ul>
     </nav>
 
-    <div class="content">
-        <div class="breadcrumb-container">
+ <div class="content">
+     <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - العقود
-                    <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
+                <div class="breadcrumb-item">  النثرية  -    أضافة نثرية
+                    <a id="lf" href="expenses.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="contracts.html">العقود</a>
+                    
+                    <a href="add-expenses.html"> أضافة نثرية</a>
                     <p>/</p>
-                    <a href="index.html">الرئيسية</a>
-                    <i class="fas fa-file-signature"></i>
+                    <a href="expenses.html">النثرية </a>
+                    <i class="fas fa-wallet"></i>
                 </div>
             </div>
         </div>
 
-        <div class="dashboard">
-            <h2>إدارة العقود</h2>
-            <div class="row">
-                <div class="card">
-                    <i class="fas fa-file-contract fa-2x"></i>
-                    <h2>إضافة عقد</h2>
-<button class="details-btn" onclick="window.location.href='add-contract.html';">
-  انتقال <i class="fas fa-arrow-left"></i></button>                </div>
-                <div class="card">
-                    <i class="fas fa-list fa-2x"></i>
-                    <h2>جميع العقود</h2>
-<button class="details-btn" onclick="window.location.href='all-contracts.html';">
-  انتقال <i class="fas fa-arrow-left"></i></button>                    </div>
+
+        <form id="rental-form">
+            <div class="form-group">
+                <label for="apartment">وصف النثرية:</label>
+                <input type="text" id="address" placeholder="أدخل الوصف " name="address" required>
             </div>
-        </div>
+
+            <div class="form-group">
+                <label for="rent-amount">المبلغ :</label>
+                <input type="number" id="rent-amount" name="rent-amount" placeholder="أدخل مبلغ " required>
+            </div>
+
+            <div class="form-group">
+                <label for="start-date">التاريخ :</label>
+                <input type="text" id="start-date" name="start-date" placeholder="اختر تاريخ " required>
+            </div>
+            <div class="form-group">
+                <label for="missing-items">
+                       الملاحظات:
+                </label>
+                <textarea id="missing-items" name="missing-items" rows="4"></textarea>
+            </div>
+        
+            <div class="form-group">
+                <label for="contract">طباعة  :</label>
+                <button type="button" id="print-contract" class="btn-print"><i class="fas fa-print"></i> إيصال الدفع </button>
+                <br>
+                <br>
+
+                <button type="button" id="print-contract" class="btn-print"><i class="fas fa-print"></i> إيصال الاستلام </button>
+            </div>
+            <button>حفظ</button>
+
+        </form>
     </div>
 
+    <!-- المكاتب المطلوبة -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.min.js"></script>
+    
+    <script>
+$(document).ready(function() {
+    // تفعيل تقويم jQuery UI لتحديد تاريخ البداية
+    $("#start-date").datepicker({
+        dateFormat: "yy-mm-dd",
+        minDate: 0 // لمنع اختيار تاريخ قديم
+    });
+
+    // طباعة الوصل - استعراض الوصل عند الضغط على الزر
+    $("#print-contract").on("click", function() {
+        const address = $("#address").val();
+        const rentAmount = $("#rent-amount").val();
+        const startDate = $("#start-date").val();
+        const missingItems = $("#missing-items").val();
+
+        if (!address || !rentAmount || !startDate) {
+            alert("يرجى ملء جميع الحقول المطلوبة قبل الطباعة.");
+        } else {
+            const printContent = `
+                <div>
+                    <h2>وصل النثرية</h2>
+                    <p><strong>وصف النثرية:</strong> ${address}</p>
+                    <p><strong>المبلغ:</strong> ${rentAmount}</p>
+                    <p><strong>التاريخ:</strong> ${startDate}</p>
+                    <p><strong>الملاحظات:</strong> ${missingItems || "لا توجد ملاحظات"}</p>
+                </div>
+            `;
+            const newWindow = window.open();
+            newWindow.document.write(printContent);
+            newWindow.document.close();
+            newWindow.focus();
+            newWindow.print();
+            newWindow.close();
+        }
+    });
+
+    // تحقق من ملء جميع الحقول المطلوبة قبل إرسال النموذج
+    $("#rental-form").on("submit", function(e) {
+        e.preventDefault();
+        const address = $("#address").val();
+        const rentAmount = $("#rent-amount").val();
+        const startDate = $("#start-date").val();
+
+        if (address && rentAmount && startDate) {
+            alert("تم إضافة الوصل بنجاح!");
+            // يمكنك إرسال البيانات إلى الخادم باستخدام AJAX أو أي منطق آخر
+        } else {
+            alert("يرجى ملء جميع الحقول المطلوبة.");
+        }
+    });
+});
+
+    </script>
 
 <script src="script.js"></script>
 

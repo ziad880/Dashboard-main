@@ -1,15 +1,16 @@
+
 <!DOCTYPE html>
 <html lang="ar">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>العقود</title>
+    <title>تسليم الإيجار</title>
     <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
 <body>
-   <div class="header">
+    <div class="header">
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
@@ -108,36 +109,109 @@
     <div class="content">
         <div class="breadcrumb-container">
             <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - العقود
-                    <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
+                <div class="breadcrumb-item">أصحاب الشقق - تسليم الايجار
+                    <a id="lf" href="owners.html"><i class="fa-solid fa-circle-right"></i></a>
                 </div>
                 <hr class="breadcrumb-divider">
                 <div class="breadcrumb-path">
-                    <a href="contracts.html">العقود</a>
+                    <a href="rental-payment.html"> تسليم الايجار</a>
                     <p>/</p>
-                    <a href="index.html">الرئيسية</a>
-                    <i class="fas fa-file-signature"></i>
+                    <a href="owners.html">أصحاب الشقق</a>
+                    <i class="fa-solid fa-house"></i>
                 </div>
             </div>
         </div>
-
-        <div class="dashboard">
-            <h2>إدارة العقود</h2>
-            <div class="row">
-                <div class="card">
-                    <i class="fas fa-file-contract fa-2x"></i>
-                    <h2>إضافة عقد</h2>
-<button class="details-btn" onclick="window.location.href='add-contract.html';">
-  انتقال <i class="fas fa-arrow-left"></i></button>                </div>
-                <div class="card">
-                    <i class="fas fa-list fa-2x"></i>
-                    <h2>جميع العقود</h2>
-<button class="details-btn" onclick="window.location.href='all-contracts.html';">
-  انتقال <i class="fas fa-arrow-left"></i></button>                    </div>
+        
+        <form id="rental-payment-form">
+            <!-- اختيار الشقة -->
+            <div class="rental-form">
+                <label for="apartment">اختيار الشقة:</label>
+                <select id="apartment" name="apartment" required>
+                    <option value="" disabled selected>اختر الشقة</option>
+                    <option value="1">شقة 1</option>
+                    <option value="2">شقة 2</option>
+                    <!-- يمكن تحميل الخيارات ديناميكيًا من قاعدة البيانات -->
+                </select>
             </div>
-        </div>
+
+
+            <!-- مبلغ الإيجار -->
+            <div class="rental-form">
+               <label for="rent-amount">مبلغ الإيجار:</label>
+                <input type="text" id="rent-amount" name="rent-amount" readonly>
+            </div>
+            <div class="rental-form">
+                <label for="rent-amount"> التاريخ:</label>
+                 <input type="text" id="rent-amount" name="rent-amount" readonly>
+             </div>
+ 
+             <div class="rental-form">
+                <label for="rent-amount">حصة المكتب:</label>
+                 <input type="text" id="rent-amount" name="rent-amount" readonly>
+             </div>
+            <!-- مرفق إيصال الدفع -->
+            <div class="rental-form">
+                <label for="payment-receipt">مرفق إيصال الدفع:</label>
+                <input type="file" id="payment-receipt" name="payment-receipt" accept=".pdf, .jpg, .png" required>
+            </div>
+        <div class="rental-form">
+            <!-- زر الحفظ -->
+            <button type="submit" id="save-button">حفظ</button>
+            <!-- زر طباعة وصل استلام -->
+            <button type="button" id="print-receipt-button">طباعة وصل الدفع</button>
+</div>
+        </form>
     </div>
 
+    <!-- المكاتب المطلوبة -->
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jsPDF/2.3.1/jspdf.umd.min.js"></script>
+
+    <script>
+        $(document).ready(function() {
+            // عند اختيار الشقة، جلب صاحب الشقة ومبلغ الإيجار تلقائيًا
+            $('#apartment').on('change', function() {
+                const apartmentId = $(this).val();
+                const rentAmount = $(this).find(':selected').data('rent'); // جلب مبلغ الإيجار
+                let ownerName = '';
+
+                // جلب صاحب الشقة بناءً على معرف الشقة
+                if (apartmentId == 1) {
+                    ownerName = 'مالك شقة 1';
+                } else if (apartmentId == 2) {
+                    ownerName = 'مالك شقة 2';
+                }
+
+                // تحديث حقول صاحب الشقة ومبلغ الإيجار
+                $('#owner').val(ownerName);
+                $('#rent-amount').val('500' + ' ريال'); // إظهار المبلغ بالريال
+            });
+
+            // زر الدفع
+            $('#pay-button').on('click', function() {
+                alert('تم الدفع بنجاح!');
+                // يمكنك إضافة منطق الدفع هنا مثل معالجة الدفع وتحديث الحالة
+            });
+
+            // زر الحفظ
+            $('#rental-payment-form').on('submit', function(e) {
+                e.preventDefault();
+                alert('تم حفظ البيانات بنجاح!');
+                // يمكنك إضافة منطق حفظ البيانات هنا مثل إرسال البيانات إلى الخادم
+            });
+
+            // زر طباعة وصل استلام
+            $('#print-receipt-button').on('click', function() {
+                const doc = new jsPDF();
+                doc.text("وصل استلام الإيجار", 10, 10);
+                doc.text("اسم الشقة: " + $('#apartment option:selected').text(), 10, 20);
+                doc.text("صاحب الشقة: " + $('#owner').val(), 10, 30);
+                doc.text("مبلغ الإيجار: " + $('#rent-amount').val(), 10, 40);
+                doc.text("طريقة الدفع: " + $('#payment-method option:selected').text(), 10, 50);
+                doc.save('وصل-الإيجار.pdf');
+            });
+        });
+    </script>
 
 <script src="script.js"></script>
 

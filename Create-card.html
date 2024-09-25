@@ -3,13 +3,14 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>العقود</title>
+    <title> إنشاء بطاقة</title>
     <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
 </head>
+
 <body>
-   <div class="header">
+    <div class="header">
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
@@ -106,38 +107,61 @@
     </nav>
 
     <div class="content">
-        <div class="breadcrumb-container">
-            <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - العقود
-                    <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
-                </div>
-                <hr class="breadcrumb-divider">
-                <div class="breadcrumb-path">
-                    <a href="contracts.html">العقود</a>
-                    <p>/</p>
-                    <a href="index.html">الرئيسية</a>
-                    <i class="fas fa-file-signature"></i>
-                </div>
-            </div>
+        <div style="margin-bottom: 3em;" class="breadcrumb-container">
+           <div class="breadcrumb">
+               <div class="breadcrumb-item">بطاقات النظام - إنشاء بطاقة 
+                   <a id="lf" href="system-cards.html"><i class="fa-solid fa-circle-right"></i></a>
+               </div>
+               <hr class="breadcrumb-divider">
+               <div class="breadcrumb-path">
+                   <a href="Create-card.html">إنشاء بطاقة</a>
+                   <p>/</p>
+                   <a href="system-cards.html">بطاقات النظام</a>
+                   <i class="fas fa-building"></i>
+               </div>
+           </div>
+       </div>
+
+       <form  action="#" method="POST" enctype="multipart/form-data" class="">
+                <form class="rental-form" enctype="multipart/form-data">
+
+
+        <div class="rental-form">
+            <label for="apartment-name">
+                 اسم المستخدم:
+            </label>
+            <input type="text" id="apartment-name" name="apartment-name" required>
+        </div>
+    
+
+
+
+
+        <!-- صور الشقة -->
+        <div class="rental-form">
+            <label for="apartment-photos">
+                  مرفق:
+            </label>
+            <input type="file" id="apartment-photos" name="apartment-photos[]" multiple>
         </div>
 
-        <div class="dashboard">
-            <h2>إدارة العقود</h2>
-            <div class="row">
-                <div class="card">
-                    <i class="fas fa-file-contract fa-2x"></i>
-                    <h2>إضافة عقد</h2>
-<button class="details-btn" onclick="window.location.href='add-contract.html';">
-  انتقال <i class="fas fa-arrow-left"></i></button>                </div>
-                <div class="card">
-                    <i class="fas fa-list fa-2x"></i>
-                    <h2>جميع العقود</h2>
-<button class="details-btn" onclick="window.location.href='all-contracts.html';">
-  انتقال <i class="fas fa-arrow-left"></i></button>                    </div>
-            </div>
-        </div>
-    </div>
+    
 
+        <div class="rental-form">
+            <label for="missing-items">
+                  الوصف:
+            </label>
+            <textarea id="missing-items" name="missing-items" rows="4"></textarea>
+        </div>
+    
+        <!-- زر الإرسال -->
+        <div style="margin-top: 1em;" class="rental-form">
+            <button type="submit" class="btn-submit">
+                <i class="fas fa-save"></i>  أرسال
+            </button>
+        </div>
+    </form>
+   </div>
 
 <script src="script.js"></script>
 
