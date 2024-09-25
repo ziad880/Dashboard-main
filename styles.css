@@ -2299,7 +2299,6 @@ input:checked + .sliders:before {
     font-size: 1.2em;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #333;
         padding-right: 10%; /* إضافة مساحة فارغة على اليمين */
 
 }
@@ -2311,7 +2310,6 @@ input:checked + .sliders:before {
     font-size: 1.2em;
     margin-bottom: 10px;
     font-weight: bold;
-    color: #333;
         padding-right: 5%; /* إضافة مساحة فارغة على اليمين */
 
 }
