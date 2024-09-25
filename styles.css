@@ -1,8 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap');
+* {
+    font-family: "Noto Kufi Arabic", sans-serif;
+}
+
 * {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
-    font-family: Arial, sans-serif;
+
 }
 body{
   background-color: #eceff4;
@@ -299,7 +304,7 @@ a{
 }
 
 .card h2 {
-    font-size: 1.5em;
+    font-size: 1em;
     margin-bottom: 10px;
 }
 
@@ -542,12 +547,12 @@ a{
 }
 
 .card h2 {
-    font-size: 1.5em;
+    font-size: 1em;
     margin-bottom: 10px;
 }
 
 .card p {
-    font-size: 1.2em;
+    font-size: .8em;
     margin-bottom: 20px;
     flex-grow: 1;
 }
@@ -1864,7 +1869,7 @@ table.dataTable th,table.dataTable td {
 }
 
 .card h2 {
-    font-size: 1.2em;
+    font-size: 1em;
 }
 
 .details-btn {

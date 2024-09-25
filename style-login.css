@@ -1,6 +1,7 @@
-@import url('https://fonts.googleapis.com/css?family=Montserrat:400,800');
+@import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap');
 * {
     box-sizing: border-box;
+    font-family: "Noto Kufi Arabic", sans-serif;
 }
 
 body {
@@ -9,7 +10,6 @@ body {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    font-family: 'Montserrat', sans-serif;
     height: 100vh;
     margin: -20px 0 50px;
     overflow: hidden; /* إلغاء التمرير */
@@ -243,6 +243,7 @@ input {
 #remember {
     margin: 0 5px 0 5px; 
     padding: 0;
+    margin-top: .6em;
     transform: scale(1); /* يمكن تعديل الحجم إذا كان صغيرًا أو كبيرًا */
 }
 
@@ -398,7 +399,7 @@ body.dark-mode input::placeholder {
         transform: scale(0.5); /* تصغير الحجم قليلاً */
     }
     a {
-        font-size: 10px;
+        font-size: .35rem;
         margin: 5px 0;
     }
     .dashboard-text1 span {
@@ -498,22 +499,24 @@ input[type="checkbox"] {
         font-size: 1rem; /* تقليل حجم العناوين */
     }
     .form-container button {
-        font-size: 0.3rem; /* حجم النص داخل الزر */
+        font-size: 0.2rem; /* حجم النص داخل الزر */
 
     }
     #remember {
+        margin-top: 3em;
         transform: scale(0.7);
         margin-right: -30px;
     }
+}
     .remember-me-label span {
         margin-right: -5px;
     }
     input::placeholder {
-        font-size: .4rem; /* حدد الحجم الذي تريده */
+        font-size: .6rem; /* حدد الحجم الذي تريده */
     }
     .social-container a {
         border: none; /* لإزالة الحدود */
         border-radius: 0; /* لإزالة الدائرة */
         padding: 0; /* إزالة أي فراغات داخل الأيقونة */
     }
-}
+
