@@ -2298,7 +2298,7 @@ input:checked + .sliders:before {
     font-size: 1.2em;
     margin-bottom: 10px;
     font-weight: bold;
-        padding-right: 10%; /* إضافة مساحة فارغة على اليمين */
+        padding-right: 20%; /* إضافة مساحة فارغة على اليمين */
 
 }
 }
