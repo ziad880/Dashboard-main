@@ -503,7 +503,7 @@ input[type="checkbox"] {
 
     }
     #remember {
-        margin-top: 3em;
+        margin-top: 4px;
         transform: scale(0.7);
         margin-right: -30px;
     }
