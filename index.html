@@ -172,7 +172,100 @@
             </div>
         </div>
     </div>
+            <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
 
+<div class="charts-wrapper">
+    <!-- الرسم البياني الأول -->
+    <div class="chart-container">
+        <div class="chart-title">نسبة الشقق المؤجرة</div>
+        <canvas id="apartmentsPieChart"></canvas>
+    </div>
+
+    <!-- الرسم البياني الثاني -->
+    <div class="chart-container">
+        <div class="chart-title">نسبة الإيجارات المدفوعة</div>
+        <canvas id="rentsPieChart"></canvas>
+    </div>
+</div>
+
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<script>
+    // إعدادات الرسم البياني الأول
+    var ctx1 = document.getElementById('apartmentsPieChart').getContext('2d');
+    var apartmentsPieChart = new Chart(ctx1, {
+        type: 'pie',
+        data: {
+            labels: ['شقق مؤجرة', 'شقق غير مؤجرة'],
+            datasets: [{
+                label: 'نسبة الشقق المؤجرة',
+                data: [80, 20],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(255, 99, 132, 0.6)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+                        }
+                    }
+                }
+            }
+        }
+    });
+
+    // إعدادات الرسم البياني الثاني
+    var ctx2 = document.getElementById('rentsPieChart').getContext('2d');
+    var rentsPieChart = new Chart(ctx2, {
+        type: 'pie',
+        data: {
+            labels: ['الإيجارات المدفوعة', 'الإيجارات غير المدفوعة'],
+            datasets: [{
+                label: 'نسبة الإيجارات المدفوعة',
+                data: [10, 90],
+                backgroundColor: [
+                    'rgba(75, 192, 192, 0.6)',
+                    'rgba(255, 99, 132, 0.6)'
+                ],
+                borderColor: [
+                    'rgba(75, 192, 192, 1)',
+                    'rgba(255, 99, 132, 1)'
+                ],
+                borderWidth: 1
+            }]
+        },
+        options: {
+            responsive: true,
+            maintainAspectRatio: false,
+            plugins: {
+                legend: {
+                    position: 'bottom',
+                },
+                tooltip: {
+                    callbacks: {
+                        label: function(tooltipItem) {
+                            return tooltipItem.label + ': ' + tooltipItem.raw + '%';
+                        }
+                    }
+                }
+            }
+        }
+    });
+</script>
 <script src="script.js"></script>
 
 </body>
