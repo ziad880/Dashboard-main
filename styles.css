@@ -2302,6 +2302,33 @@ input:checked + .sliders:before {
 
 }
 }
+@media (max-width: 1250px) {
+    .chart-container {
+        width: 70%;
+    }
+
+    .charts-wrapper {
+        display: flex;
+        flex-wrap: wrap;
+        margin: 20px 20px; /* تصغير الهوامش */
+        padding-left: 20px; /* تقليل المسافة الداخلية */
+        justify-content: space-between; /* توزيع العناصر بالتساوي */
+    }
+
+    .chart {
+        flex: 1 1 22%; /* تصغير حجم العنصر إلى 22% من العرض المتاح */
+        margin: 8px; /* تصغير الهامش حول العنصر */
+    }
+
+    .chart-title {
+        text-align: center;
+        font-size: 0.9em; /* تقليل حجم الخط أكثر */
+        margin-bottom: 8px;
+        font-weight: bold;
+        padding-right: 5%; /* تقليل المساحة الفارغة */
+    }
+}
+
 
 /* تنسيق العناوين */
 .chart-title {
