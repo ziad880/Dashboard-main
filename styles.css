@@ -2292,9 +2292,17 @@ input:checked + .sliders:before {
     flex-wrap: wrap;
     justify-content: flex-start; 
     margin: 20px 0;
-    padding-left: 20%; 
+    padding-left: 11%; 
 }
-    
+    .chart-title {
+    text-align: center;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+    font-weight: bold;
+    color: #333;
+        padding-right: 10%; /* إضافة مساحة فارغة على اليمين */
+
+}
 }
 
 /* تنسيق العناوين */
