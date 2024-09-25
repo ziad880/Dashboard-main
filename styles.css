@@ -1514,9 +1514,6 @@ table.dataTable tbody tr.selected {
     background-color: #b0bed9
 }
 
-table.dataTable tbody th,table.dataTable tbody td {
-}
-
 table.dataTable.row-border tbody th,table.dataTable.row-border tbody td,table.dataTable.display tbody th,table.dataTable.display tbody td {
     border-top: 1px solid #ddd
 }
