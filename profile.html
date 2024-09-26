@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>أصحاب الشقق</title>
+    <title>النثرية</title>
     <link rel="stylesheet" href="styles.css">
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 
@@ -13,10 +13,10 @@
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
-                <a href="profile.html">
+    <a href="profile.html">
     <span class="user-name">Admin</span>
 </a> 
-                <div class="dropdown">
+           <div class="dropdown">
                     <button class="dropbtn">▼</button>
                     <div class="dropdown-content">
                         <span class="dropdown-name">Admin</span>
@@ -110,47 +110,30 @@
     </nav>
 
     <div class="content">
-        <div class="breadcrumb-container">
-            <div class="breadcrumb">
-                <div class="breadcrumb-item">الرئيسية - أصحاب الشقق
-                    <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
-                </div>
-                <hr class="breadcrumb-divider">
-                <div class="breadcrumb-path">
-                    <a href="owners.html">أصحاب الشقق</a>
-                    <p>/</p>
-                    <a href="index.html">الرئيسية</a>
-                    <i class="fas fa-users"></i>
-                </div>
+
+
+<div class="profile-container">
+    <div class="profile-card">
+        <div class="profile-header">
+            <div class="profile-image">
+                <img src="user-photo.jpg" alt="صورة المستخدم">
             </div>
+            <h2 class="profile-name">Admin </h2>
         </div>
 
-        <div class="dashboard">
-            <h2>إدارة أصحاب الشقق</h2>
-            <div class="row">
-                <div class="card">
-                    <i class="fas fa-user fa-2x"></i>
-                    <h2>إضافة صاحب شقة</h2>
-                    <button class="details-btn" onclick="window.location.href='Add-apartment-owner.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                </div>
-                
-                <div class="card">
-                    <i class="fas fa-check-circle fa-2x"></i>
-                    <h2>تسليم الايجار  </h2>
-                    <button class="details-btn" onclick="window.location.href='rental-payment.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                </div>
-                <div class="card">
-                    <i class="fas fa-list fa-2x"></i>
-                    <h2>جميع أصحاب الشقق</h2>
-                    <button class="details-btn" onclick="window.location.href='All-apartment-owners.html';">
-                        انتقال <i class="fas fa-arrow-left"></i>  
-                </div> 
+        <div class="profile-info">
+            <div class="input-group">
+                <label for="profile-email">البريد الإلكتروني:</label>
+                <input type="email" id="profile-email" value="user@example.com" readonly>
+            </div>
+
+            <div class="input-group">
+                <label for="profile-phone">رقم الهاتف:</label>
+                <input type="text" id="profile-phone" value="+966123456789" readonly>
             </div>
         </div>
     </div>
-
+</div></div>
 
 <script src="script.js"></script>
 
