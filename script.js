@@ -83,3 +83,25 @@ document.querySelectorAll('.permission-checkbox').forEach(checkbox => {
     selectAll.checked = allChecked;
   });
 });
+// فتح البوب أب
+function openPaymentPopup() {
+    document.getElementById('paymentPopup').style.display = 'flex';
+}
+
+// إغلاق البوب أب
+function closePaymentPopup() {
+    document.getElementById('paymentPopup').style.display = 'none';
+}
+
+// تصدير إيصال الدفع (مؤقت - يمكن تعديلها لاحقاً لتصدير فعلي)
+function exportReceipt() {
+    alert('تم تصدير إيصال الدفع!');
+}
+
+// التعامل مع نموذج الدفع
+document.getElementById('paymentForm').addEventListener('submit', function(event) {
+    event.preventDefault();
+    // هنا يمكنك إضافة منطق الدفع
+    alert('تم دفع الإيجار بنجاح!');
+    closePaymentPopup();
+});

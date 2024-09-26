@@ -131,13 +131,19 @@
                     <th> وصل الدفع</th>
                     <th>المستخدم</th>
                     <th>التاريخ</th>
-                    <th>المبلغ المتبقي</th>
-                    <th>المبلغ المدفوع</th>
-                    <th>المبلغ الكلي</th>
-                    <th> العمولة</th>
-                    <th> المصاريف</th>
+                    <th>المبلغ المتبقي <i class="fa-solid fa-dollar-sign"></i></th>
+                    <th>المبلغ المتبقي TL</th>
+                    <th>المبلغ المدفوع <i class="fa-solid fa-dollar-sign"></i></th>
+                    <th>المبلغ المدفوع TL</th>
+                    <th>المبلغ الكلي <i class="fa-solid fa-dollar-sign"></i></th>
+                    <th>المبلغ الكلي TL</th>
+                    <th> العمولة <i class="fa-solid fa-dollar-sign"></i></th>
+                    <th> العمولة TL</th>
+                    <th> المصاريف <i class="fa-solid fa-dollar-sign"></i></th>
+                    <th> المصاريف TL</th>
 
-                    <th>مبلغ الايجار الشهري</th>
+                    <th>مبلغ الايجار الشهري <i class="fa-solid fa-dollar-sign"></i></th>
+                    <th>مبلغ الايجار الشهري TL</th>
 
                     <th>مدة التأجبر</th>
 
@@ -152,49 +158,60 @@
                 <tr>
                     <td class="action-btns">
                         <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
-                        <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
+<button class="btn-pay" onclick="openPaymentPopup()"><i class="fas fa-cash-register"></i> دفع الايجار</button>
                         <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل </button>
                     </td>
                     <td>
                        <button class="btn-disable"><i class="fas fa-download"></i>  </button>
                     </td>
-                    <td>محمد حامد</td>
-                    <td>18/9/2024</td>
-                    <td>3000</td>
-                    <td>7000</td>
-                    <td>10000</td>
-                    <td>1000</td>
-                    <td>1000</td>
-                    <td>5000</td>
-                    <td>سنه</td>
-                    <td>نقدي</td>
-                    <td>سابق</td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
 
-                    <td>شقة 1</td>
                 </tr>
                 
                  <tr>
                     <td class="action-btns">
                         <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
-                        <button class="btn-delete"><i class="fas fa-trash-alt"></i> حذف</button>
+<button class="btn-pay" onclick="openPaymentPopup()"><i class="fas fa-cash-register"></i> دفع الايجار</button>
                         <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل </button>
                     </td>
                     <td>
                        <button class="btn-disable"><i class="fas fa-download"></i>  </button>
                     </td>
-                    <td>زياد ايمن</td>
-                    <td>20/9/2024</td>
-                    <td>8000</td>
-                    <td>7000</td>
-                    <td>15000</td>
-                    <td>1000</td>
-                    <td>1000</td>
-                    <td>5000</td>
-                    <td>4 شهور</td>
-                    <td>بنك</td>
-                    <td>لاحق</td>
-
-                    <td>شقة 1</td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
+                    <td> - </td>
                 </tr>
                 
                 <!-- المزيد من الصفوف -->
@@ -211,7 +228,33 @@
     <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/pdfmake.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdfmake/0.1.36/vfs_fonts.js"></script>
-    
+    <!-- زر دفع الإيجار في الجدول -->
+
+<!-- البوب أب فورم الخاص بدفع الإيجار -->
+<div id="paymentPopup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <h2>دفع الإيجار</h2>
+        <form id="paymentForm">
+            <label for="paymentDate">التاريخ:</label>
+            <input type="date" id="paymentDate" required>
+
+            <label for="amount">المبلغ:</label>
+            <input type="number" id="amount" required>
+
+            <label for="notes">ملاحظات:</label>
+            <textarea id="notes"></textarea>
+
+            <label for="attachment">إرفاق ملف:</label>
+            <input type="file" id="attachment">
+
+            <div class="popup-buttons">
+                <button type="submit" class="btn-submit">دفع</button>
+                <button type="button" class="btn-export" onclick="exportReceipt()">تصدير إيصال الدفع</button>
+                <button type="button" class="btn-close" onclick="closePaymentPopup()">إغلاق</button>
+            </div>
+        </form>
+    </div>
+</div>
     <script>
         pdfMake.fonts = {
     Cairo: {
