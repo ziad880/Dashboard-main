@@ -2346,7 +2346,7 @@ padding-left: 20px;
 
 /* Popup container */
 .popup-content {
-    background-color: #fff;
+    background-color: #878e97;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     padding: 30px;
@@ -2361,14 +2361,12 @@ padding-left: 20px;
 .popup-content h2 {
     margin-bottom: 20px;
     font-size: 24px;
-    color: #333;
     text-align: center;
 }
 
 /* Form field styling */
 label {
     font-size: 14px;
-    color: #333;
     margin-bottom: 5px;
     display: block;
 }
@@ -2383,7 +2381,6 @@ input[type="file"] {
     border: 1px solid #ccc;
     border-radius: 5px;
     font-size: 14px;
-    color: #333;
     transition: border-color 0.3s ease;
 }
 
@@ -2423,8 +2420,7 @@ input[type="file"]:focus {
         opacity: 1;
         transform: scale(1);
     }
-}
-.profile-container {
+}.profile-container {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -2434,7 +2430,6 @@ input[type="file"]:focus {
 
 /* Profile Card */
 .profile-card {
-    background-color: #fff;
     border-radius: 15px;
     box-shadow: 0 8px 30px rgba(0, 0, 0, 0.15);
     padding: 40px;
@@ -2459,7 +2454,6 @@ input[type="file"]:focus {
 
 .profile-name {
     font-size: 26px;
-    color: #333;
 }
 
 /* Profile Info Fields */
@@ -2476,7 +2470,6 @@ input[type="file"]:focus {
 
 .profile-info label {
     font-size: 14px;
-    color: #555;
     margin-bottom: 5px;
     display: block;
 }
@@ -2488,7 +2481,7 @@ input[type="file"]:focus {
     color: #333;
     border: 1px solid #ddd;
     border-radius: 8px;
-    background-color: #f9f9f9;
+    background-color: #d2cece;
     cursor: not-allowed;
 }
 
@@ -2498,31 +2491,16 @@ input[type="file"]:focus {
 }
 
 .edit-btn {
+    padding: 8px;
     background: none;
-color: #000;
-        font-size: 30px; 
-
-}.edit-btn :hover {
-    background: none;
-color: #ffffff;
-        font-size: 30px; 
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+        color: #007bff;
 
 }
 
 
-
-
-
-
-
-/* Responsiveness */
-@media (max-width: 768px) {
-    .profile-card {
-        width: 90%;
-        padding: 30px;
-    }
-
-    .profile-info input {
-        font-size: 14px;
-    }
+.edit-btn:hover {
+    color: #007bff;
 }

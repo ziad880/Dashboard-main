@@ -3,20 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>النثرية</title>
+    <title>الملف الشخصي</title>
     <link rel="stylesheet" href="styles.css">
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
-
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
 </head>
 <body>
  <div class="header">
         <div class="header-r">
             <div class="user-info">
                 <img src="user-photo.jpg" alt="User Photo" class="user-photo">
-    <a href="profile.html">
+                <a href="profile.html">
     <span class="user-name">Admin</span>
 </a> 
-           <div class="dropdown">
+                <div class="dropdown">
                     <button class="dropbtn">▼</button>
                     <div class="dropdown-content">
                         <span class="dropdown-name">Admin</span>
@@ -110,6 +109,15 @@
     </nav>
 
     <div class="content">
+        <div class="breadcrumb-container">
+            <div class="breadcrumb">
+                <div class="breadcrumb-item">الرئيسية - الملف الشخصي  
+                    <a id="lf" href="index.html"><i class="fa-solid fa-circle-right"></i></a>
+                </div>
+                <hr class="breadcrumb-divider">
+               
+            </div>
+        </div>
 
 <div class="profile-container">
     <div class="profile-card">
@@ -162,11 +170,11 @@ function saveChanges() {
     const phoneInput = document.getElementById('profile-phone');
 
     emailInput.setAttribute('readonly', true);
-    emailInput.style.backgroundColor = "#f9f9f9";
+    emailInput.style.backgroundColor = "#c7c3c3";
     emailInput.style.cursor = "not-allowed";
 
     phoneInput.setAttribute('readonly', true);
-    phoneInput.style.backgroundColor = "#f9f9f9";
+    phoneInput.style.backgroundColor = "#c7c3c3";
     phoneInput.style.cursor = "not-allowed";
 
     document.getElementById('save-btn').style.display = 'none';
@@ -176,5 +184,10 @@ function saveChanges() {
 }</script>
 <script src="script.js"></script>
 
+</body>
+</html>
+
+
+<script src="script.js"></script>
 </body>
 </html>
