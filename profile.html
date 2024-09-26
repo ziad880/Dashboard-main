@@ -111,7 +111,6 @@
 
     <div class="content">
 
-
 <div class="profile-container">
     <div class="profile-card">
         <div class="profile-header">
@@ -124,17 +123,57 @@
         <div class="profile-info">
             <div class="input-group">
                 <label for="profile-email">البريد الإلكتروني:</label>
-                <input type="email" id="profile-email" value="user@example.com" readonly>
+                <div class="input-wrapper">
+                    <input type="email" id="profile-email" value="user@example.com" readonly>
+                    <button class="edit-btn" onclick="enableEditing('profile-email')"><i class="fa-solid fa-square-pen"></i></button>
+                </div>
             </div>
 
             <div class="input-group">
                 <label for="profile-phone">رقم الهاتف:</label>
-                <input type="text" id="profile-phone" value="+966123456789" readonly>
+                <div class="input-wrapper">
+                    <input type="text" id="profile-phone" value="+966123456789" readonly>
+                    <button class="edit-btn" onclick="enableEditing('profile-phone')"><i class="fa-solid fa-square-pen"></i></button>
+                </div>
             </div>
+
+            <button id="save-btn" class="save-btn" style="display: none;" onclick="saveChanges()">حفظ</button>
         </div>
     </div>
-</div></div>
+</div>
 
+</div>
+<script>
+function enableEditing(fieldId) {
+    const inputField = document.getElementById(fieldId);
+    inputField.removeAttribute('readonly'); 
+    inputField.style.backgroundColor = "#fff"; 
+    inputField.style.cursor = "text"; 
+
+    document.getElementById('save-btn').style.display = 'block';
+
+    inputField.addEventListener('input', function() {
+        document.getElementById('save-btn').style.display = 'block'; 
+    });
+}
+
+function saveChanges() {
+    const emailInput = document.getElementById('profile-email');
+    const phoneInput = document.getElementById('profile-phone');
+
+    emailInput.setAttribute('readonly', true);
+    emailInput.style.backgroundColor = "#f9f9f9";
+    emailInput.style.cursor = "not-allowed";
+
+    phoneInput.setAttribute('readonly', true);
+    phoneInput.style.backgroundColor = "#f9f9f9";
+    phoneInput.style.cursor = "not-allowed";
+
+    document.getElementById('save-btn').style.display = 'none';
+
+    console.log("Saved Email:", emailInput.value);
+    console.log("Saved Phone:", phoneInput.value);
+}</script>
 <script src="script.js"></script>
 
 </body>

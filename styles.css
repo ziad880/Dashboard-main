@@ -2359,10 +2359,10 @@ padding-left: 20px;
 
 /* Title styling */
 .popup-content h2 {
-    display: flex;
-    margin-top: 20px;
-    align-items: flex-end;
-    justify-content: space-evenly;
+    margin-bottom: 20px;
+    font-size: 24px;
+    color: #333;
+    text-align: center;
 }
 
 /* Form field styling */
@@ -2465,7 +2465,13 @@ input[type="file"]:focus {
 /* Profile Info Fields */
 .profile-info .input-group {
     margin-bottom: 20px;
-    text-align: right; /* Align the labels and inputs to the right */
+    text-align: right;
+}
+
+/* Input and Button wrapper */
+.input-wrapper {
+    display: flex;
+    align-items: center;
 }
 
 .profile-info label {
@@ -2476,32 +2482,38 @@ input[type="file"]:focus {
 }
 
 .profile-info input {
-    width: 100%;
+    width: 85%;
     padding: 12px;
     font-size: 16px;
     color: #333;
     border: 1px solid #ddd;
     border-radius: 8px;
     background-color: #f9f9f9;
-    cursor: not-allowed; /* Show that the input is not editable */
+    cursor: not-allowed;
 }
 
-/* Disabled input styling */
 .profile-info input:focus {
     outline: none;
     border-color: #007bff;
 }
 
-.profile-info input[readonly] {
-    background-color: #f1f1f1;
-    color: #666;
-    border: 1px solid #ccc;
+.edit-btn {
+    background: none;
+color: #000;
+        font-size: 30px; 
+
+}.edit-btn :hover {
+    background: none;
+color: #ffffff;
+        font-size: 30px; 
+
 }
 
-/* Hover effect for disabled inputs */
-.profile-info input:hover {
-    background-color: #ececec;
-}
+
+
+
+
+
 
 /* Responsiveness */
 @media (max-width: 768px) {
