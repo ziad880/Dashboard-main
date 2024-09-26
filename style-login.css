@@ -1,524 +1,269 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Kufi+Arabic:wght@100..900&display=swap');
+
 * {
-    box-sizing: border-box;
-    font-family: "Noto Kufi Arabic", sans-serif;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Noto Kufi Arabic", sans-serif;
 }
 
 body {
-    background: #f2f2f2; /* لون رمادي فاتح */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    flex-direction: column;
-    height: 100vh;
-    margin: -20px 0 50px;
-    overflow: hidden; /* إلغاء التمرير */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff; /* لون الخلفية الفاتحة */
+  background-size: cover;
+  background-position: center;
+  color: #333333; /* لون النص الداكن */
 }
 
-span {
-    font-size: 1em;
-    font-weight: bold;
-}
-
-a {
-    color: #000000; /* لون داكن */
-    font-size: 14px;
-    text-decoration: none;
-    margin: 10px 0;
-}
-
-button {
-    border-radius: 20px;
-    border: 1px solid #444; /* لون داكن */
-    background-color: #333; /* لون غامق */
-    color: #fff; /* لون أبيض */
-    font-size: 12px;
-    font-weight: bold;
-    padding: 12px 45px;
-    letter-spacing: 1px;
-    margin-top: 10px;
-    text-transform: uppercase;
-    transition: transform 80ms ease-in;
-}
-
-button:active {
-    transform: scale(0.95);
-}
-
-button:focus {
-    outline: none;
-}
-
-button.ghost {
-    background-color: transparent;
-    border-color: #fff; /* أبيض */
-}
-
-form {
-    background-color: #fff; /* أبيض */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 50px;
-    height: 100%;
-    text-align: center;
-}
-
-input {
-    background-color: #eee; /* رمادي فاتح */
-    border: none;
-    border: 1px solid black;
-    padding: 12px 15px;
-    margin: 8px 0;
-    text-align: right; /* محاذاة النص داخل الإدخال إلى اليمين */
-    border-radius: 5px;
-    width: 100%;
-}
-
-.container {
-    background-color: #fff; /* أبيض */
-    border-radius: 10px;
-    box-shadow: 0 14px 28px rgba(0, 0, 0, 0.25), 
-                0 10px 10px rgba(0, 0, 0, 0.22);
-    position: relative;
-    overflow: hidden;
-    width: 768px;
-    max-width: 100%;
-    min-height: 480px;
-}
-
-.form-container {
-    position: absolute;
-    top: 0;
-    height: 100%;
-    transition: all 0.6s ease-in-out;
-}
-
-.sign-in-container {
-    left: 0;
-    width: 50%;
-    z-index: 2;
-}
-
-.container.right-panel-active .sign-in-container {
-    transform: translateX(100%);
-}
-
-.sign-up-container {
-    left: 0;
-    width: 50%;
-    opacity: 0;
-    z-index: 1;
-}
-
-.container.right-panel-active .sign-up-container {
-    transform: translateX(100%);
-    opacity: 1;
-    z-index: 5;
-    animation: show 0.6s;
-}
-
-@keyframes show {
-    0%, 49.99% {
-        opacity: 0;
-        z-index: 1;
-    }
-    
-    50%, 100% {
-        opacity: 1;
-        z-index: 5;
-    }
-}
-
-.overlay-container {
-    position: absolute;
-    top: 0;
-    left: 50%;
-    width: 50%;
-    height: 100%;
-    overflow: hidden;
-    transition: transform 0.6s ease-in-out;
-    z-index: 100;
-}
-
-.container.right-panel-active .overlay-container {
-    transform: translateX(-100%);
-}
-
-.overlay {
-    background: #000000; /* لون غامق */
-    background: -webkit-linear-gradient(to right, #ffffff, #ffffff); /* تدريج رمادي غامق */
-    background: linear-gradient(to right, #000000, #8a8a8a); /* تدريج رمادي */
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: 0 0;
-    color: #fff; /* أبيض */
-    position: relative;
-    left: -100%;
-    height: 100%;
-    width: 200%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-}
-
-.overlay-right {
-    right: 0;
-    transform: translateX(0);
-    background: linear-gradient(to left, #000000, #616161); /* تدريج ألوان مشابه للجانب الأيسر */
-}
-
-.container.right-panel-active .overlay-right {
-    transform: translateX(20%);
-}
-
-.container.right-panel-active .overlay {
-    transform: translateX(50%);
-}
-.h1{
-    color: #000000;
-}
-.overlay-panel {
-    position: absolute;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    padding: 0 40px;
-    text-align: center;
-    top: 0;
-    height: 100%;
-    width: 50%;
-    transform: translateX(0);
-    transition: transform 0.6s ease-in-out;
-}
-
-.overlay-left {
-    transform: translateX(-20%);
-}
-
-.container.right-panel-active .overlay-left {
-    transform: translateX(0);
-}
-
-.overlay-right {
-    right: 0;
-    transform: translateX(0);
-}
-
-.container.right-panel-active .overlay-right {
-    transform: translateX(20%);
-}
-
-.social-container {
-    margin: 20px 0;
-}
-
-.social-container a {
-    border: 1px solid #ddd;
-    border-radius: 50%;
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-    margin: 0 5px;
-    height: 40px;
-    width: 40px;
-    color: #555; /* لون رمادي أغمق */
-}
-/* إعدادات تذكرني و نسيت كلمة السر */
-.remember-me-container {
-    text-align: right; /* لمحاذاة المحتوى بالكامل لليمين */
-    width: 100%; /* لضمان أخذ العنصر الأب العرض الكامل */
-}
-
-.remember-me-label {
-    display: inline-flex;
-    align-items: center;
-    gap: 0;
-    margin: 0;
-    padding: 0;
-        flex-direction: row-reverse;
-
-}
-
-#remember {
-    margin: 0 5px 0 5px; 
-    padding: 0;
-    margin-top: .6em;
-    transform: scale(1); /* يمكن تعديل الحجم إذا كان صغيرًا أو كبيرًا */
-}
-
-/* Light mode (default) */
-
-
-/* Dark mode styles */
-body.dark-mode h4 {
-    color: #e0e0e0; /* Lighter color for h4 in dark mode */
-}
-
-/* Other dark mode styles */
-body.dark-mode input::placeholder {
-    color: var(--placeholder-color, #ccc); /* Lighter gray color for placeholder text in dark mode */
-}
-  /* Light mode (default) */
-.container {
-  background-color: #ffffff;
-  color: #333;
-}
-
-.form-container {
-  background-color: #f9f9f9;
-  color: #333;
-}
-
-.form-container input, .form-container button {
-  background-color: #ffffff;
-  color: #333;
-}
-
-/* Light mode (default) */
-.social-container .social i {
-    color: #333; /* لون الرموز في الوضع الفاتح */
-  }
-  
-  /* Dark mode styles */
-  body.dark-mode .social-container .social i {
-    color: #e0e0e0; /* لون الرموز في الوضع الداكن */
-  }
-  
-.overlay {
-  background-color: rgba(255, 255, 255, 0.8);
-}
-
-/* Dark mode styles */
-body.dark-mode .container {
-  background-color: #1e1e1e;
-  color: #e0e0e0;
+.wrapper {
+    width: 90%;
+  background: #f8f8f8; /* خلفية فاتحة للعنصر */
+  border: 2px solid rgba(0, 0, 0, .1); /* لون الحدود الداكن */
+  color: #333333; /* لون النص الداخلي */
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  padding: 30px 40px;
+  border-radius: 10px;
 }
 
 
-
-body.dark-mode .form-container input, 
-body.dark-mode .form-container button {
-  background-color: #3a3a3a;
-  color: #ffffff;
+.wrapper .input-box {
+  width: 100%;
+  position: relative;
+  height: 50px;
+  margin: 30px 0;
 }
 
-body.dark-mode .social-container .social i {
-  color: #e0e0e0;
+.input-box input {
+  width: 100%;
+  height: 100%;
+  background: #ffffff; /* خلفية فاتحة للمدخل */
+  outline: none;
+  border: 2px solid rgba(0, 0, 0, .2); /* لون حدود المدخل */
+  border-radius: 40px;
+  font-size: 16px;
+
+  color: #333333; /* لون النص */
+  padding: 20px 40px 20px 20px;
+  text-align: right; /* لجعل الـ placeholder يبدأ من اليمين */
 }
 
-body.dark-mode .overlay {
-  background-color: rgba(0, 0, 0, 0.8);
+.input-box input::placeholder {
+  color: #aaaaaa; /* لون placeholder الداكن */
+  padding-right: 10px;
 }
 
-/* Adjusting hover and focus states */
-body.dark-mode .form-container input:focus,
-body.dark-mode .form-container button:hover {
-  background-color: #444;
-  color: #e0e0e0;
+.input-box i {
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 20px;
+  color: #333333; /* لون الأيقونة الداكنة */
 }
 
-body.dark-mode .form-container button {
-  border: 1px solid #444;
-}
-/* Light mode (default) */
-.social-container .social i {
-    color: #000000; /* Dark gray color for light mode */
-}
-
-/* Dark mode styles */
-body.dark-mode .social-container .social i {
-    color: #313131; /* Light gray color for dark mode */
-}
-/* Light mode (default) */
-input::placeholder {
-    color: #000000; /* Light gray color for placeholder text in light mode */
+.wrapper .remember-forgot {
+  display: flex;
+  justify-content: space-between;
+  font-size: 14.5px;
+  margin: -15px 0 15px;
 }
 
-/* Dark mode styles */
-body.dark-mode input::placeholder {
-    color: #ccc; /* Lighter gray color for placeholder text in dark mode */
-}
-.overlay-panel img {
-    max-width: 100%; /* يجعل الصورة تتناسب مع العرض المتاح */
-    height: auto; /* يحافظ على نسبة العرض إلى الارتفاع */
-    display: block; /* يزيل المسافة أسفل الصورة */
-    margin: 0 auto; /* يوسّط الصورة داخل الحاوية */
-    max-height: 200px; /* يحدد الحد الأقصى لارتفاع الصورة (يمكنك تعديل القيمة حسب الحاجة) */
-}
-.remember-me-label span {
-    font-size: .9em;
-}
-/* Media Query for Mobile Devices */
-@media (max-width: 768px) {
-    .remember-me-label {
-    display: flex;
-    align-items: center;  
-    justify-content: flex-start; 
-    width: 100%; 
-    box-sizing: border-box;
-        width: 200px;
- 
+.remember-forgot label {
+  display: flex;
+  align-items: center; /* لمحاذاة مربع "تذكرني" مع النص في الوسط */
+  flex-direction: row-reverse; /* عكس الاتجاه بين المربع والنص */
 }
 
-    .container {
-        max-width: 90%;
-        padding: 20px;
-        min-height: 22em; /* تقليل الطول على الشاشات الصغيرة */
-    }
-    input {
-        padding: 10px; /* Adjust padding for smaller screens */
-        width: 170%;
-    }
-
-    button {
-        padding: 10px 30px; /* Adjust padding */
-        margin-top: 5px; /* Reduce margin */
-    }
-
-    .overlay-panel {
-        padding: 20px; /* Reduce padding */
-    }
-
-    .overlay-panel img {
-        max-width: 100%; /* Ensure image fits within the container */
-        max-height: 150px; /* Adjust height for smaller screens */
-    }
-    .social-container a {
-        height: 9px;
-        width: 9px;
-    }
-    .social-container {
-        margin: 8px 0;
-    }
-    .slider:before {
-        height: 29px;
-        width: 29px;
-    }
-    #remember {
-        transform: scale(0.5); /* تصغير الحجم قليلاً */
-    }
-    a {
-        font-size: .35rem;
-        margin: 5px 0;
-    }
-    .dashboard-text1 span {
-        font-size: 1em; /* Ensure consistent size */
-        font-weight: bold;
-}
-.remember-me-label {
-font-size: .7em;
-}
-.form-container input, .form-container button {
-    font-size: .1em;
-}
-.remember-me-label {
-display: flex;
-align-items: center;  
-justify-content: flex-start; 
-width: 100%; 
-box-sizing: border-box;
-    width: 200px;
-
-}
-input[type="checkbox"] {
-width: 20px;
-cursor: pointer;
-accent-color: #000000; 
-margin-left: 10px; 
-}
-.remember-me-label span {
-font-size: 10px;
-}
-.dashboard-text1 span {
-font-size: .8em;
-font-weight: bold;
-}
-span {
-    font-size: 6px;
-}
+.remember-forgot label input {
+  accent-color: #333333; /* لون المربع */
+  margin-left: 3px;
 }
 
-/* Extra small devices (phones, 480px and down) */
-@media (max-width: 480px) {
-    h1 {
-        font-size: 15px;
-    }
-.remember-me-label {
-    display: flex;
-    align-items: center;  
-    justify-content: flex-start; 
-    width: 100%; 
-    box-sizing: border-box;
-        width: 200px;
- 
-}
-    h2 {
-        font-size: 14px; /* Further reduce font size */
-    }
-
-    input {
-        font-size: 12px; /* Smaller font size */
-        padding: 8px; /* Adjust padding */
-    }
-
-    
-    button {
-        font-size: 12px; /* Ensure consistent size */
-        padding: 8px 20px; /* Adjust padding */
-        font-size: 10px;
-    }
-    
-}
-.remember-me-label {
-    display: flex;
-    align-items: start;  
-    justify-content: flex-start; 
-    width: auto; 
-    box-sizing: border-box;
-
+.remember-forgot a {
+  text-decoration: none;
+  color: #333333; /* لون النص للرابط الداكن */
 }
 
-input[type="checkbox"] {
-    width: 20px;
+.remember-forgot a:hover {
+  text-decoration: underline;
+}
+
+.wrapper .btn {
+  width: 100%;
+  height: 50px;
+  background: #007bff; /* لون الزر الفاتح */
+  border: none;
+  outline: none;
+  border-radius: 40px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, .1);
+  cursor: pointer;
+  font-size: 16px;
+  color: #ffffff; /* لون النص داخل الزر */
+  font-weight: 600;
+}
+
+.wrapper .register-link {
+  font-size: 14.5px;
+  text-align: center;
+  margin: 20px 0 15px;
+}
+
+.register-link p a {
+  color: #007bff; /* لون الرابط الفاتح */
+  text-decoration: none;
+  font-weight: 600;
+}
+
+.register-link p a:hover {
+  text-decoration: underline;
+}
+/* Dark Mode (الوضع الداكن) */
+.dark-mode {
+    background-color: #121212; /* خلفية داكنة عامة */
+    color: #e0e0e0; /* نص فاتح */
+}
+
+
+/* Sidebar */
+.dark-mode .sidebar {
+    background-color: #2a2a2a; /* خلفية الداكنة للـ sidebar */
+    color: #cfcfcf; /* لون النص */
+    border-right: 1px solid #444; /* خط فاصل على اليمين */
+}
+
+/* Tables */
+.dark-mode table {
+    background-color: #232323; /* خلفية الجدول الداكنة */
+    color: #dddddd; /* لون النص */
+    border: 1px solid #555; /* إطار الجدول */
+}
+
+.dark-mode th, .dark-mode td {
+    border: 1px solid #444; /* إطار الخلايا */
+}
+
+.dark-mode th {
+    background-color: #333333; /* خلفية عنوان الجدول */
+}
+
+.dark-mode tr:nth-child(even) {
+    background-color: #2e2e2e; /* خلفية داكنة للصفوف المتعاقبة */
+}
+
+/* Buttons */
+.dark-mode .btn {
+    background-color: #3a3a3a; /* خلفية الأزرار الداكنة */
+    color: #e0e0e0; /* لون النص الفاتح */
+    border: 1px solid #555; /* إطار داكن */
+    padding: 10px 20px;
+
     cursor: pointer;
-    accent-color: #000000; 
-    margin-left: 10px; 
 }
 
+.dark-mode .btn:hover {
+    background-color: #4b4b4b; /* تغيير لون الخلفية عند التمرير */
+}
+
+/* Forms */
+.dark-mode input, .dark-mode select, .dark-mode textarea {
+    background-color: #2d2d2d; /* خلفية الداكنة لعناصر الإدخال */
+    color: #e0e0e0; /* لون النص الفاتح */
+    border: 1px solid #555; /* إطار داكن */
+}
+
+.dark-mode input:focus, .dark-mode select:focus, .dark-mode textarea:focus {
+    border-color: #888; /* تغيير لون الإطار عند التركيز */
+}
+
+/* Links */
+.dark-mode a {
+    color: #383838; /* لون الروابط الفاتحة */
+}
+
+.dark-mode a:hover {
+    color: #a0cfff; /* لون الروابط عند التمرير */
+}
+ a:hover {
+    color: #a0cfff; /* لون الروابط عند التمرير */
+}
+/* Footer */
+.dark-mode .footer {
+    background-color: #1a1a1a; /* خلفية الفوتر الداكنة */
+    color: #cccccc; /* لون النص */
+    border-top: 1px solid #444; /* خط علوي */
+}
+/* Mobile Styles */
 @media (max-width: 768px) {
+    /* Make buttons smaller on mobile */
+    .dark-mode .dt-button,
+    .dark-mode .buttons-pdf,
+    .dark-mode .buttons-html5,
+    .dark-mode .btn-export {
+        padding: 8px 15px; /* Smaller padding for mobile */
+        font-size: 14px; /* Smaller font size */
+        border-radius: 3px; /* Slightly smaller border radius */
+    }
+    
+    /* Adjust overall layout for mobile */
     .container {
-        max-width: 350px; /* تقليل الحد الأقصى للعرض */
+        padding: 10px; /* Less padding around the content */
     }
-    
-    button {
-        font-size: 0.7rem; /* تصغير حجم النص في الأزرار */
+
+    /* Make tables fit mobile screen */
+    .dark-mode table {
+        width: 100%; /* Ensure table fits the mobile screen */
+        font-size: 14px; /* Smaller text for mobile */
     }
-    
-    h1 {
-        font-size: 1rem; /* تقليل حجم العناوين */
+
+    /* Adjust headers for mobile */
+    .dark-mode .header {
+        font-size: 18px; /* Smaller header text */
     }
-    .form-container button {
-        font-size: 0.2rem; /* حجم النص داخل الزر */
+
+    /* Adjust sidebar for mobile */
+    .dark-mode .sidebar {
+        font-size: 14px; /* Smaller sidebar text */
+        padding: 10px; /* Reduce padding */
+    }
+
+    /* Adjust footer for mobile */
+    .dark-mode .footer {
+        font-size: 12px; /* Smaller footer text */
+    }
+
+    /* Adjust forms for mobile */
+    .dark-mode input, 
+    .dark-mode select, 
+    .dark-mode textarea {
+        font-size: 14px; /* Smaller form input text */
 
     }
-    #remember {
-        margin-top: 4px;
-        transform: scale(0.7);
-        margin-right: -30px;
-    }
+    
 }
-    .remember-me-label span {
-        margin-right: -5px;
-        font-weight: normal;
-    }
-    input::placeholder {
-        font-size: .6rem; /* حدد الحجم الذي تريده */
-    }
-    .social-container a {
-        border: none; /* لإزالة الحدود */
-        border-radius: 0; /* لإزالة الدائرة */
-        padding: 0; /* إزالة أي فراغات داخل الأيقونة */
-    }
 
+/* Optional: Change link color */
+a:hover {
+    text-decoration: none; /* إذا كنت ترغب في إضافة خط عند التمرير فوق الرابط */
+
+}
+.user-login {
+    width: 100px; /* عرض الصورة */
+    height: 100px; /* ارتفاع الصورة */
+    border-radius: 50%; /* لجعل الصورة دائرية */
+    object-fit: cover; /* لضمان أن الصورة تتناسب داخل الإطار */
+    border: 2px solid #ccc; /* إضافة إطار حول الصورة (اختياري) */
+    display: block; /* للتأكد من أن الصورة تظهر كعنصر مستقل */
+    margin: 0 auto; /* لتمركز الصورة في النص */
+}
+
+/* Optional: Add hover effect */
+.user-login:hover {
+    border-color: #80bfff; /* تغيير لون الإطار عند التمرير */
+}
+
+.dark-mode #ic {
+    color: #ffffff; /* لون الروابط الفاتحة */
+}

@@ -3,16 +3,18 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  font-family: "Poppins", sans-serif;
+  font-family: "Noto Kufi Arabic", sans-serif;
 }
+
 body {
-  min-height: 100vh;
   display: flex;
-  align-items: center;
   justify-content: center;
-  background: #f2f2f2;
-  padding: 10px; /* Padding for smaller screens */
-  overflow: hidden; /* إلغاء التمرير */
+  align-items: center;
+  min-height: 100vh;
+  background-color: #ffffff; /* لون الخلفية الفاتحة */
+  background-size: cover;
+  background-position: center;
+  color: #333333; /* لون النص الداكن */
 }
 .container {
   background: #fff;

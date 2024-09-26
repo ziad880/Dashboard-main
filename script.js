@@ -46,7 +46,15 @@ function toggleDarkMode(isDarkMode) {
     document.querySelectorAll('.buttons-pdf').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
     document.querySelectorAll('.buttons-html5').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
     document.querySelectorAll('.btn-export').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
-}
+
+// Toggle dark mode for DataTables buttons
+document.querySelectorAll('.dt-button').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+document.querySelectorAll('.buttons-pdf').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+document.querySelectorAll('.buttons-html5').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+document.querySelectorAll('.btn-export').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+document.querySelectorAll('#ic').forEach(btn => btn.classList.toggle('dark-mode', isDarkMode));
+
+  }
     
 function toggleSidebar() {
     const sidebar = document.querySelector('.sidebar');

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="ar">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>تسجيل الدخول</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://unpkg.com/boxicons@2.1.1/css/boxicons.min.css">
+
+    <link rel="stylesheet" href="style-login.css">
+</head>
+<body>
+    <div class="header">
+        <div class="header-r">
+            <label class="switch">
+                <span class="sun">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                        <!-- SVG content omitted for brevity -->
+                    </svg>
+                </span>
+                <span class="moon">
+                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 384 512">
+                        <!-- SVG content omitted for brevity -->
+                    </svg>
+                </span>
+                <input type="checkbox" class="input" id="mode-toggle">
+                <span class="slider"></span>
+            </label>
+        </div>
+        <div class="dashboard-text1">
+            <span style="    font-size: 1.2em;
+    font-weight: bold;">نظام إدارة تأجير العقارات</span>
+        </div> 
+    </div>
+
+    <div class="container">
+        <div class="wrapper">
+            <form action="">
+
+                <img class="user-login" src="user-photo.jpg" alt="User Image">
+
+
+                <div class="input-box">
+                    
+                    <input type="text" placeholder=" اسم المستخدم">
+                    <i id="ic"  class='bx bxs-user'></i>
+                </div>
+                <div class="input-box">
+                    <input type="password"placeholder="كلمة المرور">
+                    <i id="ic" class='bx bxs-lock-alt'></i>
+                </div>
+                <div class="remember-forgot">
+                    <a style="text-decoration: none;" href="otp.html"> هل نسيت كلمة السر؟</a>
+                    <label><input type="checkbox"> تذكرني</label>
+                        
+                </div>        
+                        <button type="submit" class="btn">تسجيل الدخول</button>
+            </form>
+            
+    </div>
+
+
+    <script src="script.js"></script>
+</body>
+</html>
