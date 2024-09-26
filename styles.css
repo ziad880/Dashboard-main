@@ -1953,7 +1953,7 @@ button:hover {
     }
     
     .btn-print i,.btn-disable,.btn-export ,.btn-edit{
-        font-size: 5px; /* تصغير حجم الأيقونة */
+        font-size: 10px; /* تصغير حجم الأيقونة */
     }
 .btn-export{
     margin-bottom: 0;
@@ -2346,7 +2346,7 @@ padding-left: 20px;
 
 /* Popup container */
 .popup-content {
-    background-color: #878e97;
+    background-color: #f2f2f2;
     border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
     padding: 30px;
@@ -2361,6 +2361,7 @@ padding-left: 20px;
 .popup-content h2 {
     margin-bottom: 20px;
     font-size: 24px;
+    color: #000;
     text-align: center;
 }
 
