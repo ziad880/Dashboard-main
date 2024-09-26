@@ -2562,3 +2562,7 @@ th{
         .highlight {
             background-color: #f1f1f1;
         }
+.dropbtn:hover{
+
+    background: none;
+        }
