@@ -2065,7 +2065,7 @@ overflow-x: auto;
 /* Light Mode (الوضع العادي) */
 .btn-export {
     background-color: #ffffff; /* خلفية بيضاء */
-    color: #333; /* لون النص داكن */
+    color: #555555; /* لون النص داكن */
     border: 1px solid #ccc; /* إطار */
     padding: 10px 20px;
     border-radius: 4px;
