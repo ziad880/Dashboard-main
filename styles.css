@@ -2491,7 +2491,7 @@ input[type="file"]:focus {
 }
 
 .edit-btn {
-    padding: 0px;
+
     background: none;
     border: none;
     font-size: 30px;
@@ -2500,6 +2500,16 @@ input[type="file"]:focus {
 
 }
 
+
+.edit-btn:hover {
+
+    background: none;
+    border: none;
+    font-size: 30px;
+    cursor: pointer;
+        color: #002c5c;
+
+}
 
 
       .date-filter {
@@ -2545,9 +2555,9 @@ input[type="file"]:focus {
             cursor: pointer;
         }
 
-        .date-picker button:hover {
-        }
-
+th{
+    color: #000;
+}
         /* تنسيق الجدول */
         .highlight {
             background-color: #f1f1f1;
