@@ -2491,7 +2491,7 @@ input[type="file"]:focus {
 }
 
 .edit-btn {
-    padding: 8px;
+    padding: 0px;
     background: none;
     border: none;
     font-size: 30px;
@@ -2501,6 +2501,4 @@ input[type="file"]:focus {
 }
 
 
-.edit-btn:hover {
-    color: #007bff;
-}
+
