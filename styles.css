@@ -2268,7 +2268,8 @@ input:checked + .sliders:before {
     display: flex;
     flex-wrap: wrap;
     margin-right: 160px;
-padding-left: 110px;
+
+margin-top: 4em;
 }
 
 .chart-container {
@@ -2308,9 +2309,9 @@ padding-left: 60px;
 .chart-title {
     text-align: center;
     font-size: 1.2em;
-    margin-bottom: 10px;
+    margin-bottom: 1em;
     font-weight: bold;
-        padding-right: 5%; /* إضافة مساحة فارغة على اليمين */
+        padding-right: 10%; /* إضافة مساحة فارغة على اليمين */
 
 }
 
