@@ -2558,17 +2558,16 @@ input[type="file"]:focus {
 th{
     color: #000;
 }
-        /* تنسيق الجدول */
-        .highlight {
-            background-color: #f1f1f1;
-        }
+/* تنسيق الجدول */
+.highlight {
+    background-color: #f1f1f1;
+}
 .dropbtn:hover{
-
     background: none;
-        }
-        button{
-            background-color: #333;
-        }
-        .rental-form button{
-            background-color: #333;
-        }
+}
+button{
+    background-color: #333;
+}
+.rental-form button{
+    background-color: #333;
+}
