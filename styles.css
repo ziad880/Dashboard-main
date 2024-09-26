@@ -2566,3 +2566,9 @@ th{
 
     background: none;
         }
+        button{
+            background-color: #333;
+        }
+        .rental-form button{
+            background-color: #333;
+        }
