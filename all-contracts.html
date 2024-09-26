@@ -125,7 +125,16 @@
                 </div>
             </div>
         </div>
-
+  <div class="date-filter">
+            <span class="filter-icon" id="filter-icon"><i class="fas fa-filter"></i> تصفية</span>
+            <div class="date-picker" id="date-picker">
+                <label for="start-date">من:</label>
+                <input type="date" id="start-date" name="start-date" title="تاريخ البداية">
+                <label for="end-date">إلى:</label>
+                <input type="date" id="end-date" name="end-date" title="تاريخ النهاية">
+                <button id="filter-button">تصفية</button>
+            </div>
+        </div>
     <table id="apartments-table" class="display">
             <thead>
                 <tr>
@@ -232,7 +241,43 @@
         window.print();
     });
 });
-       
+        $('#filter-icon').click(function() {
+                $('#date-picker').toggle();
+            });
+
+            // دالة تصفية الجدول حسب التاريخ
+            $('#filter-button').click(function() {
+                var startDate = $('#start-date').val();
+                var endDate = $('#end-date').val();
+
+                $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
+                    var date = new Date(data[3]); // تاريخ من العمود 4 (index 3)
+                    if (
+                        (startDate === "" && endDate === "") ||
+                        (startDate === "" && date <= new Date(endDate)) ||
+                        (new Date(startDate) <= date && endDate === "") ||
+                        (new Date(startDate) <= date && date <= new Date(endDate))
+                    ) {
+                        return true;
+                    }
+                    return false;
+                });
+
+                table.draw();
+                $('#date-picker').hide(); // إخفاء نافذة اختيار التاريخ بعد التصفية
+            });
+
+            // إضافة تأثير التحويم على التواريخ
+            $('#apartments-table tbody').on('mouseenter', 'td', function() {
+                var title = $(this).attr('title');
+                if (title) {
+                    $(this).addClass('highlight');
+                    $(this).attr('data-title', title); // حفظ التاريخ في البيانات
+                }
+            }).on('mouseleave', 'td', function() {
+                $(this).removeClass('highlight');
+                $(this).removeAttr('data-title'); // إزالة البيانات عند الخروج
+            });
 
     </script>
 <script src="script.js"></script>

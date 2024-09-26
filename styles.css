@@ -1323,7 +1323,7 @@ th {
   }
   
   #apartments-table th {
-    background-color: #000000;
+    background-color: #A9A8A7;
   }
   
   /* Dark Mode */
@@ -2502,3 +2502,53 @@ input[type="file"]:focus {
 
 
 
+      .date-filter {
+            position: relative;
+            display: inline-block;
+            margin-bottom: 20px;
+        }
+
+        .filter-icon {
+            cursor: pointer;
+            font-size: 20px;
+            margin-left: 10px;
+        }
+
+
+
+
+        .date-picker {
+            display: none;
+            position: absolute;
+            background: #fff;
+            border: 1px solid #ccc;
+            padding: 10px;
+            z-index: 100;
+        }
+
+        .date-picker label {
+            display: block;
+            margin-bottom: 5px;
+        }
+
+        .date-picker input {
+            width: 100%;
+            padding: 5px;
+            margin-bottom: 10px;
+        }
+
+        .date-picker button {
+            width: 100%;
+            padding: 8px;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+
+        .date-picker button:hover {
+        }
+
+        /* تنسيق الجدول */
+        .highlight {
+            background-color: #f1f1f1;
+        }

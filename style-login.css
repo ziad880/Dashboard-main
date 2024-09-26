@@ -19,7 +19,6 @@ body {
 }
 
 .wrapper {
-    width: 90%;
   background: #f8f8f8; /* خلفية فاتحة للعنصر */
   border: 2px solid rgba(0, 0, 0, .1); /* لون الحدود الداكن */
   color: #333333; /* لون النص الداخلي */
