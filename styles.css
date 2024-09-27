@@ -2416,14 +2416,18 @@ input[type="file"]:focus {
 }
 
 .dark-mode label {
-    color: #383838; /* Light text for labels */
+    color: #ffffff; /* Light text for labels */
 }
 
 .dark-mode input[type="date"],
 .dark-mode input[type="number"],
 .dark-mode textarea,
-.dark-mode input[type="file"] {
-    background-color: #444; /* Darker background for inputs */
+.dark-mode input[type="file"],
+.dark-mode .rental-form input,
+.dark-mode .rental-form select,
+.dark-mode .form-group input,
+.dark-mode .form-group select {
+    background-color: #727272; /* Darker background for inputs */
     border: 1px solid #555; /* Darker border for inputs */
     color: #e0e0e0; /* Light text for inputs */
 }
