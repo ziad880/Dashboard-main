@@ -2416,7 +2416,7 @@ input[type="file"]:focus {
 }
 
 .dark-mode label {
-    color: #cccccc; /* Light text for labels */
+    color: #383838; /* Light text for labels */
 }
 
 .dark-mode input[type="date"],
