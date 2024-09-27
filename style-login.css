@@ -243,6 +243,13 @@ body {
     .input-box input{
       font-size: .7em;
     }
+    .remember-forgot a {
+
+      font-size: .85em;
+    }
+    .dashboard-text1{
+      font-size: 1em;
+    }
 }
 
 /* Optional: Change link color */
