@@ -44,7 +44,8 @@ form .input-field {
 
   border-radius: 6px;
   outline: none;
-  font-size: 1.125rem;
+  font-size: 1rem;
+  margin: 0;
   text-align: center;
   border: 1px solid #ddd;
 }.input-field1 input {
@@ -63,18 +64,6 @@ form .input-field {
 .input-field input::-webkit-outer-spin-button {
   display: none;
 }
-button {
-  margin-top: 25px;
-  width: 100%;
-  color: #fff;
-  font-size: 1rem;
-  border: none;
-  padding: 9px 0;
-  cursor: pointer;
-  border-radius: 6px;
-  background: #000000;
-  transition: all 0.2s ease;
-}
 
 button {
   margin-top: 25px;
@@ -85,12 +74,12 @@ button {
   padding: 9px 0;
   cursor: default; /* تغيير المؤشر إلى default */
   border-radius: 6px;
-  background: #000000; /* لون فاتح عند عدم الاكتمال */
+  background: #1c89ff; /* لون فاتح عند عدم الاكتمال */
   transition: all 0.2s ease;
 }
 
 button.active {
-  background: #000000; /* لون داكن عند الاكتمال */
+  background: #00356e; /* لون داكن عند الاكتمال */
 }
 
 /* تأثير المؤشر غير المفعل */
@@ -140,4 +129,16 @@ input[type=number]::-webkit-outer-spin-button {
     font-size: 0.875rem;
     padding: 8px 0;
   }
+}
+.send-code:hover,.verify-code:hover{
+background-color: #4b4b4b;
+}
+.dark-mode .send-code,.dark-mode .verify-code{
+  background-color: #4b4b4b;
+  }
+  .dark-mode .send-code:hover,.dark-mode .verify-code:hover{
+    background-color: #181818;
+    }
+.dark-mode ::placeholder{
+  color: white;
 }
