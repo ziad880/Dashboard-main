@@ -240,7 +240,9 @@ body {
         font-size: 14px; /* Smaller form input text */
 
     }
-    
+    .input-box input{
+      font-size: .7em;
+    }
 }
 
 /* Optional: Change link color */
