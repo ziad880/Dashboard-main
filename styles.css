@@ -2300,7 +2300,7 @@ padding-left: 60px;
     font-size: 1.2em;
     margin-bottom: 10px;
     font-weight: bold;
-        padding-right: 20%; /* إضافة مساحة فارغة على اليمين */
+    padding-right: 20%; /* إضافة مساحة فارغة على اليمين */
 
 }
 }
@@ -2568,8 +2568,8 @@ th{
     background: none;
 }
 button{
-    background-color: #333;
+    background-color: #4b4b4b;
 }
 .rental-form button{
-    background-color: #333;
+    background-color: #4b4b4b;
 }
