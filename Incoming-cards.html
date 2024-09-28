@@ -192,34 +192,55 @@
     }
 };
       $(document).ready(function() {
-    $('#apartments-table').DataTable({
-        dom: 'Bfrtip',
-        buttons: [
-              {
-                        extend: 'excelHtml5',
-                        text: '<i class="fas fa-file-excel"></i> تصدير Excel',
-                        className: 'btn-export',
-                        titleAttr: 'تصدير إلى Excel'
-                    },
-            {
-                extend: 'pdfHtml5',
-                text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
-                className: 'btn-export',
-                titleAttr: 'تصدير إلى PDF',
-                customize: function (doc) {
-                    doc.defaultStyle = {
-                        font: 'Cairo',
-                        alignment: 'center'  // محاذاة النص لليمين
-                    };
-                    doc.styles.tableHeader = {
-                        font: 'Cairo',
-                        alignment: 'center'
-                    };
+        $('#apartments-table').DataTable({
+            dom: 'Bfrtip',
+            buttons: [
+                {
+                    extend: 'excelHtml5',
+                    text: '<i class="fas fa-file-excel"></i> تصدير Excel',
+                    className: 'btn-export',
+                    titleAttr: 'تصدير إلى Excel'
+                },
+                {
+                    extend: 'pdfHtml5',
+                    text: '<i class="fas fa-file-pdf"></i> تصدير PDF',
+                    className: 'btn-export',
+                    titleAttr: 'تصدير إلى PDF',
+                    customize: function (doc) {
+                        doc.defaultStyle = {
+                            font: 'Cairo',
+                            alignment: 'center'
+                        };
+                        doc.styles.tableHeader = {
+                            font: 'Cairo',
+                            alignment: 'center'
+                        };
+                    }
+                }
+            ],
+            language: {
+                search: "بحث:",
+                lengthMenu: "عرض _MENU_ مدخلات",
+                info: "عرض _START_ إلى _END_ من أصل _TOTAL_ مدخلات",
+                infoEmpty: "لا توجد مدخلات متاحة",
+                infoFiltered: "(تمت التصفية من _MAX_ إجمالي المدخلات)",
+                loadingRecords: "جاري التحميل...",
+                zeroRecords: "لم يتم العثور على نتائج",
+                emptyTable: "لا توجد بيانات متاحة في الجدول",
+                paginate: {
+                    first: "الأول",
+                    last: "الأخير",
+                    next: "التالي",
+                    previous: "السابق"
+                },
+                buttons: {
+                    excel: "تصدير Excel",
+                    pdf: "تصدير PDF",
+                    print: "طباعة"
                 }
             }
-        ]
+        });
     });
-});
     </script>
 <script src="script.js"></script>
 <script src="vfs_fonts.js"></script>
