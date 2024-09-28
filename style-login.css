@@ -275,3 +275,6 @@ a:hover {
 .dark-mode #ic {
     color: #ffffff; /* لون الروابط الفاتحة */
 }
+.dark-mode label {
+  color: #333;
+}
