@@ -140,8 +140,12 @@
     <table id="apartments-table" class="display">
         <thead>
             <tr>
-                <th>الشقة</th>
+                <th>الإجراءات</th>
+                <th> وصل الدفع</th>
                 <th>المستخدم</th>
+                
+                <th>الشقة</th>
+
                 <th>المالك</th>
 
                 <th>التاريخ</th>
@@ -153,6 +157,14 @@
         </thead>
         <tbody>
         <tr>
+            <td class="action-btns">
+                <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
+<button class="btn-pay" onclick="openPaymentPopup()"><i class="fas fa-cash-register"></i> دفع </button>
+                <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل </button>
+            </td>
+            <td>
+                <button class="btn-disable"><i class="fas fa-download"></i>  </button>
+             </td>
             <td> -</td>
             <td>-</td>
             <td>-</td>
@@ -161,6 +173,14 @@
             <td>-</td>
         </tr>
         <tr>
+            <td class="action-btns">
+                <button class="btn-edit"><i class="fas fa-edit"></i> تعديل</button>
+<button class="btn-pay" onclick="openPaymentPopup()"><i class="fas fa-cash-register"></i> دفع </button>
+                <button class="btn-disable"><i class="fas fa-ban"></i> تعطيل </button>
+            </td>
+            <td>
+                <button class="btn-disable"><i class="fas fa-download"></i>  </button>
+             </td>
             <td> -</td>
             <td> -</td>
             <td>-</td>
@@ -197,6 +217,33 @@
 <!-- Buttons for Excel and PDF export -->
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.html5.min.js"></script>
 <script src="https://cdn.datatables.net/buttons/2.2.2/js/buttons.print.min.js"></script>
+
+<!-- البوب أب فورم الخاص بدفع الإيجار -->
+<div id="paymentPopup" class="popup-overlay" style="display: none;">
+    <div class="popup-content">
+        <h2>دفع </h2>
+        <form id="paymentForm">
+            <label for="paymentDate">التاريخ:</label>
+            <input type="date" id="paymentDate" required>
+
+            <label for="amount">المبلغ:</label>
+            <input type="number" id="amount" required>
+
+            <label for="notes">ملاحظات:</label>
+            <textarea id="notes"></textarea>
+
+            <label for="attachment">إرفاق ملف:</label>
+            <input type="file" id="attachment">
+
+            <div class="popup-buttons">
+                <button style="margin: 0;" type="submit" class="btn-submit">دفع</button>
+                
+                <button type="button" class="btn-close" onclick="closePaymentPopup()">إغلاق</button>
+                <button style="margin: 0;" type="button" class="btn-export" onclick="exportReceipt()">تصدير إيصال الدفع</button>
+            </div>
+        </form>
+    </div>
+</div>
 <script>
     pdfMake.fonts = {
         Cairo: {

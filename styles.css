@@ -1089,7 +1089,7 @@ body.dark-mode {
     padding: 12px;
     border: 1px solid #ddd;
     border-radius: 5px;
-    font-size: 10px;
+    font-size: 14px;
 }
 
 .form-group input:focus,
@@ -2612,4 +2612,10 @@ button{
 }
 .rental-form button{
     background-color: #4b4b4b;
+}
+.rf{
+    background-color: white;
+    padding: 1em;
+    border-radius: 8px;
+    margin-bottom: 1em;
 }
