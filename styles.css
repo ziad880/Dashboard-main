@@ -2619,3 +2619,29 @@ button{
     border-radius: 8px;
     margin-bottom: 1em;
 }
+/* تصميم الحاوية الأساسية للفلاتر */
+.filter-container {
+    margin: 20px;
+    padding: 20px;
+    border: 1px solid #ccc;
+    background-color: #f9f9f9;
+    width: 400px;
+    font-family: Arial, sans-serif;
+  }
+  
+  /* تصميم القائمة المنسدلة */
+  .filter-dropdown {
+    margin-top: 10px;
+  }
+  
+  .filter-select {
+    width: 100%;
+    padding: 5px;
+    font-size: 13px;
+    margin: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #fff;
+  }
+  
+
