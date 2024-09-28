@@ -2645,3 +2645,12 @@ button{
   }
   
 
+  .filter-icon {
+    display: inline-flex; /* لعرض الأيقونة والنص بجانب بعض */
+    align-items: center; /* لتوسيط الأيقونة مع النص عمودياً */
+    cursor: pointer; /* لتغيير مؤشر الماوس عند التحويم */
+}
+
+.filter-icon i {
+    margin-right: 8px; /* إضافة مسافة بين الأيقونة والنص */
+}

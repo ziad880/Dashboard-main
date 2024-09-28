@@ -127,37 +127,6 @@
             </div>
         </div>
  <div style="display: flex;flex-direction: row-reverse;" class="date-filter">
-    <select id="filter" class="filter-select">
-        <option value="form">التاريخ الى</option>
-        <option value="january">يناير</option>
-        <option value="february">فبراير</option>
-        <option value="march">مارس</option>
-        <option value="april">ابريل</option>
-        <option value="may">مايو</option>
-        <option value="june">يونيو</option>
-        <option value="july">يوليو</option>
-        <option value="august">اغسطس</option>
-        <option value="september">سبتمبر</option>
-        <option value="october">اكتوبر</option>
-        <option value="november">نوفمبر</option>
-        <option value="december">ديسمبر</option>
-      </select>
-
-            <select id="filter" class="filter-select">
-                <option value="form">التاريخ من</option>
-                <option value="january">يناير</option>
-                <option value="february">فبراير</option>
-                <option value="march">مارس</option>
-                <option value="april">ابريل</option>
-                <option value="may">مايو</option>
-                <option value="june">يونيو</option>
-                <option value="july">يوليو</option>
-                <option value="august">اغسطس</option>
-                <option value="september">سبتمبر</option>
-                <option value="october">اكتوبر</option>
-                <option value="november">نوفمبر</option>
-                <option value="december">ديسمبر</option>
-              </select>
 
               <select id="filter" class="filter-select">
                 <option value="form">العملة</option>
@@ -177,7 +146,20 @@
                     <option value="other">2</option>
                     <option value="other">3</option>
                   </select>
-
+                  <div class="date-filter">
+                    <span style="font-size: 1em;" class="filter-icon" id="filter-icon">
+                         التاريخ<i class="fa-solid fa-angle-down"></i>
+                    </span>
+                    
+                    <div class="date-picker" id="date-picker">
+                        <label for="start-date">من:</label>
+                        <input type="date" id="start-date" name="start-date" title="تاريخ البداية">
+                        <label for="end-date">إلى:</label>
+                        <input type="date" id="end-date" name="end-date" title="تاريخ النهاية">
+                        <button id="filter-button">تصفية</button>
+                    </div>
+                </div>
+                
 
               
         </div>    <!-- جدول الشقق -->
@@ -329,6 +311,44 @@
             }
         });
     });
+    $('#filter-icon').click(function() {
+                $('#date-picker').toggle();
+            });
+
+            // دالة تصفية الجدول حسب التاريخ
+            $('#filter-button').click(function() {
+                var startDate = $('#start-date').val();
+                var endDate = $('#end-date').val();
+
+                $.fn.dataTable.ext.search.push(function(settings, data, dataIndex) {
+                    var date = new Date(data[3]); // تاريخ من العمود 4 (index 3)
+                    if (
+                        (startDate === "" && endDate === "") ||
+                        (startDate === "" && date <= new Date(endDate)) ||
+                        (new Date(startDate) <= date && endDate === "") ||
+                        (new Date(startDate) <= date && date <= new Date(endDate))
+                    ) {
+                        return true;
+                    }
+                    return false;
+                });
+
+                table.draw();
+                $('#date-picker').hide(); // إخفاء نافذة اختيار التاريخ بعد التصفية
+            });
+
+            // إضافة تأثير التحويم على التواريخ
+            $('#apartments-table tbody').on('mouseenter', 'td', function() {
+                var title = $(this).attr('title');
+                if (title) {
+                    $(this).addClass('highlight');
+                    $(this).attr('data-title', title); // حفظ التاريخ في البيانات
+                }
+            }).on('mouseleave', 'td', function() {
+                $(this).removeClass('highlight');
+                $(this).removeAttr('data-title'); // إزالة البيانات عند الخروج
+            });
+
     </script>
 <script src="script.js"></script>
 <script src="vfs_fonts.js"></script>
