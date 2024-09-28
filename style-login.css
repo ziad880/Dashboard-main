@@ -168,7 +168,7 @@ body {
 
 /* Forms */
 .dark-mode input, .dark-mode select, .dark-mode textarea {
-    background-color: #2d2d2d; /* خلفية الداكنة لعناصر الإدخال */
+    background-color: #555; /* خلفية الداكنة لعناصر الإدخال */
     color: #e0e0e0; /* لون النص الفاتح */
     border: 1px solid #555; /* إطار داكن */
 }
